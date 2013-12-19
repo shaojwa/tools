@@ -1,9 +1,9 @@
 # git_man
 #### 20131219
 
-    /* tell git to automatically stage tracked file. */
     git add -u .
-	
-	/* push local repository to remote server */ 
 	git init 
-	git remote add origin <server>
+	git clone https://github.com/shaojwa/doc.git
+	git remote add doc https://github.com/shaojwa/doc.git
+	
+	
