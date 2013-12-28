@@ -1,6 +1,6 @@
 
 ## markdown manual 
-#### 28/12 2013 by onemao
+#### 28/12 2013 by darktyping &copy;
 
 ## summary
 
@@ -33,3 +33,37 @@ markdown 语法总的说来是一区块的划分的，简单可以分为
 	{
 		return 0;
 	}
+
+
+#### 可以用三个以上的星号、减号、或者底线来画出分割线，比如
+****
+
+#### 连接：
+
+This is [an example](http://example.com/ "Title") inline link.
+
+[This link](http://example.net/) has no title attribute.
+
+代码是：
+ 
+    This is [an example](http://example.com/ "Title") inline link.
+	[This link](http://example.net/) has no title attribute.
+
+#### 强调（一颗星斜体，两颗星加粗，三颗星斜体加粗）
+
+*这里用的就是一颗星的强调*
+
+**这里用的是两颗星的强调**
+
+但是如果你显示星号，那就用斜杠转义比如 \*斜杠转义\*
+
+#### 一小段代码
+用 `printf()` 来演示
+
+
+#### 自动连接
+<http://example.com/>
+
+<address@example.com>
+
+简单用法总结如上，更多信息参见: [Markdown语法说明中文版](http://wowubuntu.com/markdown/#list)
