@@ -11,4 +11,8 @@
 	git config user.email "shaojwa@gmail.com"
 	git config user.name "shaowa"
 	
-	
+#### 20131228
+
+	git status -s // col.1: status in index col.2 status in work
+
+![git switch](sw.jpg)
