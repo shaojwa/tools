@@ -3,6 +3,7 @@
     ![number]
 	![-number]
 	![expression]
+	^foo^bar
 	mv !*
 	mv !^
 	mv !$
