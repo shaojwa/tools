@@ -16,3 +16,5 @@
 	git status -s // col.1: status in index col.2 status in work
 
 ![git switch](sw.jpg)
+
+    git commit -m "`date`"
