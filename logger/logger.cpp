@@ -1,6 +1,6 @@
 
 
-/*refined at 20131228 */
+/* edit on 20131228 */
 #include <windows.h>
 #include <stdio.h>
 #include <time.h>

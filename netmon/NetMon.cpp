@@ -1,6 +1,6 @@
 
 
-/* Editted at 20131228 */
+/* edit on 20131228 */
 
 #include "logger.h"
 #include "netmon.h"

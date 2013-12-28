@@ -1,6 +1,6 @@
 
 
-/* edit at 20131228 */
+/* edit on 20131228 */
 
 #ifndef _WS_LOGGER_H_
 #define _WS_LOGGER_H_
