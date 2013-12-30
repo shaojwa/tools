@@ -1,5 +1,8 @@
 
+// ref1 : http://msdn.microsoft.com/en-us/library/windows/desktop/aa365601(v=vs.85).aspx
+// ref2 : http://msdn.microsoft.com/en-us/library/windows/desktop/aa365592(v=vs.85).aspx
 #include "stdafx.h"
+
 #include "cmdutil.h"
 #include "logger.h"
 
