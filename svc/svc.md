@@ -1,0 +1,16 @@
+
+#### 查询服务状态
+    sc query tacservice
+	// TYPE: 10 WIN32_OWN_PROCESS
+	// RUNNING (STOPPABLE, NOT_PAUSEABLE, ACCEPTS_SHUTDOWN)
+	sc stop tacservice
+	// STATE ：1 STOPPED (NOT_STOPPABLE, NOT_PAUSEABLE, IGNORES_SHUTDOWN)
+****
+	sc query wgclient
+	// TYPE: 110 WIN32_OWN_PROCESS
+	// RUNNING (NOT_STOPPABLE, NOT_PAUSEABLE, ACCEPTS_SHUTDOWN)
+    sc stop wgclient
+	// [SC] ControlService FAILED 1052:
+	// 1052: ERROR_INVALID_SERVICE_CONTROL
+
+#### 服务停止
