@@ -3,9 +3,11 @@
 #ifndef _TAC_LOGGER_H_
 #define _TAC_LOGGER_H_
 
+
 #include "tchar.h"
 #include <string.h>
 #include <sstream>
+#include <windows.h>
 using namespace std;
 
 

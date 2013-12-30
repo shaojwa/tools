@@ -1,17 +1,4 @@
 
-
-/******************************************************************************
-*   Copyright(c) 2008-2013 DPtech 版权所有
-*
-*   文件名称： logger.cpp
-*   简要描述： 日志打印操作类
-*
-*   创建者：wangshaojie
-*
-*   版本： 1.0
-*   日期： 2013.12
-******************************************************************************/
-#include <stdafx.h>
 #include <windows.h>
 #include <stdio.h>
 #include <time.h>
@@ -101,7 +88,7 @@ void Logger::LogT(LPCTSTR fmt, ...)
 
     ::EnterCriticalSection(&m_lock);
     if(m_log_fp) {
-        _ftprintf(m_log_fp, _T("[%s]"), szTime); 
+        _ftprintf(m_log_fp, _T("[%s](pid = %d)"), szTime, GetCurrentProcessId()); 
         _vftprintf(m_log_fp, fmt, list);
         fflush(m_log_fp);
     }
@@ -123,7 +110,7 @@ void Logger::Log(LPCSTR fmt, ...)
 
     ::EnterCriticalSection(&m_lock);
     if(m_log_fp) {
-        fprintf(m_log_fp, "[%s]", szTime); 
+        fprintf(m_log_fp, "[%s](pid = %d)", szTime, GetCurrentProcessId()); 
         vfprintf(m_log_fp, fmt, list);
         fflush(m_log_fp);
     }
