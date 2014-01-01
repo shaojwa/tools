@@ -1,5 +1,6 @@
 
 
+/* edited on 20140101*/
 // ref1 : http://msdn.microsoft.com/en-us/library/windows/desktop/aa365601(v=vs.85).aspx
 // ref2 : http://msdn.microsoft.com/en-us/library/windows/desktop/aa365592(v=vs.85).aspx
 
