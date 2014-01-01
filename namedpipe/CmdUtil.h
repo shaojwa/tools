@@ -4,52 +4,47 @@
 #define _TAC_CMD_UTIIL_H_
 
 
-#define BUFSIZE 10
+#define PIPE_BUFSIZE 32 
 
-typedef struct
-{
+typedef struct {
     OVERLAPPED oOverlap;
     HANDLE hPipeInst;
-    TCHAR chRequest[BUFSIZE];
+    TCHAR chRequest[PIPE_BUFSIZE];
     DWORD cbRead;
-    TCHAR chReply[BUFSIZE]; 
+    TCHAR chReply[PIPE_BUFSIZE];
     DWORD cbToWrite; 
 } PIPEINST, *LPPIPEINST; 
+
+typedef enum {
+    NS_NONE        = 0,
+    NS_EXIT        = 1,
+    NS_CONTINUE    = 2
+} NEXT_STEP;
 
 class CmdUtil
 {
 public:
-    static CmdUtil* GetInst();
-    void Release();
-    static BOOL StartListenThread(void);
+    /*处理命令进程调用借口(服务端进程)*/
+    static CmdUtil& GetInst();
+    static BOOL StartListenThread(LPCTSTR pipename);
+    static NEXT_STEP ParseCmd(LPCTSTR pipename);
 
-    //static void ParseCmd(void);
-
+    /*发送命令进程调用接口(客户端进程)*/
+    static HANDLE OpenPipe(LPCTSTR pipename);
+    static BOOL SendCmdRequest(LPCTSTR cmd);
+    static BOOL ClosePipe();
 
 private:
     CmdUtil() {}
     ~CmdUtil() {}
+    void Release();
 
-    //static bool GetCmdLen(LPTSTR *lpvMessage, DWORD * cbToWrite);
-    //static DWORD SendAndReceive();
-
-    //static VOID DisconnectAndClose(LPPIPEINST lpPipeInst);
-    //static VOID GetAnswerToRequest(LPPIPEINST pipe);
-    //static VOID WINAPI CompletedReadRoutine(DWORD dwErr, 
-    //    DWORD cbBytesRead, LPOVERLAPPED lpOverLap);
-    //static VOID WINAPI CompletedWriteRoutine(DWORD dwErr, 
-    //    DWORD cbWritten, LPOVERLAPPED lpOverLap);
-
-    //static BOOL ConnectToNewClient(HANDLE hPipe, LPOVERLAPPED lpo);
-    //static BOOL CreateAndConnectInstance(LPOVERLAPPED lpoOverlap);
-
-    /*服务端进程功能代码*/
     static DWORD WINAPI ListenCmdProc(LPVOID lpParam);
     static BOOL CreateAndConnectInstance(LPOVERLAPPED lpoOverlap);
     static BOOL ConnectPipe(HANDLE hPipe, LPOVERLAPPED lpo);
-    static VOID CompletedWriteRoutine(
+    static VOID WINAPI CompletedWriteRoutine(
         DWORD dwErr, DWORD cbWritten, LPOVERLAPPED lpOverLap);
-    static VOID CompletedReadRoutine(
+    static VOID WINAPI CompletedReadRoutine(
         DWORD dwErr, DWORD cbBytesRead, LPOVERLAPPED lpOverLap);
     static VOID DisconnectAndClose(LPPIPEINST lpPipeInst);
 
@@ -57,8 +52,7 @@ private:
     static bool _inited;
     static CmdUtil* _instance;
     static DWORD _result;
-    static LPCTSTR _piplename;
-    static DWORD _bufsize;
+    static TCHAR _pipename[256];
     static DWORD _timeout;
 };
 
