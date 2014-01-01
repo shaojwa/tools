@@ -1,5 +1,7 @@
 
 
+/* edited on 20140101*/
+
 #ifndef _TAC_CMD_UTIIL_H_
 #define _TAC_CMD_UTIIL_H_
 

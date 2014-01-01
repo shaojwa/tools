@@ -1,4 +1,7 @@
 
+
+/* edited on 20140101*/
+
 #include <windows.h>
 #include <stdio.h>
 #include <time.h>

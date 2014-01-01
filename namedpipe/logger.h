@@ -1,5 +1,7 @@
 
 
+/* edited on 20140101*/
+
 #ifndef _TAC_LOGGER_H_
 #define _TAC_LOGGER_H_
 
