@@ -76,6 +76,6 @@
  
 	git remote add doc https://github.com/shaojwa/doc.git
 
-it switch](sw.jpg)
+[it switch](sw.jpg)
 
     git commit -m "`date`"
