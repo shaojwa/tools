@@ -2,80 +2,80 @@
 
 ###### v0.1 on 20131219 / v0.2 on 20141125
 
-## ÅäÖÃgit
+## é…ç½®git
 
     git config user.email "shaojwa@gmail.com"
     git config user.name "shaojwa"
 
-## ´´½¨´úÂë²Ö¿â
-### ·½·¨1
-ÔÚgithubÍøÕ¾ÉÏ´´½¨´úÂë²Ö¿â
+## åˆ›å»ºä»£ç ä»“åº“
+### æ–¹æ³•1
+åœ¨githubç½‘ç«™ä¸Šåˆ›å»ºä»£ç ä»“åº“
 
-### ·½·¨2
+### æ–¹æ³•2
 
-## ³õÊ¼»¯
-Ê¹ÓÃÇ°ÏÈ³õÊ¼»¯±¾µØ²Ö¿â   
-·½·¨1£º±¾µØ³õÊ¼»¯£¨ÔÝÊ±²»¹ØÁª´úÂë²Ö¿â£©
+## åˆå§‹åŒ–
+ä½¿ç”¨å‰å…ˆåˆå§‹åŒ–æœ¬åœ°ä»“åº“   
+æ–¹æ³•1ï¼šæœ¬åœ°åˆå§‹åŒ–ï¼ˆæš‚æ—¶ä¸å…³è”ä»£ç ä»“åº“ï¼‰
 
     cd <dir>
     git init
-·½·¨2£º´ÓÔ¶³Ì²Ö¿â³õÊ¼»¯£¨Ö±½Ó¹ØÁªÄ³¸ö´úÂë²Ö¿â£©
+æ–¹æ³•2ï¼šä»Žè¿œç¨‹ä»“åº“åˆå§‹åŒ–ï¼ˆç›´æŽ¥å…³è”æŸä¸ªä»£ç ä»“åº“ï¼‰
 
     cd <dir>
-    git clone https://github.com/shaojwa/leetcode/git
+    git clone https://github.com/shaojwa/leetcode.git
 
-## ÐÞ¸ÄºóµÄ³·Ïú
-·ÅÆú¹¤×÷ÇøÖÐµÄËùÓÐÐÞ¸Ä£º
+## ä¿®æ”¹åŽçš„æ’¤é”€
+æ”¾å¼ƒå·¥ä½œåŒºä¸­çš„æ‰€æœ‰ä¿®æ”¹ï¼š
 
     git reset --hard HEAD
-·ÅÆú¹¤×÷ÇøÖÐÖ¸¶¨ÎÄ¼þµÄµÄÐÞ¸Ä£º
+æ”¾å¼ƒå·¥ä½œåŒºä¸­æŒ‡å®šæ–‡ä»¶çš„çš„ä¿®æ”¹ï¼š
     
     
-## Ìí¼ÓÎÄ¼þµ½±¾µØ»º´æ(index-tree)
-³¡¾°1£ºÌí¼ÓÄ³¸öÄ¿Â¼ÏÂµÄËùÓÐÎÄ¼þµ½±¾µØ»º´æ 
+## æ·»åŠ æ–‡ä»¶åˆ°æœ¬åœ°ç¼“å­˜(index-tree)
+åœºæ™¯1ï¼šæ·»åŠ æŸä¸ªç›®å½•ä¸‹çš„æ‰€æœ‰æ–‡ä»¶åˆ°æœ¬åœ°ç¼“å­˜ 
 
     git add . 
     git add -u .
     
-³¡¾°2£ºÌí¼ÓÖ¸¶¨ÎÄ¼þµ½±¾µØ»º´æ
+åœºæ™¯2ï¼šæ·»åŠ æŒ‡å®šæ–‡ä»¶åˆ°æœ¬åœ°ç¼“å­˜
 
     git add -p <file>
 
-## Ìí¼ÓÍêºó²é¿´×´Ì¬
+## æ·»åŠ å®ŒåŽæŸ¥çœ‹çŠ¶æ€
     git status
 
-##È¡ÏûÌí¼Óµ½»º´æ
-³¡¾°1£ºÈ¡ÏûÄ³¸öÎÄ¼þµÄÌí¼Ó
+##å–æ¶ˆæ·»åŠ åˆ°ç¼“å­˜
+åœºæ™¯1ï¼šå–æ¶ˆæŸä¸ªæ–‡ä»¶çš„æ·»åŠ 
 
     git rm --cached <file>
    
-³¡¾°2£ºÈ¡ÏûËùÓÐÎÄ¼þµÄÌí¼Ó
+åœºæ™¯2ï¼šå–æ¶ˆæ‰€æœ‰æ–‡ä»¶çš„æ·»åŠ 
 
 
-## °Ñ¸ü¸ÄÍ¬²½µ½±¾µØ²Ö¿â(head-tree)
-Í¬²½µ½Ô¶³Ì·þÎñÆ÷Ç°µÃÏÈÍ¬²½µ½±¾µØ·þÎñÆ÷
+## æŠŠæ›´æ”¹åŒæ­¥åˆ°æœ¬åœ°ä»“åº“(head-tree)
+åŒæ­¥åˆ°è¿œç¨‹æœåŠ¡å™¨å‰å¾—å…ˆåŒæ­¥åˆ°æœ¬åœ°æœåŠ¡å™¨
 
     git commit -m "some message"
 
-## °ÑÐÞ¸ÄÍ¬²½µ½Ô¶³Ì²Ö¿â
+## æŠŠä¿®æ”¹åŒæ­¥åˆ°è¿œç¨‹ä»“åº“
 
     git push  https://github.com/shaojwa/leetcode.git maser
     
-ÔËÐÐÉÏÌõÃüÁî»áÌáÊ¾ÄãÉèÖÃÓÃ»§ÃûºÍÃÜÂë:
+è¿è¡Œä¸Šæ¡å‘½ä»¤ä¼šæç¤ºä½ è®¾ç½®ç”¨æˆ·åå’Œå¯†ç :
 
     Username for 'https://github.com':
     Password for 'https://shaojwa@github.com':
     
-ÊäÈëÕýÈ·µÄÓÃ»§ÃûºÍÃÜÂëÖ®ºóÌáÊ¾Ìá½»³É¹¦.¿ÉÒÔÔÚÍøÕ¾ÉÏÈ·ÈÏ¡£
+è¾“å…¥æ­£ç¡®çš„ç”¨æˆ·åå’Œå¯†ç ä¹‹åŽæç¤ºæäº¤æˆåŠŸ.å¯ä»¥åœ¨ç½‘ç«™ä¸Šç¡®è®¤ã€‚
 
     
     
-##·ÖÖ§²Ù×÷
+##åˆ†æ”¯æ“ä½œ
 
-Ô¶³ÌÌí¼ÓÐÂµÄ·ÖÖ§
+è¿œç¨‹æ·»åŠ æ–°çš„åˆ†æ”¯
  
 	git remote add doc https://github.com/shaojwa/doc.git
 
-[it switch](sw.jpg)
+![it switch](sw.jpg)
 
     git commit -m "`date`"
