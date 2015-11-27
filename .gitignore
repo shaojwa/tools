@@ -1,0 +1,8 @@
+*.txt
+*.swp
+*.sln
+*.sdf
+*.vcproj
+*.vcxproj
+*.opensdf
+*~
