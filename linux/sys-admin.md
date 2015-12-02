@@ -1,6 +1,19 @@
 @文档基于CentOS
 @20151202
 
+###### 查看所有用户
+
+    $ cat /etc/passwd
+    $ awk -F':' '{ print $1}' /etc/passwd
+
+###### 所有组
+
+    $ cat /etc/group
+
+###### 组内所有成员
+    
+    lid group_name|user_name
+
 ###### 查看系统完整信息
 	uname -a
 
