@@ -1,10 +1,11 @@
-#本文介绍samba的配置
+####samba基础
 @20151202
-@本文基于CentOS-7
+本文基于CentOS-7
 
-##检查samba是否已经安装
+
+####检查samba是否已经安装
 安装包检查 rpm -qa |grep samba 
-##查看samba状态
+####查看samba状态
 systemctl status smb
 ##配置samba
 samba配置文件路径/etc/samba/smb.conf

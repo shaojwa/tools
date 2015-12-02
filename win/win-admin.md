@@ -1,3 +1,3 @@
-
-
-    vol // get the disk serial number.
+#### windows管理命令
+@20151202
+vol [drive:] //获取卷(分区)的序列号

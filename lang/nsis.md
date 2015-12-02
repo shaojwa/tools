@@ -1,17 +1,17 @@
 
 #### 20140108 by shaojwa
 
-# Ch2
-## 2.2
+#### Ch2
+#### 2.2
 * nsis 把每一行都当作命令
 
-## 2.3
+#### 2.3
 * OutFile 指令指明生成的安装文件路径
 
-### 2.3.1 属性指令（多种）
+#### 2.3.1 属性指令（多种）
 * 属性指令决定安装行为以及外观
 
-### 2.3.2 页面指令（Page）
+#### 2.3.2 页面指令（Page）
 * 安装页设置使用Page命令
     Page license
 	Page components
@@ -20,7 +20,7 @@
 	UninstallPage uninstConfirm
 	UninstallPage instfiles
 
-### 2.3.3  片段指令(Section)
+#### 2.3.3  片段指令(Section)
 * 常用法
 
         Section "Installer section"
@@ -45,7 +45,7 @@
 	    File "path/to/file"  
 
 
-### 2.3.4 函数 Functions
+#### 2.3.4 函数 Functions
 
 函数和片段的区别是他们被调用的方式.  
 函数有两类 1. *用户函数*  2. *回调函数*
@@ -57,7 +57,7 @@
 
 
 
-### 2.3.5 使用脚本
+#### 2.3.5 使用脚本
 #### 2.3.5.1 代码的逻辑结构
 * 常见的条件指令(为了方便各种比较运算一般都会添加 `LogicLib.nsh`)
 
@@ -69,7 +69,7 @@
 #### 2.3.5.3 调试脚本
     MessageBoxes/DetailPrint
 
-### 2.3.6 脚本的执行
+#### 2.3.6 脚本的执行
 
 (1) 定义的页面依次显示，直到instfiles页面
 (2) 在instfiles页面，各个section按照定义的顺序依次执行。
@@ -78,7 +78,7 @@
 比如.onInit回调函数会先于任何其他代码执行。
 (5) 也有页面回调函数(page-callback function)会在页面显示的某个阶段执行。
 
-### 2.3.7 编辑器命令
+#### 2.3.7 编辑器命令
 编译器命令在编译的时候执行  
 
 1. 条件编译
