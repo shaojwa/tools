@@ -21,6 +21,7 @@ Iptables是绝大多数linux发行版内建的防火墙
     # chkconfig iptables on
     # chkconfig ipv6tables on
 
-在CentOS7之后的版本统一用systemctl命令：
+在CentOS7之后的版本统一用systemctl命令:  
+
     # systemctl [status|start|stop|restart] iptables
     # systemctl [status|start|stop|restart] ipv6tables
