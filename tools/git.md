@@ -8,70 +8,74 @@
 `git init`
 
 ###### 方法2：克隆某个仓库自动初始化：
- 
 `git clone`
 
 
 ###### 查看
 
-###### 查看状态
+查看状态  
 `git status`  
 status = tracked + untracked  
 tracked = work + index + history + remote
 
-###### 查看日志
+查看日志  
 `git log`  
 `git log -p`  
 `git log -2`
 
-###### 查看diff
+查看本地clone的版本  
+git remote show origin 
 
-###### work和index之间
+#### diff    
+work和index之间   
 `git diff`
 
-###### work和history之间
+work和history之间  
 `git diff HEAD`
 
-###### work和remote之间
+work和remote之间  
 `git diff HEAD~`
 
-###### index和history之间
+index和history之间  
 `git diff --cached`  
 `git diff --staged`
 
-###### index和remote之间
+index和remote之间  
 `git diff --cached HEAD~`
 
 
 ###### 提交修改
-###### 从untracked到tracked  
+从untracked到tracked  
 `git add`  
 
-###### 从work到index
+从work到index  
 `git add`  
 `git add . `   
 `git add -u . `   
 `git add -p <file>`  
 
-###### 从index到history 
+从index到history   
 //from index to history  
 `git commit -m <some message>`   
 //from work to history  
 `git commit -a -m <some message>` 
 
-######  从history到remote
+从history到remote  
 `git push  https://github.com/shaojwa/leetcode.git master`  
 
 ###### 回退
-###### 从tracked到untracked  
-`git rm --cached <file>`
+从tracked到untracked  
+`git rm --cached <file>`  
 
+从index到work  
+`git checkout --files`    
 
-###### 从index到work
-`git checkout --files`
-
-###### 从history到index
+从history到index  
 `git reset --files`  
+
+###### 更新
+从remote更新到本地history      
+`git remote update`
 
    
 ###### 分支
