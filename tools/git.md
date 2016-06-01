@@ -1,68 +1,96 @@
-v0.1@ 20131219  
-v0.2@ 20141125  
-v0.3@ 20151127  
+v0.1@ 20131219
+v0.2@ 20141125
+v0.3@ 20151127
+v0.4@ 20160601
 
-### 创建项目仓库
-方法1：创建崭新的git项目仓库  
+status = tracked + untracked  
+tracked = work + index + history + remot
 
+#### create empry repository
     git init
-
-方法2：克隆某个仓库自动初始化  
-
+#### clone a repository
     git clone
 
-
-### 提交修改
-从untracked到tracked  
-
+#### from workspace to index
     git add
-
-从work到index  
-
     git add
     git add .
     git add -u .
     git add -p <file>
 
-从index到history  
-
+#### from index to local repository
     git commit -m <some message>
 
-从index到history  
-
+#### from worksapce to local repository
     git commit -a -m <some message>  
 
-从history到remote  
-
+#### from local repository to remote repository
     git push  https://github.com/shaojwa/leetcode.git master
 
-### 回退
-从tracked到untracked  
+#### revert from index to workspace
+    git checkout
 
+#### revert from local repository to workspace
+    git checkout HEAD
+
+#### remove file from the index only
     git rm --cached <file>
 
-从index到work  
+#### remove file from index and working tree
+    git rm [-f] <file>
 
-    git checkout --files
-
-从history到index  
-
+#### reset current HEAD to the specified state
     git reset --files
 
-### 更新
-从remote更新到本地history  
-
+#### update from remote repository to local repository
     git remote update
 
-### 远程添加新的分支
-
+#### add remote repository
     git remote add doc https://github.com/shaojwa/doc.git
 
-### 其他
+#### list create or delete branched
+    git branch
 
-    git commit -m "`date`"
+#### list the remote-tracking branches
+    git branch -r
 
+#### list remote-tracking branched and local branches
+    git branch -a
 
+#### show working tree status
+    git status
 
+#### show commit logs
+    git log
+    git log -p
+    git log -2
 
+#### query remote repository name
+    git remote [-v]
 
+#### query all  branches in remote repository named origin
+
+    git remote show origin
+
+#### diff between work and index
+
+    git diff
+
+#### diff between workspace and local repository
+
+    git diff HEAD
+
+#### diff between workspace and remote repository
+
+    git diff HEAD~
+
+#### diff between index and local repository
+    git diff --cached
+    git diff --staged
+
+#### diff between index and remote repository
+    git diff --cached HEAD~
+
+#### rename remote repository
+    git remote -v
+    git remote set-url origin https://github.com/shaojwa/man.git
