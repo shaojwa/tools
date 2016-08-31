@@ -56,7 +56,12 @@ tab键长度
     set listchars=eol:↓,tab:→→,trail:·
     set list
 
-配置映射  
+设置swap和backup目录  
+
+    set directory=$VIMRUNTIME\..\swap\\
+    set backupdir=$VIMRUNTIME\..\backup\\
+
+#### 键盘映射  
 
     map <M-1> 1gt
     map <M-2> 2gt
