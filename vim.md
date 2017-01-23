@@ -111,10 +111,10 @@ VISUAL BLOCK模式下（windows下按ctrl+q）
     :[range]s/search/replace/[options]  
 先设options为空则  
 * 如果range为空，则替换光标当前行的第一个匹配项。  
-* :8,10s 则替换8-10行中，每一行的提一个匹配项。  
+* `:8,10s` 则替换8-10行中，每一行的提一个匹配项。  
 现在option选择为g  
-* :s/search/replace/g 替换每一行中出现的所有匹配项。  
-* :8,10s/search/replace/g替换8-10行中每一行出现的所有匹配项。  
+* `:s/search/replace/g` 替换每一行中出现的所有匹配项。  
+* `:8,10s/search/replace/g`替换8-10行中每一行出现的所有匹配项。  
 更多参见[这里](http://vim.wikia.com/wiki/Search_and_replace)  
 
 
