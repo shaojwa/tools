@@ -1,5 +1,37 @@
-@20151202  
-## vim
+20151202  
+#### motion
+0
+^
+$
+g_
+#### normal mode
+u/CTRL-R
+CTRL-N/CTRL-P
+CTRL-I/CTRl-O
+CTRL-]/CTRL-T
+CTRL-G
+#
+*
+g#
+g*
+=
+=%
+gd
+#### insert mode
+i_CTRL-H
+i_CTRL-W
+i_CTRL-U
+i_CTRL-J
+i_CTRL-I
+i_CTRL-T
+i_CTRL-D
+i_CTRL-N
+i_CTRL-P
+i_CTRL-[
+i_CTRL-C
+i_<Esc>
+
+
 ### 设置
 设置字体  
 
