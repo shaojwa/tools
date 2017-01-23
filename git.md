@@ -1,96 +1,83 @@
-v0.1@ 20131219
-v0.2@ 20141125
-v0.3@ 20151127
-v0.4@ 20160601
+v0.1@ 20131219  
+v0.2@ 20141125  
+v0.3@ 20151127  
+v0.4@ 20160601  
 
 status = tracked + untracked  
-tracked = work + index + history + remot
+tracked = work + index + history + remote  
 
-#### create empry repository
-    git init
-#### clone a repository
-    git clone
 
-#### from workspace to index
-    git add
-    git add
-    git add .
-    git add -u .
-    git add -p <file>
+#### add  
+    git add  
+    git add .  
+    git add -u .  
+    git add -p <file>  
 
-#### from index to local repository
-    git commit -m <some message>
 
-#### from worksapce to local repository
-    git commit -a -m <some message>  
+#### branch  
+    git branch // list create or delete branched  
+    git branch -r // list the remote-tracking branches  
+    git branch -a // list remote-tracking branched and local branches  
 
-#### from local repository to remote repository
-    git push  https://github.com/shaojwa/leetcode.git master
 
-#### revert from index to workspace
-    git checkout
+#### checkout  
+    git checkout  // revert from index to working directory  
+    git checkout HEAD // revert from to working directory  
 
-#### revert from local repository to workspace
-    git checkout HEAD
 
-#### remove file from the index only
-    git rm --cached <file>
+#### clone  
+    git clone // clone a repository  
 
-#### remove file from index and working tree
-    git rm [-f] <file>
 
-#### reset current HEAD to the specified state
-    git reset --files
+#### commit  
+    git commit -m <message> // from index to HEAD  
+    git commit -a -m <message> // from working directory to HEAD  
 
-#### update from remote repository to local repository
-    git remote update
 
-#### add remote repository
-    git remote add doc https://github.com/shaojwa/doc.git
+#### diff  
+    git diff // diff between work and index  
+    git diff HEAD  // diff between workspace and HEAD  
+    git diff HEAD~ // diff between workspace and remote  
+    git diff --cached // diff between index and head  
+    git diff --staged // same to above  
+    git diff --cached HEAD~ // diff between index and remote  
 
-#### list create or delete branched
-    git branch
 
-#### list the remote-tracking branches
-    git branch -r
+#### init  
+    git init // create empty repository  
 
-#### list remote-tracking branched and local branches
-    git branch -a
 
-#### show working tree status
-    git status
+#### log  
+    git log  
+    git log -p  
+    git log -2  
 
-#### show commit logs
-    git log
-    git log -p
-    git log -2
 
-#### query remote repository name
-    git remote [-v]
+#### push  
+    git push https://github.com/shaojwa/leetcode.git master  
+    git push origin master  
 
-#### query all  branches in remote repository named origin
 
-    git remote show origin
+#### remote  
+    git remote [-v]  
+    // rename remote repository  
+    git remote set-url origin https://github.com/shaojwa/man.git  
+    // query all branches in remote repository named origin  
+    git remote show origin  
+    git remote update // update from remote repository to local repository  
+    git remote add doc https://github.com/shaojwa/doc.git // add remote repository  
 
-#### diff between work and index
 
-    git diff
+#### reset  
+    git reset --files // reset current HEAD to the specified state  
 
-#### diff between workspace and local repository
 
-    git diff HEAD
+#### rm  
+    git rm --cached <file> // remove file from the index only  
+    git rm [-f] <file> // file from index and working directory  
 
-#### diff between workspace and remote repository
 
-    git diff HEAD~
+#### status  
+    git status  
 
-#### diff between index and local repository
-    git diff --cached
-    git diff --staged
 
-#### diff between index and remote repository
-    git diff --cached HEAD~
-
-#### rename remote repository
-    git remote -v
-    git remote set-url origin https://github.com/shaojwa/man.git
