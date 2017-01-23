@@ -116,6 +116,8 @@ VISUAL BLOCK模式下（windows下按ctrl+q）
 * :s/search/replace/g 替换每一行中出现的所有匹配项。  
 * :8,10s/search/replace/g替换8-10行中每一行出现的所有匹配项。  
 更多参见[这里](http://vim.wikia.com/wiki/Search_and_replace)  
+
+
 #### 匹配  
 匹配边界可以考虑用:  
     \< 和 \>  
@@ -159,6 +161,6 @@ VISUAL BLOCK模式下（windows下按ctrl+q）
 最后是对应的十进制的unicode值  
 比如输入向下箭头  
 就可以先按CTRL-K然后再输入-v就可以  
-#### pattern
+#### pattern  
     :%s/^\[^#]/####\1/gc
 
