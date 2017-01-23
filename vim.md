@@ -1,35 +1,35 @@
 20151202  
 #### motion  
-0  
-^  
-$  
-g_  
+    0  
+    ^  
+    $  
+    g_  
 #### normal mode  
-u/CTRL-R  
-CTRL-N/CTRL-P  
-CTRL-I/CTRl-O  
-CTRL-]/CTRL-T  
-CTRL-G  
-#  
-*  
-g#  
-g*  
-=  
-=%  
-gd  
+    u/CTRL-R  
+    CTRL-N/CTRL-P  
+    CTRL-I/CTRl-O  
+    CTRL-]/CTRL-T  
+    CTRL-G  
+    #  
+    *  
+    g#  
+    g*  
+    =  
+    =%  
+    gd  
 #### insert mode  
-i_CTRL-H  
-i_CTRL-W  
-i_CTRL-U  
-i_CTRL-J  
-i_CTRL-I  
-i_CTRL-T  
-i_CTRL-D  
-i_CTRL-N  
-i_CTRL-P  
-i_CTRL-[  
-i_CTRL-C  
-i_<Esc>  
+    i_CTRL-H  
+    i_CTRL-W  
+    i_CTRL-U  
+    i_CTRL-J  
+    i_CTRL-I  
+    i_CTRL-T  
+    i_CTRL-D  
+    i_CTRL-N  
+    i_CTRL-P  
+    i_CTRL-[  
+    i_CTRL-C  
+    i_<Esc>  
 #### 设置  
 设置字体  
     set guifont=courier_new:h12  
@@ -159,3 +159,6 @@ VISUAL BLOCK模式下（windows下按ctrl+q）
 最后是对应的十进制的unicode值  
 比如输入向下箭头  
 就可以先按CTRL-K然后再输入-v就可以  
+#### pattern
+    :%s/^\[^#]/####\1/gc
+
