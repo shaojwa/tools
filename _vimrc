@@ -1,37 +1,86 @@
+let mapleader=","
+map <silent> <leader>ss :source ~/.vimrc<cr>
+map <silent> <leader>ee :e ~/.vimrc<cr>
+
+"coding setting
+set shiftwidth=2
+set tabstop=2
+set smarttab
+set expandtab
+set nu
+set cindent
+set fenc=utf-8
+set enc=utf-8
+set fileformats=unix
+set colorcolumn=120
+
+"ui setting
+set statusline=[%l/%L,%c,%{&ff},%{&fenc}][%{getcwd()}][%f]
+set laststatus=2
+set splitright
+set splitbelow
+set hlsearch
+set smartcase
+
+set textwidth=64
+"set list
+set listchars=eol:↓,tab:→→,trail:·
 set guifont=source_code_pro:h11
 set guioptions-=T
 set guitablabel=%N:%F
-set encoding=utf-8
-set lines=24
-set columns=80
-set textwidth=64
-set shiftwidth=4
-set tabstop=4
-set expandtab
 set nocompatible
 set cursorline
 set langmenu=en
-let $lang='en'
-set listchars=eol:↓,tab:→→,trail:·
-set statusline=%<%F
-set list
-set nu
 set directory=$VIMRUNTIME\..\swap\\
 set backupdir=$VIMRUNTIME\..\backup\\
 
+let $lang='en'
 colorscheme desert
 
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
-set cc=80
-highlight ColorColumn guibg=#202020
-
+highlight ColorColumn ctermbg=grey
+highlight Search cterm=NONE ctermfg=grey ctermbg=blue
+highlight CursorLine cterm=none ctermfg=white gui=none guifg=white
 let Tlist_Ctags_Cmd='D:\ctags\ctags.exe'
 
 "nmap <C-CR> _i<CR><Esc>
-"nnoremap <C-Space> i<Space><Esc>
+nnoremap <Space> <C-F>
+nnoremap <S-Space> <C-B>
+nnoremap <CR> <C-D>
+nnoremap <Down> <C-E>
+nnoremap <Up> <C-Y>
+nnoremap <Space> <C-U>
+nmap <F2> :set list!<CR>
+nmap <F3> :call ToggleLineNumber()<CR>
+function ToggleLineNumber()
+  if &nu == 0 && &rnu == 0
+    set nu
+  elseif &nu == 1  && &rnu == 0
+    set nonu rnu
+  elseif &nu == 0 && &rnu == 1
+    set nu rnu
+  else
+    set nonu nornu
+  endif
+endfunction
+
+nmap <F4> :!ctags -L project.files --c++-kinds=+p --fields=+iaS --extra=+q <CR><CR>
+nmap <F12> :TlistToggle<CR>
+
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+
+let g:LookupFile_MinPatLength=2
+let g:LookupFile_TagExpr=string('./ltags')
+let g:LookupFile_PreserveLastPattern=0
+let g:LookupFile_PreservePatternHistory=0
+nmap <silient> <leader>ll :LUTags<cr>
+nmap <silient> <leader>lk :LUBufs<cr>
+nmap <silient> <leader>lj :LUWalk<cr>
+
 
 map <M-1> 1gt
 map <M-2> 2gt
