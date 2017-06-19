@@ -63,7 +63,7 @@ nnoremap <silent> ]C :cfirst<cr>
 nnoremap <silent> [C :clast<cr>
 
   nmap <F2> :set list!<cr>
-function! LNToggle()
+function! LineNumberToggle()
   if &nu == 0 && &rnu == 0
     set nu
   elseif &nu == 1 && &rnu == 0
@@ -75,7 +75,7 @@ function! LNToggle()
   endif
 endfunction
 
-nmap <F3> :call LNToggle() <cr>
+nmap <F3> :call LineNumberToggle() <cr>
 nmap <F4> :set hlsearch!<cr>
 nmap <F8> :TlistToggle<cr>
 nmap <F9> :!find . -name "*.h" -o -name "*.cc" -type f > project.files<cr><cr>
@@ -108,7 +108,6 @@ set csverb
 endif
 
 nmap <c-@>s :cs find s <c-r>=expand("<cword>")<cr><cr>
-nmap <F3> :call ToggleLineNumber()<CR>
 nmap <c-@>g :cs find g <c-r>=expand("<cword>")<cr><cr>
 nmap <c-@>c :cs find c <c-r>=expand("<cword>")<cr><cr>
 nmap <c-@>t :cs find t <c-r>=expand("<cword>")<cr><cr>

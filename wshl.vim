@@ -10,6 +10,7 @@
 hi clear Normal
 set bg&
 
+
 " Remove all existing highlighting and set the defaults.
 hi clear
 
@@ -18,12 +19,16 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "wsh"
+let colors_name = "wshl"
 
 " vim: sw=2
 
 " added by wsh
-hi LineNr ctermfg=gray cterm=none
-hi wsFunc ctermfg=cyan cterm=none
-hi wsMemb ctermfg=cyan cterm=none
-hi wsClass ctermfg=green cterm=none 
+hi Normal ctermfg=black ctermbg=white cterm=none
+hi Statement ctermfg=blue
+hi LineNr ctermfg=black
+hi Operator ctermfg=magenta cterm=none
+hi Comment ctermfg=black cterm=bold
+hi wsFunc ctermfg=blue
+hi wsMemb ctermfg=blue cterm=none
+hi wsClass ctermfg=green cterm=none
