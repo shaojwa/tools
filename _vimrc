@@ -1,6 +1,6 @@
-let mapleader=","
-map <silent> <leader>ss :source ~/.vimrc<cr>
-map <silent> <leader>ee :e ~/.vimrc<cr>
+let mapleader=','
+map <silent> <leader>ss :source ~/.vimrc<CR>
+map <silent> <leader>ee :e ~/.vimrc<CR>
 
 " coding settings
 syntax enable
@@ -18,7 +18,7 @@ set colorcolumn=120
 "match codeline /\%>80v/
 
 " ui settings
-colorscheme wsh
+colorscheme wshl
 set statusline=[%l/%L,%c,%{&ff},%{&fenc}][%{getcwd()}][%f]
 set laststatus=2
 set splitright
@@ -30,7 +30,7 @@ set nowrap
 set csqf=s-,c-,d-,i-,t-,e-
 hi search ctermfg=gray ctermbg=blue cterm=none
 hi colorcolumn ctermbg=black guibg=black
-hi cursorline ctermfg=white cterm=none
+hi cursorline cterm=none
 
 autocmd insertenter,insertleave * set cul!
 
@@ -42,6 +42,8 @@ nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 nnoremap <c-h> <c-w><c-h>
 nnoremap <c-l> <c-w><c-l>
+inoremap <c-j> <c-n>
+inoremap <c-k> <c-p>
 
 " buffer list
 nnoremap <silent> ]b :bprevious<cr>
@@ -107,11 +109,11 @@ if has("cscope")
 set csverb
 endif
 
-nmap <c-@>s :cs find s <c-r>=expand("<cword>")<cr><cr>
+nmap <c-@>s :cs find s <c-r>=expand("<cword>")<cr><cr>:cw<cr>
 nmap <c-@>g :cs find g <c-r>=expand("<cword>")<cr><cr>
-nmap <c-@>c :cs find c <c-r>=expand("<cword>")<cr><cr>
-nmap <c-@>t :cs find t <c-r>=expand("<cword>")<cr><cr>
-nmap <c-@>e :cs find e <c-r>=expand("<cfile>")<cr><cr>
+nmap <c-@>c :cs find c <c-r>=expand("<cword>")<cr><cr>:cw<cr>
+nmap <c-@>t :cs find t <c-r>=expand("<cword>")<cr><cr>:cw<cr>
+nmap <c-@>e :cs find e <c-r>=expand("<cword>")<cr><cr>:cw<cr>
 nmap <c-@>f :cs find f <c-r>=expand("<cfile>")<cr><cr>
-nmap <c-@>i :cs find i ^<c-r>=expand("<cword>")<cr>$<cr>
+nmap <c-@>i :cs find i ^<c-r>=expand("<cfile>")<cr>$<cr>
 nmap <c-@>d :cs find d <c-r>=expand("<cword>")<cr><cr>
