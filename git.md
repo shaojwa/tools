@@ -27,8 +27,7 @@ tracked = work + index + history + remote
 
 #### clone  
     git clone // clone a repository  
-
-
+    git clone ssh://git@github.com/shaojwa/lang.git // can not commit
 #### commit  
     git commit -m <message> // from index to HEAD  
     git commit -a -m <message> // from working directory to HEAD  
