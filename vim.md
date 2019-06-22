@@ -30,60 +30,19 @@
     i_CTRL-[  
     i_CTRL-C  
     i_<Esc>  
-#### 设置  
-设置字体  
-    set guifont=courier_new:h12  
-设置窗口显示行数  
-    set lines=40  
-设置窗口显示列数  
-    set columns=80  
-设置光标所在行高亮  
-    set cursorline  
-设置底部状态栏显示信息  
-    set statusline+=%F  
-自动缩进字符数  
-    set shiftwidth=4  
-tab键长度  
-    set tabstop=4  
-空格替换tab  
-    set expandtab  
-设置显示空白字符  
-    set list  
-    set listchars=tab:>-  
-去掉窗口工具栏  
-    set guioptions-=T  
-设置tab页  
-    set guitablabel=%N:%M:%F  
-是否折行显示  
-    set wrap  
-    set nowrap  
-配置替换字符  
-    set listchars=eol:↓,tab:→→,trail:·  
-    set list  
-设置swap和backup目录  
-    set directory=$VIMRUNTIME\..\swap\\  
-    set backupdir=$VIMRUNTIME\..\backup\\  
-#### 键盘映射  
-    map <M-1> 1gt  
-    map <M-2> 2gt  
-    map <M-3> 3gt  
-    map <M-4> 4gt  
-    map <M-5> 5gt  
-    map <M-6> 6gt  
-    map <M-7> 7gt  
-    map <M-8> 8gt  
-    map <M-9> 9gt  
-    map <M-F1> :tabclose<CR>  
-    map <M-F2> :tabedit<CR>  
+
 #### 自动缩进格式化  
 VISUAL BLOCK模式下（windows下按ctrl+q）  
 选中后按=可以自动缩进  
+
 #### 左右缩进块代码  
 VISUAL BLOCK模式下（windows下按ctrl+q）  
 选中后按<或者>  
+
 #### 单行缩进  
 正常模式下  
 缩进光标所在单行可以按两次<(左缩进)或者>（右缩进）  
+
 #### 回到光标上一次位置  
 反引号  
     ``  
