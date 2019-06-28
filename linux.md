@@ -40,6 +40,10 @@
 
 #### dirname
 
+#### 怎么挂载debugfs
+
+    mount -t debugfs none /sys/kernel/debug
+
 #### 提起deb包中的文件
 
     dpkg-deb -x package.deb extract/
@@ -162,9 +166,7 @@ sysctl 和 在proc下的操作sys是一致的，所以相比/proc/sys这么长�
     GATEWAY=192.168.245.1
     DNS1=192.168.245.2
 
-
 #### 清空dns缓存
 
     /etc/init.d/dns-clean
-    
     
