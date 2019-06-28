@@ -93,30 +93,6 @@
 
     split
     
-####　查看内核配置
-
-sysctl下的很多配置的解释可以到：https://www.kernel.org/doc/Documentation/sysctl 找到。　　
-sysctl 和 在proc下的操作sys是一致的，所以相比/proc/sys这么长的路径，还是用sysctl来得快：　　
-
-#### 放弃缓存 vm.drop_caches 
-
-非破坏性操作，并不会释放脏对象。官方文档已经说明，这不是一个控制内核各种缓存增长的方法。  
-该操作会引起性能问题，因为他丢弃缓存对象，因此还有明显的IO以及CPU消耗来重新创建这些对象，特别是对象正在重度使用的时候。
-
-    vm.drop_caches // 1: 释放页缓存, 2:释放可回收的slab对象包括dentries和inodes，3：页缓存和slab对象
-
-#### 什么时slab
-
-    slab是一种Linux内存分配算法。
-
-#### watchdog_thresh是干什么的
-
-    kernel.watchdog_thresh
-
-用来控制hrtimer（高精度定时器）和NMI（不可屏蔽中断）的事件的频率。
-进而也影响到softlockup 和 hardlockup的筏值，通常这个筏值是watchdog_thresh的两倍。
-
-
 #### 常用压缩解压命令
 
     tar -cf vdbench.tar vdbench/
@@ -165,8 +141,36 @@ sysctl 和 在proc下的操作sys是一致的，所以相比/proc/sys这么长�
     NETMASK=255.255.255.0
     GATEWAY=192.168.245.1
     DNS1=192.168.245.2
-
+    
 #### 清空dns缓存
 
     /etc/init.d/dns-clean
     
+#### 查看内核配置 
+
+sysctl下的很多配置的解释可以到：https://www.kernel.org/doc/Documentation/sysctl 找到。　　
+sysctl 和 在proc下的操作sys是一致的，所以相比/proc/sys这么长的路径，还是用sysctl来得快：　　
+
+#### 丢弃内核缓存 
+
+非破坏性操作，并不会释放脏对象。官方文档已经说明，这不是一个控制内核各种缓存增长的方法。  
+该操作会引起性能问题，因为他丢弃缓存对象，因此还有明显的IO以及CPU消耗来重新创建这些对象，特别是对象正在重度使用的时候。
+
+    vm.drop_caches // 1: 释放页缓存, 2:释放可回收的slab对象包括dentries和inodes，3：页缓存和slab对象
+    
+#### 内核中的tcp连接保活参数
+
+    tcp_keepalive_time: 最后一个数据包和第一次保活探测之间的时间间隔。
+    tcp_keepalive_intvl: 包括探测之间报文之间的时间间隔。
+    tcp_keepalive_probes: 连接被标记为dead时所需要的无返回探测报文个数。
+
+#### 什么是slab
+
+    slab是一种Linux内存分配算法。
+
+#### watchdog_thresh是干什么的
+
+    kernel.watchdog_thresh
+
+用来控制hrtimer（高精度定时器）和NMI（不可屏蔽中断）的事件的频率。
+进而也影响到softlockup 和 hardlockup的筏值，通常这个筏值是watchdog_thresh的两倍。
