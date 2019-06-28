@@ -125,6 +125,24 @@ sysctl 和 在proc下的操作sys是一致的，所以相比/proc/sys这么长�
     tc qdisc add dev eth1 root netem delay 3s
     tc qdisc del dev eth1 root netem delay 3s
     tc qdisc show dev eth1
+    
+ ### vimdiff 常用命令
+ 
+    vimdiff
+    diffget
+    diffput
+    diffu[pdate]
+    do //own
+    dp //put
+    ]c //next diff
+    [c //prev diff
+    zo
+    zc
+    
+#### xargs常用法
+    
+    cat hosts | xargs -I{} ssh root@{} hostname
+    sudo locate -br ^.*\\.sh$  | xargs -i bash -c 'echo {} >> total.sh; cat {} >> total.sh'
 
 #### yum
 
