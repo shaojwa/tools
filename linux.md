@@ -174,3 +174,18 @@ sysctl 和 在proc下的操作sys是一致的，所以相比/proc/sys这么长�
 
 用来控制hrtimer（高精度定时器）和NMI（不可屏蔽中断）的事件的频率。
 进而也影响到softlockup 和 hardlockup的筏值，通常这个筏值是watchdog_thresh的两倍。
+
+#### dirtytime_expire_seconds
+
+都知道atime的改变只是文件访问引起的，但是这个inode却脏了。inode脏了是需要下刷inode到disk的。所以这个问题就有多种优化思路：  
+noatime：直接干掉atime，让系统中的atime失效。  
+reatime：ctime和mtime的时间晚于atime时才去更新atime。  
+lazytime，控制inode下发的时间。  
+后台bdi用来写回dirty inode，就是bdi_writeback->b_dirty，就看dirty 的inode什么时候放到这个队列。  
+如果是i_size等关键inode属性改变，具体文件系统层会放到这个队列 ，如果是ctime等不关键属性，那么VFS层负责把inode放到这个队列中。  
+
+
+#### 系统调用号在什么头文件定义？
+    
+    asm/unistd_64.h:190:#define __NR_gettid 186
+    bits/syscall.h:577:# define SYS_gettid __NR_gettid  
