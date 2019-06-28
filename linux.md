@@ -15,8 +15,6 @@
 
     awk '{print $(NF)}'
     
-#### basename
-    
 #### bash 命令输入几个技巧
 
     !!	最后一条命令
@@ -37,8 +35,6 @@
     date -s "+5 mins"
     date -s "-5 hours"
     date -s "+5 hours"
-
-#### dirname
 
 #### 怎么挂载debugfs
 
@@ -85,12 +81,10 @@
     yum install gcc
     yum install gcc-c++
 
-
 #### pylint 用法
     
     pylint --rcfile=conffile module.py      // 某模块
     pylint --rcfile=conffile packagename    // 某个包
-
     
 #### readline 相关快捷键
 
