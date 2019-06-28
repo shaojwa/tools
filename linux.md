@@ -150,14 +150,21 @@ sysctl 和 在proc下的操作sys是一致的，所以相比/proc/sys这么长�
     yum whatprovides ifconfig
     yum install net-tools
 
-#### 在虚拟机中配置DNS服务
+#### 查看DNS服务器ip
 
     cat /etc/resolve.conf
     nmcli dev show | grep DNS
 
-#### config DNS of vm
+#### 在虚拟机中配置DNS服务
 
     IPADDR=192.168.245.128
     NETMASK=255.255.255.0
     GATEWAY=192.168.245.1
     DNS1=192.168.245.2
+
+
+#### 清空dns缓存
+
+    /etc/init.d/dns-clean
+    
+    
