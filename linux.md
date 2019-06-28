@@ -51,6 +51,34 @@
 #### 对文本折行
  
     fold –s
+    
+#### grep 递归行号
+
+    grep -rn "loosgood"  * 
+    egrep  -o '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+'
+    *  表示当前目录所有文件，也可以是某个文件名
+    -r 递归查找，不fllow 软链接
+    -R 递归查找，fellow 软链接
+    -w 只匹配整个单词，而不是字符串的一部分
+    
+ 
+如果想严格匹配某个单词（不是匹配字串），则需要添加边界判断，一般可以两种方式：
+
+    -w 参数
+    grep "\blog_file\b" or grep "\<log_file\>"
+    
+这两种只会匹配log_file 而不会匹配mon_cluster_log_file
+\<和\>是最长见的正则表达式的扩展，用来表示单词的开头和结尾，所谓的单词就是数字字母和下划线。
+\b和类似，但是可以同时代表\<和\>。也就是说\b的两侧必须一侧是单词字符，一侧不是。
+而\B表示的是\B两侧必须都是单词字符。所以一般\B匹配的就是某个单词字符串的子串。
+
+\<，\>， \s，\w，\b这些很方便的表达都是GNU的扩展，而不是POSIX的标准。
+这些扩展一般的GNU版本常常会支持，但是需要确认。更多见《shell脚本学习指南》
+
+###### 查找man文档中以连字符开始的选项
+
+    $ man chmod | grep [-]R
+        -R, --recursive
  
 #### gcc g++ 安装
 
@@ -92,6 +120,22 @@
 #### 如何分割文件
 
     split
+ 
+#### ssh 常见登入问题
+
+    ssh –v/-vv/-vvv	一个v显示debug1，两个v显示到debug2，类推，用于调试。
+
+远程不允许登入问题
+
+    /etc/ssh/sshd_config同时开启：    
+    PermitRootLogn Without-password
+    PermitRootLogn yes
+    service ssh reload
+    
+登入延迟问题
+
+    用ssh –vvv root@192.168.4.11调试查看延迟原因，
+    如果是GSS失败，则设置/etc/ssh/sshd_config中的 GSSAPIAuthentication 为no，然后重启sshd
     
 #### 常用压缩解压命令
 
