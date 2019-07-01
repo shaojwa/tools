@@ -80,3 +80,25 @@ tracked = work + index + history + remote
     git status  
 
 
+#### 怎么使用cherry pick
+
+* 在分支b上运行cherry-pick，commit号是分支a上的一个commit(将分支a上的某个提交应用到b上)
+
+    get cherry-pick e0e56
+
+* 此时在分支b上运行git status 就可以看到有文件在"Unmerged paths"下：
+
+    
+    $ git status
+    # Unmerged paths:
+    #   (use "git add <file>..." to mark resolution)
+    #
+    #       both modified:      src/a.h
+    #       both modified:      src/b.cc
+    #       both modified:      src/c.cc
+    #       both modified:      src/d.cc
+
+
+* 手动解决每一个冲突的文件后，git add每一个文件。
+* 最后运行git cherry-pick --continue 来添加提交。
+
