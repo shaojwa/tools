@@ -118,14 +118,16 @@ tracked = work + index + history + remote
  
  一个merge之后的commit就会有两个父提交，first-parent是merged-in的commit，second-parent是被合入的commit。
  
-    // ~是纵向第几层父节点
+ ~是纵向第几层父节点
+ 
     HEAD~ == HEAD~1: HEAD的第一个parent
     HEAD~2 == HEAD~1~1: HEAD的第一个parent的第一个parent
     
-    // ^ 横向第几个父节点
+ ^ 横向第几个父节点
+ 
     HEAD^ == HEAD^1：HEAD的第一个parent
     HEAD^2：HEAD的第2个parent
-    //
+   
     HEAD^2 != HEAD^1^1
     HEAD~2 == HEAD^1^1
     
