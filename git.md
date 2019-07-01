@@ -112,3 +112,6 @@ tracked = work + index + history + remote
 
     [core]
         editor = vim
+        
+ 
+ #### HEAD^ 和 HEAD~ 的区别
