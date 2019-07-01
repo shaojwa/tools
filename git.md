@@ -89,16 +89,15 @@ tracked = work + index + history + remote
 * 此时在分支b上运行git status 就可以看到有文件在"Unmerged paths"下：
 
     
-    $ git status
-    # Unmerged paths:
-    #   (use "git add <file>..." to mark resolution)
-    #
-    #       both modified:      src/a.h
-    #       both modified:      src/b.cc
-    #       both modified:      src/c.cc
-    #       both modified:      src/d.cc
+       $ git status
+       # Unmerged paths:
+       #   (use "git add <file>..." to mark resolution)
+       #
+       #       both modified:      src/a.h
+       #       both modified:      src/b.cc
+       #       both modified:      src/c.cc
+       #       both modified:      src/d.cc
 
 
 * 手动解决每一个冲突的文件后，git add每一个文件。
 * 最后运行git cherry-pick --continue 来添加提交。
-
