@@ -122,18 +122,7 @@ tracked = work + index + history + remote
 
 * 手动解决每一个冲突的文件后，git add每一个文件。
 * 最后运行git cherry-pick --continue 来添加提交。
-
-
-#### 设置单行 pretty-format
-
-    [format]
-    pretty = format:"%C(yellow)%h %C(red)%ad %C(green)%<(8)%an %C(cyan)%s"
     
-#### 设置vim为默认编辑器
-
-    [core]
-        editor = vim
-        
  
  #### HEAD^ 和 HEAD~ 的区别
  
@@ -152,3 +141,13 @@ tracked = work + index + history + remote
     HEAD^2 != HEAD^1^1
     HEAD~2 == HEAD^1^1
     
+  
+#### 设置单行 pretty-format
+
+    [format]
+    pretty = format:"%C(yellow)%h %C(red)%ad %C(green)%<(8)%an %C(cyan)%s"
+    
+#### 设置vim为默认编辑器
+
+    [core]
+        editor = vim
