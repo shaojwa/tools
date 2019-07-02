@@ -8,11 +8,24 @@ tracked = work + index + history + remote
 
 
 #### add  
-    git add  
-    git add .  
-    git add -u .  
+    git add  <pathspec>
     git add -p <file>  
+    
+* 添加所有修改过的tracked files
 
+   git add -u .  
+    
+*   添加当前目录所有的文件到index包括untracked的文件
+  
+   git add .      
+
+#### 把文件重index中的移出不再track
+    
+      git rm --cached <file_name>
+      
+#### 把add的文件恢复到unstaged
+      
+      git reset HEAD <file_name>gi
 
 #### branch  
     git branch // list create or delete branched  
