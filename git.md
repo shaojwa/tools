@@ -7,41 +7,50 @@ status = tracked + untracked
 tracked = work + index + history + remote  
 
 
-#### add  
-    git add  <pathspec>
-    git add -p <file>  
-    
-* 添加所有修改过的tracked files
+#### add 文件到index暂存
 
-   git add -u .  
+    git add  <pathspec>
     
-*   添加当前目录所有的文件到index包括untracked的文件
+添加所有修改过的tracked files
+
+    git add -u .  
+    
+添加当前目录所有的文件到index包括untracked的文件
   
-   git add .      
+     git add .      
 
 #### 把文件重index中的移出不再track
     
       git rm --cached <file_name>
       
-#### 把add的文件恢复到unstaged
+#### 把某个added的文件恢复到unstaged
       
-      git reset HEAD <file_name>gi
+      git reset HEAD <file_name>
+      
+#### 把所有added的文件恢复到unstaged
+
+     git reset HEAD
 
 #### branch  
+
     git branch // list create or delete branched  
     git branch -r // list the remote-tracking branches  
     git branch -a // list remote-tracking branched and local branches  
 
 
 #### checkout  
+
     git checkout  // revert from index to working directory  
     git checkout HEAD // revert from to working directory  
 
 
 #### clone  
+
     git clone // clone a repository  
     git clone ssh://git@github.com/shaojwa/lang.git // can not commit
+    
 #### commit  
+
     git commit -m <message> // from index to HEAD  
     git commit -a -m <message> // from working directory to HEAD  
 
@@ -54,10 +63,9 @@ tracked = work + index + history + remote
     git diff --staged // same to above  
     git diff --cached HEAD~ // diff between index and remote  
 
-
 #### init  
-    git init // create empty repository  
 
+    git init // create empty repository  
 
 #### log  
     git log  
