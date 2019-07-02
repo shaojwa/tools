@@ -13,7 +13,7 @@ tracked = work + index + history + remote
     
 添加所有修改过的tracked files
 
-    git add -u .  
+    git add -u
     
 添加当前目录所有的文件到index包括untracked的文件
   
