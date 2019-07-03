@@ -30,6 +30,10 @@ tracked = work + index + history + remote
 #### 把所有added的文件恢复到unstaged
 
      git reset HEAD
+     
+#### 克隆一个库
+
+    git clone ssh://git@github.com/shaojwa/lang.git
 
 #### branch  
 
