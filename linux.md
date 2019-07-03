@@ -114,6 +114,14 @@
 #### 如何分割文件
 
     split
+    
+#### ssh-keygen中使用passphrase
+
+ssh-keygen时如果输入passphrase那么在使用ssh的时候就会提示你输入passphrase。比如你在：
+
+    git clone ssh://git@github.com/shaojwa/lang.git
+    
+同时如果你修改主机hostname原来的public key自然就不再有效。
  
 #### ssh 常见登入问题
 
