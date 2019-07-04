@@ -209,20 +209,6 @@ ssh-keygen时如果输入passphrase那么在使用ssh的时候就会提示你输
     /etc/init.d/dns-clean
     
     
-#### 关闭防火墙
-
-    firewall-cmd --state
-    service firewalld status
-    
-    systemctl start firewalld.service
-    service firewalld start
-    
-    systemctl stop firewalld.service
-    service firewalld stop
-    
-    systemctl disable firewalld.service
-    service firewalld disable
-
 #### 服务重启过多导致无法再次重启
 
     man systemd.service
@@ -243,3 +229,36 @@ ssh-keygen时如果输入passphrase那么在使用ssh的时候就会提示你输
     systemctl reset-failed ceph-mds@target
 
 
+
+#### 关闭防火墙
+
+    firewall-cmd --state
+    service firewalld status
+    
+    systemctl start firewalld.service
+    service firewalld start
+    
+    systemctl stop firewalld.service
+    service firewalld stop
+    
+    systemctl disable firewalld.service
+    service firewalld disable
+    
+ #### selinx查询设置
+ 
+ * 三种模式
+ * 两种策略：targeted 和 strict
+ * 查看状态
+ 
+       sestatus -v
+     
+ * 查看当前模式
+ 
+       getenforce
+ * 设置成permissive 模式
+ 
+       setenfroce 0
+        
+ * 持久化设置
+ 
+       /etc/selinux/config
