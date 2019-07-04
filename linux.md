@@ -234,10 +234,9 @@ ssh-keygen时如果输入passphrase那么在使用ssh的时候就会提示你输
 
 案例： 
 
-/opt/xxx/lib/systemd/system/ceph-mds@.service
-    
-    StartLimitInterval=30min
-    StartLimitBurst=3
+/opt/xxx/lib/systemd/system/ceph-mds@.service  
+StartLimitInterval=30min
+StartLimitBurst=3
 
     systemctl reset-failed ceph-mds@mds0.service
     systemctl reset-failed ceph-mds@target
