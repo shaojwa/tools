@@ -43,16 +43,22 @@ linux内核中看到的一些特殊用法：
       
   
 C语言在1989年出过第一个标准，一般叫C89/C90 或者叫ANSI C。在这是前是K&R C，在这之后有C99，以及C11。
-我们看的k&C的《C程序设计语言》，第二版是C89，最早的一版就是K&R C。  
+
+我们看的k&C的《C程序设计语言》，第二版是C89，最早的一版就是K&R C。
+
 标准中有函数嵌套层度，函数参数个数等很多规范，只是平时大家不会过多留意到。 
   
   
-C89/C90是一个很大的改进，比如增加 signed、volatile、const关键字，增加void *类型，增加预处理命令，以及定义c标准库等。  
+C89/C90是一个很大的改进，比如增加 signed、volatile、const关键字，增加void * 类型，增加预处理命令，以及定义c标准库等。  
   
-C99做的改进常见的是：
-关键字和数据类型上， 添加inline，指针修饰restrict，支持long long，long double数据类型。  
-支持边长数组，支持对结构体特定成员赋值，支持16位浮点数等。  
+C99做的改进常见的是： 
+
+关键字和数据类型上， 添加inline，指针修饰restrict，支持long long，long double数据类型。
+
+支持边长数组，支持对结构体特定成员赋值，支持16位浮点数等。
+
 在语法上，变量声明可以放代码块的任何地方。源程序每行最大支持4095个字节。支持单行//注释方式。
+
 目前据说对C99支持最好的是GUN C编译器。
 
 C11做的常用改进是：新增文件锁功能；支持多线程；目前绝大多数编译器还不支持。
@@ -117,3 +123,69 @@ GNU C 支持使用 … 表示范围扩展，这个特性不仅可以使用在数
  这是 GUN C编译器的一个扩展。
  
  #### 第三课 语句表达式
+ 
+C语言中，语句和表达式是不一样的，表达式有两个属性，值和类型，比如 x = 1 * 2，但是后面没有结束的分号。
+
+分号是编译器认为一条语句结束的标志，就算是bash之类的脚本语言，也是用分号而不是物理行来判断一行代码的结束。
+
+* 代码块
+
+在｛｝中做个语句组成，编译器以代码块来决定变量的入栈和出栈。
+
+GNU C 对 C 标准作了扩展，允许在一个表达式里内嵌语句，允许在表达式内部使用局部变量、for 循环和 goto 跳转语句。
+
+这样的表达式，我们称之为语句表达式。语句表达式的格式如下：
+
+      ({ 表达式1; 表达式2; 表达式3; })
+      
+      
+      MAX(x,y)  ({\
+          auto __a = (x); \
+          auto __b = (y); \
+          __a > __b ? __a : __b; \
+      )
+      
+      #define MAX(type,x,y)({     \
+          type _x = x;        \
+          type _y = y;        \
+          _x > _y ? _x : _y; \
+          })
+      
+      #define min_t(type, x, y) ({            \
+          type __min1 = (x);          \
+          type __min2 = (y);          \
+          __min1 < __min2 ? __min1 : __min2; })
+
+      #define max_t(type, x, y) ({            \
+          type __max1 = (x);          \
+          type __max2 = (y);          \
+          __max1 > __max2 ? __max1 : __max2; })
+          
+          
+  #### 第四课 
+  
+  typeof
+  
+      #define MAX(x,y)({     \
+          typeof(x) _x = x;        \
+          typeof(x) _y = y;        \
+          _x > _y ? _x : _y; \
+      })
+      
+      
+      #define min(x, y) ({                \
+          typeof(x) _min1 = (x);          \
+          typeof(y) _min2 = (y);          \
+          (void) (&_min1 == &_min2);      \
+          _min1 < _min2 ? _min1 : _min2; })
+
+      #define max(x, y) ({                \
+          typeof(x) _max1 = (x);          \
+          typeof(y) _max2 = (y);          \
+          (void) (&_max1 == &_max2);      \
+          _max1 > _max2 ? _max1 : _max2; })
+          
+      #define offsetof(TYPE, MEMBER) ((size_t) &((TYPE *)0)->MEMBER)
+      #define  container_of(ptr, type, member) ({    \
+          const typeof( ((type *)0)->member ) *__mptr = (ptr); \
+          (type *)( (char *)__mptr - offsetof(type,member) );})
