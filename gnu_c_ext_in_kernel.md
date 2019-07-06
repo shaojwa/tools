@@ -241,7 +241,11 @@ GNU C 通过 __attribute__ 来声明 aligned 和 packed 属性，指定一个变
       }__attribute__((aligned(16)));
       
   起始这里要除以 aligned是同时指定对齐和分配大小的，看gnu官网的解释：
-  > force the compiler to insure (as far as it can) that each variable whose type is struct S or more_aligned_int will be allocated and aligned at least
+  > aligned
+  force the compiler to insure (as far as it can) that each variable whose type is struct S or more_aligned_int will be allocated and aligned at least
+  
+  > packed
+This attribute, attached to an enum, struct, or union type definition, specified that the minimum required memory be used to represent the type.
 
 #### 第8课 变参函数的格式检查format
 
