@@ -1,5 +1,7 @@
-[GNU C语法扩展大全](http://gcc.gnu.org/onlinedocs/gcc/)
+[GNU C语法扩展大全](http://tigcc.ticalc.org/doc/gnuexts.html)
+
 [GCC 编译器手册](http://gcc.gnu.org/onlinedocs/gcc/)
+
 #### 第1课 简介
 
 linux内核中看到的一些特殊用法：
