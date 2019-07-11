@@ -3,26 +3,27 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601  
 
-status = tracked + untracked  
-tracked = work + index + history + remote  
+#### 克隆一个库
 
+    git clone ssh://git@github.com/shaojwa/lang.git
+    
+#### clone  
+
+    git clone // clone a repository  
+    git clone ssh://git@github.com/shaojwa/lang.git // can not commit
 
 #### add 文件到index暂存
 
     git add  <pathspec>
     
-添加所有修改过的tracked files
+##### 添加所有修改过的tracked files
 
     git add -u
     
-添加当前目录所有的文件到index包括untracked的文件
+#### 添加当前目录所有的文件到index包括untracked的文件
   
      git add .      
-
-#### 把文件重index中的移出不再track
-    
-      git rm --cached <file_name>
-      
+   
 #### 把某个added的文件恢复到unstaged
       
       git reset HEAD <file_name>
@@ -30,34 +31,31 @@ tracked = work + index + history + remote
 #### 把所有added的文件恢复到unstaged
 
      git reset HEAD
-     
-#### 克隆一个库
-
-    git clone ssh://git@github.com/shaojwa/lang.git
-
+ 
+#### 把文件从index中的移出（即不再track，提交后这个文件自然就不在库中）
+    
+      git rm --cached <file_name>
+ 
 #### branch  
 
     git branch // list create or delete branched  
     git branch -r // list the remote-tracking branches  
-    git branch -a // list remote-tracking branched and local branches  
+    git branch -a // list remote-tracking branched and local branches 
 
-
-#### checkout  
+#### checkout 把working tree中的文件更新为index tree中的文件
 
     git checkout  // revert from index to working directory  
-    git checkout HEAD // revert from to working directory  
+    git checkout HEAD // revert from to working directory
+    get checkout <tag>
 
+#### reset 
 
-#### clone  
+    git reset --files // reset current HEAD to the specified state  
 
-    git clone // clone a repository  
-    git clone ssh://git@github.com/shaojwa/lang.git // can not commit
-    
 #### commit  
 
     git commit -m <message> // from index to HEAD  
     git commit -a -m <message> // from working directory to HEAD  
-
 
 #### diff  
     git diff // diff between work and index  
@@ -76,11 +74,9 @@ tracked = work + index + history + remote
     git log -p  
     git log -2  
 
-
 #### push  
     git push https://github.com/shaojwa/leetcode.git master  
     git push origin master  
-
 
 #### remote  
     git remote [-v]  
@@ -90,10 +86,6 @@ tracked = work + index + history + remote
     git remote show origin  
     git remote update // update from remote repository to local repository  
     git remote add doc https://github.com/shaojwa/doc.git // add remote repository  
-
-
-#### reset  
-    git reset --files // reset current HEAD to the specified state  
 
 
 #### rm  
