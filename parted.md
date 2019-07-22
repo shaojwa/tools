@@ -39,28 +39,28 @@
 
 *  然后创建一个分区（可以直接指定xfs）
 
-      (parted) mkpart primary
-      File system type?  [ext2]? xfs
-      Start? 17.4kB
-      End? 1997G
-      Warning: You requested a partition from 16.9kB to 1997GB (sectors 33..3900390625).
-      The closest location we can manage is 17.4kB to 1997GB (sectors 34..3900680158).
-      Is this still acceptable to you?
-      Yes/No? y
-      Warning: The resulting partition is not properly aligned for best performance.
-      Ignore/Cancel? i
-      (parted) print
+        (parted) mkpart primary
+        File system type?  [ext2]? xfs
+        Start? 17.4kB
+        End? 1997G
+        Warning: You requested a partition from 16.9kB to 1997GB (sectors 33..3900390625).
+        The closest location we can manage is 17.4kB to 1997GB (sectors 34..3900680158).
+        Is this still acceptable to you?
+        Yes/No? y
+        Warning: The resulting partition is not properly aligned for best performance.
+        Ignore/Cancel? i
+        (parted) print
   
   这是在创建分区的时候指定文件类型。
   
 *  在次查看后退出
 
-      Model: PM8060- DefaultValue3 (scsi)
-      Disk /dev/sdd: 1997GB
-      Sector size (logical/physical): 512B/512B
-      Partition Table: gpt
-      Disk Flags:
+        Model: PM8060- DefaultValue3 (scsi)
+        Disk /dev/sdd: 1997GB
+        Sector size (logical/physical): 512B/512B
+        Partition Table: gpt
+        Disk Flags:
 
-      Number  Start   End     Size    File system  Name     Flags
-       1      17.4kB  1997GB  1997GB               primary
-      (parted) quit
+        Number  Start   End     Size    File system  Name     Flags
+        1      17.4kB  1997GB  1997GB               primary
+        (parted) quit
