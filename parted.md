@@ -78,3 +78,20 @@
         log      =internal log           bsize=4096   blocks=57214, version=2
                  =                       sectsz=512   sunit=0 blks, lazy-count=1
         realtime =none                   extsz=4096   blocks=0, rtextents=0
+        
+        $ sudo parted /dev/sdp
+        GNU Parted 3.1
+        Using /dev/sdp
+        Welcome to GNU Parted! Type 'help' to view a list of commands.
+        (parted) print
+        Model: PM8060- DefaultValue15 (scsi)
+        Disk /dev/sdp: 480GB
+        Sector size (logical/physical): 512B/512B
+        Partition Table: loop
+        Disk Flags:
+
+        Number  Start  End    Size   File system  Flags
+         1      0.00B  480GB  480GB  xfs
+    
+    可以看到此时的print打印的字段比之前的少，没有Name字段，不清楚原因，网上都是通过mkfs.xfs的方式来格式化。
+
