@@ -51,7 +51,7 @@
         Ignore/Cancel? i
         (parted) print
   
-  这是在创建分区的时候指定文件类型。
+
   
 *  在次查看后退出
 
@@ -64,3 +64,17 @@
         Number  Start   End     Size    File system  Name     Flags
         1      17.4kB  1997GB  1997GB               primary
         (parted) quit
+
+
+* 以上在创建分区的时候指定文件类型，如果已经存在分区，那么可以通过mkfs.xfs命令来格式为 xfs
+
+        $ sudo mkfs.xfs -f /dev/sdp
+        meta-data=/dev/sdp               isize=512    agcount=4, agsize=29293888 blks
+                 =                       sectsz=512   attr=2, projid32bit=1
+                 =                       crc=1        finobt=0, sparse=0
+        data     =                       bsize=4096   blocks=117175552, imaxpct=25
+                 =                       sunit=0      swidth=0 blks
+        naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+        log      =internal log           bsize=4096   blocks=57214, version=2
+                 =                       sectsz=512   sunit=0 blks, lazy-count=1
+        realtime =none                   extsz=4096   blocks=0, rtextents=0
