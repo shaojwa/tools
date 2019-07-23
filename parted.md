@@ -25,7 +25,8 @@
 
         Number  Start  End  Size  File system  Name  Flags
 
-*　看一下可用情况
+
+* 看一下可用情况
 
       (parted) print free
       Model: PM8060- DefaultValue3 (scsi)
