@@ -1,5 +1,11 @@
 20151202  
 
+#### top 10 using in coding
+
+    y$ # copy to end of line
+    y^ # copy to head of line
+    t/T/f/F/;/, # find 
+
 #### motion  
 
     0  
