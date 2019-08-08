@@ -3,6 +3,9 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601  
 
+#### origin 是库的名字
+
+
 #### 克隆一个库
 
     git clone ssh://git@github.com/shaojwa/lang.git
@@ -40,7 +43,13 @@ v0.4@ 20160601
 
     git branch // list create or delete branched  
     git branch -r // list the remote-tracking branches  
-    git branch -a // list remote-tracking branched and local branches 
+    git branch -a // list remote-tracking branched and local branches
+    
+### 查看本地 branch 对应的的 远程库的upsteam分支信息
+
+    git config -l
+    或者
+    git branch -vv
 
 #### checkout 把working tree中的文件更新为index tree中的文件
 
