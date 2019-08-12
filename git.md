@@ -163,3 +163,22 @@ v0.4@ 20160601
 
 #### 如何使用分支来修问题单
 
+    git branch bugfix01
+  
+  git会创建一个指针，指向当前的提交（commit），怎么找到当前的提交？通过HEAD，HEAD是一个指向分支的指针（可以理解为指针的指针）。  
+  创建完成之后，HEAD还在原来的分支（指向原来的分支），并没有指向新创建的bugfix14。  
+  此时，可以查看各个本地分支所指向的commit对象：git log --oneline --decorate，创建完成之后，需要checkout：
+  
+    git checkout bugfix01
+    
+  这样HEAD就指向bugfix01分支。以上两条命令可以通过 git checkout -b bugfix01 等价完成。
+  创建分支之后，有时候需要切换回master，切换之前最好保证修改已经提交到bugfix01上（即bugxi01已经干净，尽管可以通过stash等命令来绕过）
+  如果你想将bugfix01上的修改合并到master上，那么需要先checkout到master分支：
+  
+    $ git checkout master
+    $ git merge bugfix01
+   
+  何明完成之后，需要删除bugfix01分支：
+  
+    $ git branch -d bugfix01
+
