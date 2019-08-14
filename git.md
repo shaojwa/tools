@@ -9,16 +9,11 @@ v0.4@ 20160601
     master 是分支名字
 
 
-#### 克隆一个库
-
-    git clone ssh://git@github.com/shaojwa/lang.git
-    
-#### clone  
-
-    git clone // clone a repository  
+#### 克隆一个库    
+    git clone // clone a repository
     git clone ssh://git@github.com/shaojwa/lang.git // can not commit
 
-#### add 文件到index暂存
+#### 添加文件到index暂存
 
     git add  <pathspec>
     
@@ -26,11 +21,11 @@ v0.4@ 20160601
 
     git add -u
     
-#### 添加当前目录所有的文件到index包括untracked的文件
+#### 添加当前目录所有的文件到index（包括untracked的文件）
   
      git add .      
    
-#### 把某个added的文件恢复到unstaged
+#### 把某个已经add的文件恢复到unstaged（本质上是恢复index）
       
       git reset HEAD <file_name>
       
@@ -42,22 +37,25 @@ v0.4@ 20160601
     
       git rm --cached <file_name>
  
-#### branch  
+#### 分支管理 
 
     git branch // list create or delete branched  
     git branch -r // list the remote-tracking branches  
     git branch -a // list remote-tracking branched and local branches
     
-### 查看本地 branch 对应的的 远程库的upsteam分支信息
+* 查看本地 branch 对应的的 远程库的upsteam分支信息
 
     git config -l
-    或者
     git branch -vv
 
-#### checkout 把working tree中的文件更新为index tree中的文件
+* 创建一个和远程跟踪分支同名的本地分支
 
-    git checkout  // revert from index to working directory  
-    git checkout HEAD // revert from to working directory
+    git checkout V100R001 # 本地没有这个分支且远程有这个分支
+
+#### 把working中的文件更新为index中的文件
+
+    git checkout        // revert from index to working directory  
+    git checkout HEAD
     get checkout <tag>
 
 #### reset 
@@ -69,7 +67,8 @@ v0.4@ 20160601
     git commit -m <message> // from index to HEAD  
     git commit -a -m <message> // from working directory to HEAD  
 
-#### diff  
+#### diff
+
     git diff // diff between work and index  
     git diff HEAD  // diff between workspace and HEAD  
     git diff HEAD~ // diff between workspace and remote  
@@ -81,16 +80,19 @@ v0.4@ 20160601
 
     git init // create empty repository  
 
-#### log  
+#### log
+
     git log  
     git log -p  
     git log -2  
 
 #### push  
+
     git push https://github.com/shaojwa/leetcode.git master  
     git push origin master  
 
-#### remote  
+#### remote
+
     git remote [-v]  
     // rename remote repository  
     git remote set-url origin https://github.com/shaojwa/man.git  
@@ -99,13 +101,13 @@ v0.4@ 20160601
     git remote update // update from remote repository to local repository  
     git remote add doc https://github.com/shaojwa/doc.git // add remote repository  
 
-
 #### rm  
+
     git rm --cached <file> // remove file from the index only  
     git rm [-f] <file> // file from index and working directory  
 
+#### status 
 
-#### status  
     git status  
 
 
