@@ -45,12 +45,12 @@ v0.4@ 20160601
     
 * 查看本地 branch 对应的的 远程库的upsteam分支信息
 
-    git config -l
-    git branch -vv
+        git config -l
+        git branch -vv
 
 * 创建一个和远程跟踪分支同名的本地分支
 
-    git checkout V100R001 # 本地没有这个分支且远程有这个分支
+        git checkout V100R001 # 本地没有这个分支且远程有这个分支
 
 #### 把working中的文件更新为index中的文件
 
