@@ -14,4 +14,4 @@
 
           enabled=0
 
-#### 查看 yum repolist
+5.yum repolist
