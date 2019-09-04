@@ -1,6 +1,11 @@
     
+    h                   // show help
+    =                   // print current file name
+    ^G                  // print current file name
+    :f                  // print current file name
+    
     less -ppattern
-    less +10            //10 is a command of less
+    less +10            // 10 is a command of less
     less -j 
     [N]g                // goto line N
     [n]p                // go to N percent
