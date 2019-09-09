@@ -15,3 +15,8 @@
           enabled=0
 
 5.yum repolist
+
+#### yum 查询包信息
+
+    yum provides ifconfig
+    yum whatprovides ifconfig
