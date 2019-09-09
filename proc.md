@@ -1,4 +1,5 @@
     /proc/<pid>/stack
+     /proc/diskstats
     /proc/locks
     /proc/loadavg
     /proc/modules
