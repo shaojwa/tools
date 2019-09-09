@@ -9,3 +9,13 @@
     !*	除第一个命令之外的所有参数
     ^s1^s2	将上一条命令中的s1切换为s2
     !!:n-m	上一条命令的n-m个参数。
+    
+    history expansion: ^ $ * - %
+    parameter expansion
+    BRE: . * ^ $ [] \
+    ERE: + ? | {} () 
+    touch file{1..100}
+    set –x
+    set -e/-o pipefail
+    trap
+    ${name:?error_message}
