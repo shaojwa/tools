@@ -1,0 +1,1 @@
+      hdparm -Tt /dev/sda
