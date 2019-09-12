@@ -1,7 +1,9 @@
     /proc/<pid>/stack
-     /proc/diskstats
+    /proc/diskstats
     /proc/locks
     /proc/loadavg
     /proc/modules
     /proc/sysrq-trigger
     /proc/sys/net/ipv4/
+    /proc/net/dev
+    /proc/net/snmp
