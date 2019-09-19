@@ -16,3 +16,7 @@
  * 持久化设置
  
        /etc/selinux/config
+       
+ * 修改后重启
+ 
+     sudo shutdown -r 0
