@@ -1,13 +1,17 @@
-20151202  
+20151202
+
 #### vim 升级后的问题
 
-    通过在.vimrc文件的第一行加入 syntax enable来解决
-    
+    通过在.vimrc文件的第一行加入syntax enable来解决
+
 #### top 10 using in coding
 
-    y$ # copy to end of line
-    y^ # copy to head of line
-    t/T/f/F/;/, # find 
+copy to end of line
+    y$ 
+copy to head of line
+    y^
+search item   
+    t/T/f/F/;/, 
 
 #### motion  
 
@@ -48,32 +52,46 @@
 
 #### 自动缩进格式化  
 
-    VISUAL BLOCK模式下（windows下按ctrl+q） 选中后按=可以自动缩进  
+VISUAL BLOCK模式下（windows下按ctrl+q） 选中后按等号=可以自动缩进  
 
-#### 左右缩进块代码  
+#### 块缩进 
 
-    VISUAL BLOCK模式下（windows下按ctrl+q）选中后按<或者>  
+VISUAL BLOCK模式下（windows下按ctrl+q）选中后按<或者>  
 
 #### 单行缩进  
 
-    正常模式下，缩进光标所在单行可以按两次<(左缩进)或者>（右缩进）  
+正常模式下，缩进光标所在单行可以按两次<(左缩进)或者>（右缩进）  
 
 #### 回到光标上一次位置  
 
-    反引号   ``  或者引号  ''  
+跳转：单引号或者反引号，两个单引号或者两个反引号表示跳转到最近一次跳转之前的位置。
+
+#### 跳转列表跳转
+
+跳转列表中较新的光标位置
+
+    ctrl+i
+    
+跳转列表中较老的光标位置
+
+    ctrl+o
     
 #### 跳转到行  
 
-    三种方式:      42gg    42G      :42<CR>  
-    如果需要同时把指定行移到shell窗口顶部(中部或者底部)则需要在上述命令后添加 zt(z. or zb)  
+三种方式:
+
+    42gg
+    42G
+    :42<CR>  
+    
+如果需要同时把指定行移到shell窗口顶部(中部或者底部)则需要在上述命令后添加 zt(z. or zb)  
     
 #### 显示特定字符  
 
-    可以在vimrc文件中用set listchar来配置用特殊字符显示不可见字符  
-    比如想用$先显示一行的末尾可以配置 set listchars=eol:$  
-    然后在命令模式下运行:set list 就可以看到  
-    可以用:set nolist取消显示  
-    对于部分特定字符  
+可以在vimrc文件中用set list来上显示不可打印字符，set listchar来配置用特殊字符显示不可打印字符，默认是 eol:$
+比如想用$先显示一行的末尾可以配置 set listchars=eol:$  
+然后在命令模式下运行:set list 就可以看到  
+可以用:set nolist取消显示  
 
 #### 自动重新加载vimrc文件  
 
@@ -81,21 +99,21 @@
     
 #### 替换  
 
-    vim中的替换命令为:s  
+vim中的替换命令为:s  
     
 其中s的取意substitute完整语法： 
 
     :[range]s/search/replace/[options]  
     
-先设options为空则  
+先设options为空则
 
-    *  如果range为空，则替换光标当前行的第一个匹配项。  
-    * `:8,10s` 则替换8-10行中，每一行的提一个匹配项。  
+* 如果range为空，则替换光标当前行的第一个匹配项。  
+* :8,10s 则替换8-10行中，每一行的提一个匹配项。  
     
-现在option选择为g  
+现在option选择为g
 
-    *  `:s/search/replace/g` 替换每一行中出现的所有匹配项。  
-    *  `:8,10s/search/replace/g`替换8-10行中每一行出现的所有匹配项。 
+* :s/search/replace/g 替换每一行中出现的所有匹配项。  
+* :8,10s/search/replace/g替换8-10行中每一行出现的所有匹配项。  
     
 更多参见[这里](http://vim.wikia.com/wiki/Search_and_replace)  
 
@@ -126,18 +144,20 @@
     
 #### 查看帮助  
 
-    查看普通模式命令 无前缀  :help x  
-    查看可视模式命令    v_  :help v_u  
-    查看命令行模式命令  :   :help :quit  
+    查看普通模式命令  :help x  
+    查看可视模式命令  :help v_u  
+    查看命令行模式命令:help :quit  
     找到标签后按CTRL-]进入选项的详细信并可以按CTRL-T或者CTRL-O返回  
     进入帮助之后可以用/进行特定内容查找  
     
-##### 输入特殊字符  
+#### 输入特殊字符  
 
     在插入模式下按CTRL-K  
     此时会出现一个问号  
-    然后直接输入表示特殊字符的符号码  
-    如何查看某个特殊字符的符号码？  
+    然后直接输入表示特殊字符的符号码
+
+#### 如何查看某个特殊字符的符号码
+
     在命令模式下输入:digraphs就会弹出字符映射表  
     然后找到你需要的特殊字符  
     其中的前两个符号就是特殊字符的符号码  
@@ -148,4 +168,3 @@
     
 #### pattern  
     :%s/^\[^#]/####\1/gc
-
