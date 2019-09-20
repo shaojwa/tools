@@ -1,5 +1,8 @@
 20151202  
+#### vim 升级后的问题
 
+    通过在.vimrc文件的第一行加入 syntax enable来解决
+    
 #### top 10 using in coding
 
     y$ # copy to end of line
@@ -66,11 +69,11 @@
     
 #### 显示特定字符  
 
-可以在vimrc文件中用set listchar来配置用特殊字符显示不可见字符  
-比如想用$先显示一行的末尾可以配置 set listchars=eol:$  
-然后在命令模式下运行:set list 就可以看到  
-可以用:set nolist取消显示  
-对于部分特定字符  
+    可以在vimrc文件中用set listchar来配置用特殊字符显示不可见字符  
+    比如想用$先显示一行的末尾可以配置 set listchars=eol:$  
+    然后在命令模式下运行:set list 就可以看到  
+    可以用:set nolist取消显示  
+    对于部分特定字符  
 
 #### 自动重新加载vimrc文件  
 
@@ -86,13 +89,15 @@
     
 先设options为空则  
 
-    * 如果range为空，则替换光标当前行的第一个匹配项。  
+    *  如果range为空，则替换光标当前行的第一个匹配项。  
     * `:8,10s` 则替换8-10行中，每一行的提一个匹配项。  
+    
 现在option选择为g  
-    * `:s/search/replace/g` 替换每一行中出现的所有匹配项。  
-    * `:8,10s/search/replace/g`替换8-10行中每一行出现的所有匹配项。  
-更多参见[这里](http://vim.wikia.com/wiki/Search_and_replace)  
 
+    *  `:s/search/replace/g` 替换每一行中出现的所有匹配项。  
+    *  `:8,10s/search/replace/g`替换8-10行中每一行出现的所有匹配项。 
+    
+更多参见[这里](http://vim.wikia.com/wiki/Search_and_replace)  
 
 #### 匹配  
 
