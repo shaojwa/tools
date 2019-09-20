@@ -10,7 +10,7 @@
    
 复制到行头用 y^
 
-搜索用 t/T/f/F/;/, 
+搜索用 tTfF;, 
 
 #### motion  
 
@@ -88,9 +88,6 @@ VISUAL BLOCK模式下（windows下按ctrl+q）选中后按<或者>
 #### 显示特定字符  
 
 可以在vimrc文件中用set list来上显示不可打印字符，set listchar来配置用特殊字符显示不可打印字符，默认是 eol:$
-比如想用$先显示一行的末尾可以配置 set listchars=eol:$  
-然后在命令模式下运行:set list 就可以看到  
-可以用:set nolist取消显示  
 
 #### 自动重新加载vimrc文件  
 
@@ -104,15 +101,17 @@ vim中的替换命令为:s
 
     :[range]s/search/replace/[options]  
     
-先设options为空则
+先设options为空则，如果range为空，则替换光标当前行的第一个匹配项，比如则替换8-10行中，每一行的第一个匹配项：
 
-* 如果range为空，则替换光标当前行的第一个匹配项。  
-* :8,10s 则替换8-10行中，每一行的提一个匹配项。  
+    :8,10s
     
-现在option选择为g
+现在option选择为g，替换每一行中出现的所有匹配项：
 
-* :s/search/replace/g 替换每一行中出现的所有匹配项。  
-* :8,10s/search/replace/g替换8-10行中每一行出现的所有匹配项。  
+    :s/search/replace/g
+    
+替换8-10行中每一行出现的所有匹配项：
+
+    :8,10s/search/replace/g
     
 更多参见[这里](http://vim.wikia.com/wiki/Search_and_replace)  
 
