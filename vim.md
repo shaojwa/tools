@@ -4,14 +4,13 @@
 
     通过在.vimrc文件的第一行加入syntax enable来解决
 
-#### top 10 using in coding
+#### top 10
 
-copy to end of line
-    y$ 
-copy to head of line
-    y^
-search item   
-    t/T/f/F/;/, 
+复制到行尾用 y$ 
+   
+复制到行头用 y^
+
+搜索用 t/T/f/F/;/, 
 
 #### motion  
 
