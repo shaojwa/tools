@@ -14,9 +14,21 @@
 
           enabled=0
 
-5.yum repolist
+5. check current repos:
 
-#### yum 查询包信息
+          yum repolist
+          
+#### check package existence
 
-    yum provides ifconfig
-    yum whatprovides ifconfig
+           yum list <package>
+           yum search <package>
+
+yum list tmux
+
+#### show detrail infos of package
+
+          yum provides <package>
+          yum whatprovides <package>
+
+yum provides ifconfig
+yum whatprovides ifconfig
