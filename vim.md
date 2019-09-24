@@ -1,5 +1,13 @@
 20151202
 
+#### 建议配色
+
+    slate
+    darkblue
+    industry
+    elflord
+    ron
+
 #### vim 升级后的问题
 
     通过在.vimrc文件的第一行加入syntax enable来解决
