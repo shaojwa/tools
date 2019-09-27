@@ -12,3 +12,4 @@
     tcpdump dst port not telnet
     tcpdump src host 192.168.0.1 and dst net 192.168.0.0/24
     tcpdump -i bond1  host 172.12.15.162 and port 6800
+    tcpdump tcp port 2049 -i ethB02-0 -w nfs.cap
