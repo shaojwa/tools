@@ -1,3 +1,4 @@
+    内存泄露工具Valgrind了解
     shutdown命令的halt是什么意思？
     the /run/nologin file is created to ensure that further logins shall not be allowed. (ref shutdown)
     xfs 文件系统写数据有joural么？
