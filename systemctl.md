@@ -1,3 +1,8 @@
+
+    man systemctl
+    man systemd.service
+    man systemd.unit
+
 #### sub commands of systemctl
 
 * unit command
@@ -40,16 +45,13 @@ Running systemctl disable removes the symlink to the service in /etc/systemd/sys
     [wsh@192 ~]$ systemctl enable smb
 
 
-#### 服务重启过多导致无法再次重启
-
-    man systemd.service
-    man systemd.unit
+#### service are not permitted to start any more by too many restarts
     
-* StartLimitIntervalSec 检查时间
-* StartLimitBurst 启动次数
+* StartLimitInterval    // checking interval
+* StartLimitBurst       // how many starts per interval are allowed
 * systemctl reset-fail
 
-案例： 
+eg： 
 
 /opt/xxx/lib/systemd/system/ceph-mds@.service  
 
