@@ -1,3 +1,12 @@
+#### sub commands of systemctl
+
+* unit command
+* unit file command 
+
+
+#### disable 
+
+just remove the  symlink to  the specified unit file from the unit configuration directory.
 
 #### check if the service start on boot
 
