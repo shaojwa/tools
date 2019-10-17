@@ -4,7 +4,8 @@
     exression = host { and | or } port { and | or } protocol
 
     -b: ip/arp/rarp
-    -n：不将ip解析为域名
+    -n：不将主机地址转为主机名
+    -nn：不将协议和端口转为名字
     -t: 不显示时间
     -X: 以ASCII 和 十六进制显示   
     
@@ -21,3 +22,9 @@
 ### capture ICMP
 
     tcpdump -i ethA01-0 host 10.99.68.235 and icmp
+    
+    // icmp request    
+    tcpdump -i ethA01-0 host 10.99.68.235 and icmp and icmp -e icmp[icmptype] == 8
+    
+    // icmp rely
+    tcpdump -i ethA01-0 host 10.99.68.235 and icmp and icmp -e icmp[icmptype] == 0
