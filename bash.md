@@ -10,8 +10,9 @@
 
 ### bash 中如果没有定义 也可以在比较
 参考：
-        https://google.github.io/styleguide/shell.xml
-        https://tiswww.case.edu/php/chet/bash/FAQ
+
+    https://google.github.io/styleguide/shell.xml
+    https://tiswww.case.edu/php/chet/bash/FAQ
 
     bash中如果一个变量没有定义，也可以在 [[ ]] 中进行比较。
     if [[ $1 != "" ]]; then cd $1; done
