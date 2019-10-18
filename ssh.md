@@ -1,5 +1,10 @@
 ### ssh tunnel 原理
 
+https://www.ssh.com/ssh/tunneling/
+
+ssh tunnel 又叫做 ssh 端口转发。 ssh client监听一个端口，application 连接到ssh client。
+ssh client将 app 的数据转发给ssh-server服务器。ssh-server 再把数据转给app-serve。
+
 ### ssh 调试
 
     ssh –v/-vv/-vvv	一个v显示debug1，两个v显示到debug2，类推，用于调试。
