@@ -13,8 +13,8 @@ ssh client将 app 的数据转发给ssh-server服务器。ssh-server 再把数�
 
 /etc/ssh/sshd_config同时开启：
 
-    PermitRootLogn Without-password
-    PermitRootLogn yes
+    PermitRootLogin Without-password
+    PermitRootLogin yes
     service ssh reload
     
 ###  登入延迟问题
