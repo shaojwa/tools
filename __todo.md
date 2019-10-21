@@ -9,3 +9,4 @@
     /proc/net/dev
     /proc/net/snmp    
     ifdown和ifconfig区别？
+    https://www.ibm.com/developerworks/cn/linux/l-bash-test.html
