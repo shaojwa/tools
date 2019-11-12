@@ -27,3 +27,24 @@
 #### session related
     tmux new-session -s session_name
     tmux attach-session -t session_name
+
+
+#### key bind
+ 
+     set -g prefix C-a
+     unbind C-b
+     
+     // like vim
+     // pane
+     #up
+     bind-key k select-pane -U
+     #down
+     bind-key j select-pane -D
+     #left
+     bind-key h select-pane -L
+     #right
+     bind-key l select-pane -R
+     
+     // window
+     #select last window
+     bind-key C-l select-window -l
