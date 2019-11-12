@@ -23,12 +23,6 @@
      s           Select a new session for the attached client interactively.
      d           Detach the current client.
 
-
-#### session related
-    tmux new-session -s session_name
-    tmux attach-session -t session_name
-
-
 #### key bind
  
      set -g prefix C-a
@@ -48,3 +42,9 @@
      // window
      #select last window
      bind-key C-l select-window -l
+
+
+#### session related
+
+    tmux new -s session_name
+    tmux attach -t session_name
