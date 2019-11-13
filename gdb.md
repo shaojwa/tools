@@ -104,7 +104,7 @@
     
 指定程序启动参数
 
-    (gdb) file /opt/h3c/bin/ceph-mds
+    (gdb) file /opt/bin/ceph-mds
     (gdb) set args -f --cluster ceph --id mds0 --setuser ceph --setgroup ceph
     (gdb) run
     
