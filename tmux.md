@@ -1,3 +1,11 @@
+#### renumber windows
+
+
+     // then using movew -r to renumbered  all windows in sequential order in the session
+     :movew -r
+     // without parameters will move the current to the first free position
+     :movew
+
 #### key bindings
 
      C-b    prefix key
@@ -22,8 +30,11 @@
      // session     
      s           Select a new session for the attached client interactively.
      d           Detach the current client.
+     
+     // command
+     :
 
-#### key bind
+#### tmux conf
  
      set -g prefix C-a
      unbind C-b
