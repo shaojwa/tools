@@ -1,22 +1,35 @@
-#### 配置
-
-HD = host definitions，主机定义，一般只会在多主机测试场景下用。
+## 配置
+#### HD 
+host definitions，主机定义，一般只会在多主机测试场景下用。
   * system	主机ip或者网络主机名。
   * shell	其实就是远程主机可以提供的连接方式。一般都是ssh。
 	
-SD = storage definition，存储定义
-WD = workload definition，工作负载定义 
-FSD = filesystem definition，文件件系统定义
+#### SD
+storage definition，存储定义
+
+#### WD
+workload definition，工作负载定义 
+
+#### FSD
+filesystem definition，文件件系统定义
+
 * 括fsd_name，参数包括，路径，深度，广度，文件数，文件大小。
 
-FWD = filelesystem workload definition，文件系统工作负载定义
-
-文件系统测试一般用fwd，而不是wd。fwd依赖fsd。
-
-* fwd=name	如果是default，那么该配置会当做默认配置被所有下面第你故意的fwd使用。
-* xfersize	读写传输文件大小，默认128k。
+#### FWD
+filelesystem workload definition，文件系统工作负载定义，文件系统测试用fwd，不是wd，fwd依赖fsd。
+* fwd=name，如果是default，那么该配置会当做默认配置被所有下面第你故意的fwd使用。
+* operation
+	one of mkdir, rmdir, create, delete, open, close, read, write, access, getattr and setattr
 	
-RD run definitions rd依赖fwd
+* fileio 在文件内怎么IO
+	random: 在一个文件内随机IO，不是随机选文件，一个文件只有一个线程访问
+	sequential: 在一个文件内顺序IO
+
+* fileselect 怎么选择文件
+* xfersize 读写传输文件大小，默认128k。
+	
+#### RD
+run definitions，rd依赖fwd。
 
 * format 格式化
 
@@ -53,5 +66,5 @@ rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=600,interval=1
 
 #### 常见问题
 
-1.总文件容量过大，空间不足
-2.集群模式下，host不通
+1. 总文件容量过大，空间不足
+2. 集群模式下，host不通
