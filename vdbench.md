@@ -53,5 +53,5 @@ rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=600,interval=1
 
 #### 常见问题
 
-1. 总文件容量过大，空间不足
-2. 集群模式下，host不通
+1.总文件容量过大，空间不足
+2.集群模式下，host不通
