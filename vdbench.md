@@ -3,23 +3,60 @@
 
 HD(host definitions)	主机定义	一般只会在多主机测试场景下才用。
   * system	主机ip或者网络主机名。
-	* shell	其实就是远程主机可以提供的连接方式。一般都是ssh。
+  * shell	其实就是远程主机可以提供的连接方式。一般都是ssh。
 	
-SD(storage definition)	存储定义	
-
+SD(storage definition)	存储定义
 WD(workload definition)	工作负载定义 
 
-FSD(filesystem definition) 	定义文件系统目录文件结构。
-	包括fsd_name，参数包括，路径，深度，广度，文件数，文件大小。
-	
-FWD(filesystem workload definition) 	文件系统工作负载定义。	
-	文件系统测试一般用FWD，而不是WD。fwd依赖fsd，包括fwd_name，定义读写方式，xfersize（数据传输大小），顺序还是随机，文件选择方式等。
+FSD(filesystem definition) 文件系统定。 包括fsd_name，参数包括，路径，深度，广度，文件数，文件大小。
+FWD(filesystem workload definition) 文件系统工作负载定义。	
+
+文件系统测试一般用FWD，而不是WD。fwd依赖fsd，包括fwd_name，定义读写方式，xfersize（数据传输大小），顺序还是随机，文件选择方式等。
 	* fwd=name	如果是default，那么该配置会当做默认配置被所有下面第你故意的fwd使用。
 	* xfersize	读写传输文件大小，默认128k。
 	
-RD	run definitions	rd依赖fwd
-
-* format=yes	format=yes（目录层次的完全创建以及所有文件的初始化，会先删除当前的文件节后，然后重建文件结构，然后才会运行需要的RD）
+RD run definitions rd依赖fwd
+* format=yes（目录层次的完全创建以及所有文件的初始化，会先删除当前的文件节后，然后重建文件结构，然后才会运行需要的RD）
 * format=restart（只会生成缺少的文件以及扩展大小不足的文件，但是并不会创建目录结构）
   
-#### bugs	留意文件总共的大小，不能过大，否者vdbench起不来。
+#### 几个配置
+
+* format
+
+格式化，如果是yes，就是需要格式化，删除原有的目录结构
+
+```
+format=yes // 目录层次的完全创建以及所有文件的初始化，会先删除当前的文件节后，然后重建文件结构，然后才会运行需要的RD
+format=restart // 只会生成缺少的文件以及扩展大小不足的文件，但是并不会创建目录结构
+```
+
+#### 样例
+
+```
+# step 1: Host Definition
+# hd is used in multi-vdbench instance
+# hd=default,vdbench=./vdbench,user=root,shell=ssh
+# hd=hd1,system=192.169.84.11
+# hd=hd2,system=192.169.84.12
+
+# step 2: FileSystem Definition, non-default fsd is required.
+fsd=fsd1,anchor=/mnt/vdbench,depth=1,width=100,files=50,size=64k,shared=yes
+
+# step 3: Filesytem Workload Definition, non-default fwd is required.
+#fwd=format,xfersize=(32k,30,8k,30,4k,40),threads=64
+#fwd=default,xfersize=(32k,30,8k,30,4k,40),fileio=random,fileselect=random,rdpct=60,threads=64
+#fwd=fwd1,fsd=fsd1
+#fwd=fwd1,fsd=fsd1,host=hd1
+#fwd=fwd2,fsd=fsd1,host=hd2
+
+fwd=fwd1,fsd=fsd1,xfersize=(32k,30,8k,30,4k,40),fileio=random,fileselect=random,rdpct=60,threads=64
+
+
+# step 4: Run Definition
+rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=600,interval=1
+```
+
+#### 常见问题
+
+1. 总文件容量过大，空间不足
+2. 集群模式下，host不通
