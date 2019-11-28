@@ -1,3 +1,5 @@
+    添加sudo权限通过wheel方式和编辑sudoers的方式哪个更好？
+    如果查看占用CPU高的程序？
     内存泄露工具Valgrind了解
     shutdown命令的halt是什么意思？
     the /run/nologin file is created to ensure that further logins shall not be allowed. (ref shutdown)
