@@ -11,4 +11,6 @@
     authentication  // 认证
     authority       // 权威
     mastery         // 精通
+    trail           // n.痕迹 v.跟踪
     By default, on RedHat based distributions like CentOS and Fedora.
+    SUDO gives an audit trail I believe under /var/log/secure.
