@@ -7,6 +7,8 @@
 
 ## english
 
-authentication
-authority
-By default, on RedHat based distributions like CentOS and Fedora.
+    auditing        // 审计
+    authentication  // 认证
+    authority       // 权威
+    mastery         // 精通
+    By default, on RedHat based distributions like CentOS and Fedora.
