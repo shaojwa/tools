@@ -11,7 +11,7 @@
     authentication  // 认证
     authority       // 权威
     expand all      // 展开所有
-    cpllapse all    // 收起所有    
+    collapse all    // 折叠所有    
     mastery         // 精通
     trail           // n.痕迹 v.跟踪
     IIRC：if I remember correctly // 如果我没记错的话
