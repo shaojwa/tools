@@ -13,6 +13,7 @@
     collapse all    // 折叠所有
     expand all      // 展开所有    
     mastery         // 精通
+    redundant       // 冗余的
     trail           // n.痕迹 v.跟踪
     vertex
     IIRC：if I remember correctly // 如果我没记错的话
