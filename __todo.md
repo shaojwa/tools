@@ -1,4 +1,5 @@
 ## admin
+* sshpass 做什么用的？
 * 添加sudo权限通过wheel方式和编辑sudoers的方式哪个更好？
 * shutdown命令的halt是什么意思？
 * the /run/nologin file is created to ensure that further logins shall not be allowed. (ref shutdown)
