@@ -6,6 +6,9 @@
 * https://www.ibm.com/developerworks/cn/linux/l-bash-test.html
 * windows10 下有ubuntu子系统，可以试用下，尽管据说有不少命令可能还不能用。
 
+* cat /sys/block/sda/queue/read_ahead_kb
+* echo c > /proc/sysrq-trigger
+
 * /proc/locks 什么作用
 
 * xfs 文件系统写数据有journal么？
