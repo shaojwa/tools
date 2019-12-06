@@ -1,1 +1,1 @@
- shopt	显示所有的option, 比如 dotglob 用于文件名展开时包含dot开头的文件。
+shopt	显示所有的option, 比如 dotglob 用于文件名展开时包含dot开头的文件。 glob在bash中是通配符的意思，这是一种shopt option，不是bash 的option，和 glob 相关的option有 nullglob，failglob，nocaseglob，dotglob。 设置或取消设置的命令是 shopt -s dotglob 和 shopt -u dotglob。
