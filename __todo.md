@@ -1,4 +1,5 @@
 
+* 看一下 ld 的man手册
 * sshpass 做什么用的？
 * 添加sudo权限通过wheel方式和编辑sudoers的方式哪个更好？
 * shutdown命令的halt是什么意思？
