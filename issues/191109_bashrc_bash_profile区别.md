@@ -67,6 +67,21 @@ run /home/wsh/.bashrc
 run /etc/bashrc
 ```
 
+* wsh 登入后 su
+
+```
+run /root/.bashrc
+run /etc/bashrc
+```
+
+
+* root 登入：
+```
+run /root/.bash_profile
+run /root/.bashrc
+run /etc/bashrc
+```
+
 * root 登入后 su wsh
 
 ```
