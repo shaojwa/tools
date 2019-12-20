@@ -1,5 +1,45 @@
-#### .bashrc 和 .bash_profile的区别
 
-centos系统的home目录下有.bashrc 和 .bash_profile 两个文件，而且.bash_profile会包含并先执行.bashrc。
-同样的，.bashrc 会先执行/etc/bashrc。interactive shell 分为 login shell 以及非 login shell， login shell自然就是等入时候的shell，而之后启动的bash就是non-login shell。
-login shell 会执行.bash_profile, 而 非login-shell只会执行.bashrc, 所以不需要每次bash都运行的配置可以放到.bash_profile里。
+
+#### shell 分类
+
+四大类:
+
+```
+interactive login shell         // 用户登入时
+interactive not-login shell     // su 用户
+
+
+non-interactively with --login  // 
+non-interactively               // 比如执行脚本时
+```
+
+#### .bashrc 还是 .bash_profile
+
+
+```
+//
+interactive login shell
+/etc/profile
+~/.bash_profile
+~/.bash_login
+~/.profile
+
+
+//
+interactive not-login shell
+~/.bashrc
+
+
+// 
+non-interactively with --login
+/etc/profile
+~/.bash_profile
+~/.bash_login
+~/.profile
+
+
+non-interactively               // 比如执行脚本时
+
+```
+
+#### 脚本包含
