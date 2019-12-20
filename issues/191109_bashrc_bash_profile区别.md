@@ -42,4 +42,27 @@ non-interactively               // 比如执行脚本时
 
 ```
 
-#### 脚本包含
+#### 脚本包含关系
+
+```
+.bash_profile
+-> .bashrc
+-> /etc/bashrc
+```
+
+#### 实例
+
+* wsh 登入：
+
+```
+run .bash_profile
+run .bashrc
+run /etc/bashrc
+```
+
+* root 登入后 su wsh
+
+```
+run .bashrc
+run /etc/bashrc
+```
