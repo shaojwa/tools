@@ -5,12 +5,20 @@
 四大类:
 
 ```
-interactive login shell         // 用户登入时
-interactive not-login shell     // su 用户
+interactive login shell
+// 用户登入时
+
+interactive not-login shell
+// su 用户
+// 登入后运行bash
 
 
-non-interactively with --login  // 
-non-interactively               // 比如执行脚本时
+non-interactively with --login
+//
+
+non-interactively
+// 比如执行脚本时
+
 ```
 
 #### .bashrc 还是 .bash_profile
@@ -37,8 +45,7 @@ non-interactively with --login
 ~/.bash_login
 ~/.profile
 
-
-non-interactively               // 比如执行脚本时
+non-interactively
 
 ```
 
@@ -55,14 +62,14 @@ non-interactively               // 比如执行脚本时
 * wsh 登入：
 
 ```
-run .bash_profile
-run .bashrc
+run /home/wsh/.bash_profile
+run /home/wsh/.bashrc
 run /etc/bashrc
 ```
 
 * root 登入后 su wsh
 
 ```
-run .bashrc
+run /home/wsh/.bashrc
 run /etc/bashrc
 ```
