@@ -1,8 +1,7 @@
 
-
 #### shell 分类
 
-四大类:
+四类:
 
 ```
 interactive login shell
