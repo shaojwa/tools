@@ -1,15 +1,15 @@
 
 
-# 调试
+## 调试
 
 ```
 message(STATUS "dbg: WITH_LIBCEPHFS: ${WITH_LIBCEPHFS}")
 return()
 ```
 
-# 工程命令
+## 工程命令
 
-## add_executable
+#### add_executable
 
 添加一个可执行目标, 编译时最常碰到的两种目标之一，另外一种是库文件。
 
@@ -17,7 +17,7 @@ return()
 add_executable(<name> [WIN32] [MACOSX_BUNDLE]  [EXCLUDE_FROM_ALL]  source1 [source2 ...])
 ```
 
-## add_library
+#### add_library
 
 * 添加一个库目标，库有静态库、共享库、模块等分类
 
