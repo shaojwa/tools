@@ -1,16 +1,6 @@
   
+  tmux卡死问题，client和server都只有一个线程，用tmux kill-window -t 1 终止该window。
   
-  #### acm  
-  
-    信心上限树是什么(UCT) 是什么东西？
-    std::hash (std::bitset)
-    https://stackoverflow.com/questions/12600330/pop-back-return-value
-    http://www.gotw.ca/gotw/008.htm
-    https://stackoverflow.com/questions/596162/can-you-remove-elements-from-a-stdlist-while-iterating-through-it
-    https://stackoverflow.com/questions/799314/difference-between-erase-and-remove
-    move也会抛出异常，所以不是所有的类型都是movable
-    1234b2有其他算法需要了解下
-    
 #### sysprog
    
     https://chortle.ccsu.edu/AssemblyTutorial/
@@ -39,7 +29,7 @@
     
     linux 系统编程p55
     原生编程规范 是什么意思？    
-
+    
 #### man
 
 * 看一下 ld 的man手册
@@ -73,3 +63,14 @@
 * ifdown和ifconfig区别？
 
 * iopath结合图理解
+
+  #### acm  
+  
+    信心上限树是什么(UCT) 是什么东西？
+    std::hash (std::bitset)
+    https://stackoverflow.com/questions/12600330/pop-back-return-value
+    http://www.gotw.ca/gotw/008.htm
+    https://stackoverflow.com/questions/596162/can-you-remove-elements-from-a-stdlist-while-iterating-through-it
+    https://stackoverflow.com/questions/799314/difference-between-erase-and-remove
+    move也会抛出异常，所以不是所有的类型都是movable
+    1234b2有其他算法需要了解下
