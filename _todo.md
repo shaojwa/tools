@@ -1,5 +1,9 @@
   
-  tmux卡死问题，client和server都只有一个线程，用tmux kill-window -t 1 终止该window。
+#### 什么是 UP machine
+
+  The mpstat command can be used both on SMP and UP machines
+  
+  mux卡死问题，client和server都只有一个线程，用tmux kill-window -t 1 终止该window。
   
 #### sysprog
    
