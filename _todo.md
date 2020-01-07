@@ -78,3 +78,16 @@
     https://stackoverflow.com/questions/799314/difference-between-erase-and-remove
     move也会抛出异常，所以不是所有的类型都是movable
     1234b2有其他算法需要了解下
+
+
+#### log
+
+```
+12月25日
+网络丢包模拟工具tc
+12月26日
+logrotate
+12月27日
+excel锁定一行
+logrotate学习基本用法
+```
