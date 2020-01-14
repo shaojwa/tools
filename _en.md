@@ -12,6 +12,7 @@ https://wikidiff.com/dispatch/deliver
     diligence       // 勤勉
     expand all      // 展开所有  
     heuristic       // 启发式的
+    initiate        //  初始化
     mastery         // 精通
     nigotiate       // 协商
     redundant       // 冗余的
