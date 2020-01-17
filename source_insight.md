@@ -4,7 +4,7 @@
         ctrl+u // cut line
         ctrl+p // past line
         ctrl+i // insert line
-        ctrl+j  // join lines
+        ctrl+j // join lines
         ctrl+y // redo
         ctrl+z // undo
         f9/f10 // 左右缩进
