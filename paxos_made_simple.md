@@ -113,11 +113,13 @@ P2b只是要求如果v被选中（假设编号为n），那么任何编号大于
 
 将proposer的行为和acceptor的行为合并在一起，我们就知道，算法分为两个阶段：
 
-第一阶段 ：
+第一阶段：
+
 （a）一个proposer先会选择一个编号n，然后项一个acceptor多数集发送一个prepare request。
 （b）此时acceptor有几种情况。第一，没有回应过任何 prepare request，那么一定会回应这个编号为n的prepare request。第二，回应过编号小于n的prepare requst，那么在此回应这个编号为n的prepare request。第三，回应过编号为n的prepare request，忽略这个prepare request。第四， 回应过编号大于n的prepare request，忽略这个prepare request。并回应这个acceptor接受过的编号最大的proposal，注意，这一点很重要，不然可能会影响proposer发送的accept request中的v值。
 
 第二阶段：
+
 （a）这个proposer收到它发出的prepare request 的回应，且回应的acceptor满足多数集。那么它就会发送accept request。这个accept request中有编号n和值v，这个v是收到的所有accpet多数集中回应的response中编号最大的proposal的v值。
 （b）acceptor会接收这个accept request，除非在收到这个accept request之前它又回应过其他的prepare request（很显然，这个prepare request的编号一定是大于n的）
 
@@ -126,10 +128,18 @@ P2b只是要求如果v被选中（假设编号为n），那么任何编号大于
 
 当某个proposer开始尝试一个更高编号的proposal时，放弃一个proposal也许是一个好主意。（这个放弃，是单单指这个尝试发布更高版本的proposer么，还是其他的proposer？）所以，当一个acceptor因为收到更高版本的prepare request而放弃低版本的prepare request 和 accpet request时，应该通知proposer，这样这个proposer就可以放弃这个proposer。这只是一个性能上的优化，不会影响正确性。
 
+其实至此，我还是不能完全确定，这样就能保证在编号为n的proposal选中之后，后续被选中的编号大于n的proposal值也是v么？
+另外，如果需要其他的值怎么办？以上过程描述的只是一个值的选举过程，不是全过程，不然新的v如何提议？所以继续看下文。
+
 ## 学习一个选中的值
 
+learner需要学习到选中的值，所以必须找到被多数集接受的proposal，最明显的算法是，让每一个acceptor，不管什么时候接受一个proposal，都呼应给所有的learner，给他们发送proposal。这可以让learner尽快找到选中的值。但这要求每一个acceptor去回应每一个learner。所以响应的数量是acceptor 和 learner数量的乘积。
 
+在非拜占庭故障的前提下，一个learner从另外一个learner中学习到值时简单的。我们可以让acceptor将回应发送给特定的某个learner。然后这个learner，当某个值被选中时，通知其他的learner。但是这存在单点故障，优势是，请求数只等于acceptor数量加上learner的数量。
 
+所以，更通用的办法是，让多个特定的learner组成一个集合，来提高稳定性，尽管会增加通信的代价和复杂度。
 
+因为消息的丢失，一个被选中的value可能不被任何的learner学习到。learner可以询问acceptor他们接收的proposal是什么。但是某个acceptor的故障会导致无法确定是否某个多数集已经接受某个proposal。在这种情况下，learner只能在新的proposal被选中时找到（新的proposal的值是否和之前的一样？）。如果一个learner需要知道一个新的值是否被选中，那么它可以让一个proposal发起一个proposal，用之前描述的算法。
 
+## 过程
 
