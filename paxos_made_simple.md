@@ -143,3 +143,11 @@ learner需要学习到选中的值，所以必须找到被多数集接受的prop
 
 ## 过程
 
+构造一种两个proposer连续不断的发起更高编号的提议，却没有一个proposer的提议被选中的场景是容易的。因为每个proposal都有两个阶段，proposer p的第二阶段可能因为 proposer q的第一阶段（q的编号比p的高）而中断。此时 p 再用更高的编号发起proposal，这个proposal又会影响到q的第二阶段。所以，只要acceptor会回应编号更高的prepare request，那么低编号的accept request 就无法得到响应。
+
+为了保证过程，一个突出的proposer 需要被选出作为唯一的proposer去发起proposal。如果这个proposer可以同acceptor的多数集通信，并且使用
+使用比用过的编号更高的编号，他就能成功发布一个proposal且被选中。如果它学习到更高版本的request，他就会放弃原来的proposal并再次尝试，最终他会选到一个足够高的编号。
+
+如果有足够多的系统正常工作，那么通过选择一个唯一的突出proposer来实现活性（这个活性对应的单词liveness到底是什么意思？？）。
+
+
