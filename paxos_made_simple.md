@@ -69,7 +69,7 @@ accepter的故障挂机会导致后续的流程无法继续。
 
 因为任何一个多数集合（命名为S），一定至少包含一个C中的成员，那么，只要保证下面这个条件，我们就可以得出这个结论：一个编号为n的proposal的值一定是v：
 
-P2c，任何一个v和n，如果一个proposal（编号为n，值为v）想要发布，那么请保证以下条件：一定存在一个多数集合S，这个集合中的acceptor满足两种可能（a）要么没有acceptor接受过编号小于n的proposal（b）要么，这些acceptor中接收到的编号小于n的最大的编号的proposal的值是v。
+(P2c)，任何一个v和n，如果一个proposal（编号为n，值为v）想要发布，那么请保证以下条件：一定存在一个多数集合S，这个集合中的acceptor满足两种可能（a）要么没有acceptor接受过编号小于n的proposal（b）要么，这些acceptor中接收到的编号小于n的最大的编号的proposal的值是v。
 
 P2b只是要求如果v被选中（假设编号为n），那么任何编号大于n的proposal在发布的时候值必须为v。其实这只是一个要求，而不是具体可实现的算法，到了P2c，已经尝试通过步骤来满足这个要求，P2c给出了如何满足P2b的更加可操作的方案。这里似乎P2c并不比P2b强？？？？
 
@@ -89,8 +89,47 @@ P2b只是要求如果v被选中（假设编号为n），那么任何编号大于
 
 这就产生了下面的proposal发布算法：
 
-* 一个proposer选择一个新的n，并发送一个请求给某个acceptor集合，要求他们回应两点（a）不再接受编号小于n的proposal，这点前面已经说过。（b）如果有，请返回编号小于n的最大的proposal。这个请求被称作准备请求（prepare requsest）。
+* 一个proposer选择一个新的n，并发送一个请求给某个acceptor集合，要求他们回应两点（a）不再接受编号小于n的proposal，这点前面已经说过。（b）如果有，请返回编号小于n的编号最大的proposal。这个请求被称作准备请求（prepare requsest）。
 
-* 如果这个propos而收到一个大多数集合的回应，那么这个proposal 就可以发起一个序号为n，只为v的请求，其中v的值怎么得到呢？v就是受到的多数集合中编号最大的proposal的值。（或者如果响应者没有上报proposal时，proposer就自己选择一个）
+* 如果这个propos而收到一个大多数集合的回应，那么这个proposal 就可以发起一个序号为n，只为v的请求，其中v的值怎么得到呢？v就是受到的多数集合中编号最大的proposal的值。（或者如果响应者没有上报proposal时，proposer就自己选择一个），这个请求叫 accept request。
 
-然后发送请求，这个请求叫accepter请求。
+以上是proposer的算法，其实我们有疑问：
+收到一个多数集的回应不再接受小于n的proposal以及得到所有响应的编号最大的proposal的值就解决问题？我没懂
+
+对acceptor来说，会收到两种请求，prepare request，以及 accept request，其中，prepare请求是一定会回应的，但是accept request 必须在它没有承诺不接受的时候才会回应。所以有：
+
+(P1a)： 一个acceptor会接受一个编号为n的proposal，当且仅当它没有回应过编号大于n的proposal的prepare请求。P1a包含P1，P1a是P1的增强，P1说的是第一个值一定会接受，所以，是不是说，一个节点受限收到的是accept请求，而不是prepare请求时，一定会接受accept请求。
+
+以上算法已经是完整的值选择算法，只要保证proposal的编号是唯一的。下面是对这个算法的一个小的优化：
+
+
+假设一个acceptor收到的一个编号为n的prepare request，但在此之前，它已经回应一个编号大于n的prepare request，也就是说已经答应不再accept 编号为n的的proposal，所以它其实已经没有必要回应这个编号为n的prepare request，因为它不会accept 这个 proposal，此时我们让这个acceptor忽略这个prepare request。我们也会忽略已经接受大proposal的prepare request。
+
+基于这个优化，一个acceptor只需要记住已经accept的编号最高的proposal，和已经回应的prepare request的最高的编号。（我：也就是说，你可以之前accept过一个编号为m的proposal，然后保证后续不再accept 小于n的 prepare request。这里n应该是大于m的，但是我不确定）
+
+因为P2c约束必须得到满足，就算是发生故障。所以一个acceptor必须记住以上两个信息，就算它挂机后重启。
+
+但是proposer是可以随时放弃一个proposal，也不会记住任何东西，只要它不会用同样的序号发送不同的proposal。
+
+将proposer的行为和acceptor的行为合并在一起，我们就知道，算法分为两个阶段：
+
+第一阶段 ：
+（a）一个proposer先会选择一个编号n，然后项一个acceptor多数集发送一个prepare request。
+（b）此时acceptor有几种情况。第一，没有回应过任何 prepare request，那么一定会回应这个编号为n的prepare request。第二，回应过编号小于n的prepare requst，那么在此回应这个编号为n的prepare request。第三，回应过编号为n的prepare request，忽略这个prepare request。第四， 回应过编号大于n的prepare request，忽略这个prepare request。并回应这个acceptor接受过的编号最大的proposal，注意，这一点很重要，不然可能会影响proposer发送的accept request中的v值。
+
+第二阶段：
+（a）这个proposer收到它发出的prepare request 的回应，且回应的acceptor满足多数集。那么它就会发送accept request。这个accept request中有编号n和值v，这个v是收到的所有accpet多数集中回应的response中编号最大的proposal的v值。
+（b）acceptor会接收这个accept request，除非在收到这个accept request之前它又回应过其他的prepare request（很显然，这个prepare request的编号一定是大于n的）
+
+
+一个proposer是可以发起多个proposal的，只要遵循算法。也可以中途的任何时间放弃某一个propsal。正确性是可以保持的，尽管某些请求或者响应会在proposal被放弃之后很长时间才到达目的地。
+
+当某个proposer开始尝试一个更高编号的proposal时，放弃一个proposal也许是一个好主意。（这个放弃，是单单指这个尝试发布更高版本的proposer么，还是其他的proposer？）所以，当一个acceptor因为收到更高版本的prepare request而放弃低版本的prepare request 和 accpet request时，应该通知proposer，这样这个proposer就可以放弃这个proposer。这只是一个性能上的优化，不会影响正确性。
+
+## 学习一个选中的值
+
+
+
+
+
+
