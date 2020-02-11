@@ -1,2 +1,1 @@
-ubuntu系统的网络服务名市networking，如果出错，请确认以root权限执行。
-新版本的ubuntu已经用systemd来管理服务，所以尝试用systemctl restart networking来重启。
+ubuntu系统的网络服务名市networking，如果出错，请确认以root权限执行。新版本的ubuntu（16.04以及以上）已经用systemd来管理服务，所以尝试用systemctl restart networking来重启。network-manager是在desktop版本的ubuntu上使用。
