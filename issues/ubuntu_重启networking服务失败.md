@@ -1,1 +1,1 @@
-ubuntu系统的网络服务名市networking，如果出错，请确认以root权限执行。
+ubuntu系统的网络服务名市networking，如果出错，请确认以root权限执行。较新版本的ubuntu已经用systemd来管理服务，所以尝试用systemctl restart networking来重启。
