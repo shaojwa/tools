@@ -8,6 +8,8 @@ bash是一个运行环境，运行环境本身有选项(OPTIONS)，参数(ARGUME
 
 其实stdin 和stdout 和 stderr 有这两个oper就足够，如果同时对stdout和stderr重定向，那么bash多来一点花样，我觉得不是必须的。因为如果都需要重定向到同一个文件，那么大不了>word 2>word 一起用，和 &>word 可能没什么区别， &>使命令简化而已，但也许有别的考虑。其实我个人觉得&的真正价值是在stderr和stdout之间相互重定向用的，因为直接用1>2或者2>1时，oper后的1或2会被当做文件名。
 
+其实&>的真正语法叫 文件描述符复制（Duplicating File Descriptors），和重定向没有直接关联，可以查看man帮助。
+
 #### bash option是否enable的设置
 
 -o  optname
