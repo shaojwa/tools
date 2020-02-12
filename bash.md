@@ -1,4 +1,18 @@
-bash是一个运行环境，运行环境本身有选项(OPTIONS)，参数(ARGUMENTS)，调用方式(INVOCATION)，运行环境支持自己的语言，所以有定义(DEFINITIONS)，保留字(RESERVED WORDS)，以及语法（GRAMMER），当然还有 EXIT STATUS 以及 BUILTIN COMMANDS 等等。当看到一个用法时，可以先考虑下，这是属于什么部分的内容，比如test，shopt 就是builtin command。 星号的用法属于EXPANSION 大类下的Pathname expansion下小类， bash光大类就有十几个，这是最基本的分配。
+bash是一个运行环境，运行环境本身有选项(OPTIONS)，参数(ARGUMENTS)，调用方式(INVOCATION)，运行环境支持自己的语言，所以有定义(DEFINITIONS)，保留字(RESERVED WORDS)，以及语法（GRAMMER），当然还有 EXIT STATUS 以及 BUILTIN COMMANDS 等等。
+
+当看到一个用法时，可以先考虑下这是属于什么部分的内容，比如test，shopt 就是BUILTIN COMMANDS。 星号的用法属于EXPANSION 大类下的pathname expansion下小类， bash光大类就有十几个，这是最基本的分配。
+
+#### 重定向
+
+在命令被执行前，它的输出输出就被重定向。重定向按照它们出现的顺序，从左到右处理。
+两大类：输入和输出，输出再细分两类：标准输出和标准错误。统一格式是:
+```
+[n]{oper}{word}
+```
+< 和 > 都是oper， n被忽略时，如果oper是<，那么n=0，如果oper是>,那么n=1。
+
+其实stdin 和stdout 有这两个oper就足够，但对标准错误stderr的重定向使问题复杂化。
+
 
 #### bash option是否enable的设置
 
