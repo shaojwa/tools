@@ -10,9 +10,9 @@ bash是一个运行环境，运行环境本身有选项(OPTIONS)，参数(ARGUME
 
 < 和 > 都是oper， n被忽略时，如果oper是<，那么n=0，如果oper是>, 那么n=1。
 
-其实stdin 和stdout 和 stderr 有这两个oper就足够，但对标准错误stderr和stdout的同时使语法复杂了点。
+其实stdin 和stdout 和 stderr 有这两个oper就足够，如果同时对stdout和stderr重定向，那么bash多来一点花样，我觉得不是必须的。
 
-如果都需要重定向到一个文件，那么大不了>word 2>word 一起用，和 &>word 可能没什么区别， &>使命令简化而已。
+因为如果都需要重定向到同一个文件，那么大不了>word 2>word 一起用，和 &>word 可能没什么区别， &>使命令简化而已，但也许有别的考虑。
 
 #### bash option是否enable的设置
 
