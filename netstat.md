@@ -1,3 +1,8 @@
+#### 查看丢包
+
+netstat 是在查看网络延时问题是首先想到的命令，因为 man netstat 说就有 inferface statistics信息。但是这个命令已经被废弃，建议使用ss。但是用netstat 实在是成习惯。但是很可惜，针对某个网口的丢包情况貌似无法通过netstat看到。而最直接的命令 居然是ifconfig，命令输出中的RX和TX中的errors和drops。
+
+#### 查看链接
     -t，-u分别表示tcp，udp的socket。
     -l，显示listening 的socket，默认情况下是忽略的。
     -n，主机和端口都显示数字，默认情况下会把部分ip和端口转为主机和服务。
