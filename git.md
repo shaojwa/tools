@@ -5,6 +5,18 @@ v0.4@ 20160601
 
 #### 查看某个commit中某个文件的修改
 
+#### checkout 
+
+* git checkout <new_branch>
+```
+执行git checkout <branch_name>时，如果branch_name在本地分支中存在，那么就会签出这个本地分支的代码。 
+如果不存在而且，这个分支名匹配到远程库origin中的一个分支，那么将在本地创建一个同名的分支名，跟踪远程的分支。
+所以这种情况就相当于新建一个本地分支（-b）参数，然后这个本地分支跟踪远程的的同名分支。
+即 man git checkout里说的，等同于：git checkout -b <branch> --track <remote>/<branch>
+```
+* git checkout -b <new_branch>
+而如果用 git checkout -b <new_branch>时，branch 就是新的分支名，没有指定源分支，所以默认是当前分支。
+
 #### 怎么使用cherry pick
 
 * 在分支b上运行cherry-pick，commit号是分支a上的一个commit(将分支a上的某个提交应用到b上)
