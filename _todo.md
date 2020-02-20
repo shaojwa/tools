@@ -1,4 +1,7 @@
-  
+#### 进程的状态和它的线程的状态什么关系？  
+
+#### 线程由创建它的父线程么？
+
 #### 什么是 UP machine
 
   The mpstat command can be used both on SMP and UP machines
