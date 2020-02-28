@@ -1,3 +1,8 @@
+#### 光标上下移动
+```
+ctrl-b Up/PgUp/Down/PgDown
+```
+
 #### renumber windows
 
 
