@@ -3,6 +3,11 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
+####  ssh 下载 github上ceph的代码
+```
+git clone git@github.com:ceph/ceph.git
+```
+
 #### 查看某个commit中某个文件的修改
 
 #### checkout 
