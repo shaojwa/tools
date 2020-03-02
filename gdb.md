@@ -4,7 +4,7 @@ gdb 调试需要建议使用 root权限
 
 #### 启用 Non-Stop 模式
 
-在 ~/.gdbinit文件中写入一下三行，当然也可以在启动gdb之后手动运行这三行。
+在 `~/.gdbinit` 文件中写以下3行，当然也可以在启动gdb之后手动运行这三行。
 ```
 set target-async on
 set pagination off
