@@ -1,3 +1,24 @@
+#### 权限
+
+gdb 调试需要建议使用 root权限
+
+#### 启用 Non-Stop 模式
+
+在 ~/.gdbinit文件中写入一下三行，当然也可以在启动gdb之后手动运行这三行。
+```
+set target-async on
+set pagination off
+set non-stop on
+```
+但是一定要注意，先不要启动测试进程，因为程序启动之后，有的命令是无效的。
+```
+(gdb) set target-async on
+Cannot change this setting while the inferior is running.
+(gdb) set non-stop on
+Cannot change this setting while the inferior is running.
+```
+所以，如果程序已经attach，那么，以上三条命令只有 `set pagination off` 生效，所有线程t状态。
+0
 #### gdb基本用法
 
 远程调试
@@ -122,22 +143,3 @@
 
 一个软件的正式版本一般都是经过优化的，如果一个接口的参数，在调用这个接口之后不再使用，那么这个接口的参数一般会通过寄存器传入。
 这个参数也就不会在栈帧中看到，除非是对内层的调用。所以如果碰到某个接口的参数无法显示，不用觉得奇怪。
-
-####  gdb 调试需要root权限
-
-#### 
-
-在`.gdbinit`文件中开启`set non-stop on`之后，挂载进程，所有线程t状态：
-```
-(gdb) set target-async on
-Cannot change this setting while the inferior is running.
-(gdb) set non-stop on
-Cannot change this setting while the inferior is running.
-```
-
-#### non-stop模式
-```
-set target-async on
-set pagination off
-set non-stop on
-```
