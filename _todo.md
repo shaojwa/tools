@@ -4,6 +4,7 @@
 进程的状态和它的线程的状态什么关系？
 5.5.4 Thread-Specific Breakpoints
 https://sourceware.org/gdb/onlinedocs/gdb/Non_002dStop-Mode.html
+https://sourceware.org/gdb/onlinedocs/gdb/Asynchronous-and-non_002dstop-modes.html
 ```
 
 #### 什么是 UP machine
