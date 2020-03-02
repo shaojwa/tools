@@ -5,6 +5,7 @@
 5.5.4 Thread-Specific Breakpoints
 https://sourceware.org/gdb/onlinedocs/gdb/Non_002dStop-Mode.html
 https://sourceware.org/gdb/onlinedocs/gdb/Asynchronous-and-non_002dstop-modes.html
+https://stackoverflow.com/questions/19181834/what-is-the-concept-of-vruntime-in-cfs
 ```
 
 #### 什么是 UP machine
