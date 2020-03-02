@@ -3,6 +3,7 @@
 线程有创建它的父线程么？(done)
 进程的状态和它的线程的状态什么关系？
 5.5.4 Thread-Specific Breakpoints
+https://sourceware.org/gdb/onlinedocs/gdb/Non_002dStop-Mode.html
 ```
 
 #### 什么是 UP machine
