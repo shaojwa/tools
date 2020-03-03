@@ -1,6 +1,7 @@
 #### todo
 ```
 break 25 thread 4
+b func if arg1->foo().bar().c_str() == "xxxx"
 interrupt
 thread apply 4 bt
 thread apply all continue
