@@ -1,15 +1,10 @@
 #### 光标上下移动
 ```
-ctrl-b Up/PgUp/Down/PgDown
+ctrl-b [ 之后可以 Up/PgUp/Down/PgDown
 ```
 
-#### renumber windows
+#### 进入 copy模式之后用vi的快捷键
 
-
-     // then using movew -r to renumbered  all windows in sequential order in the session
-     :movew -r
-     // without parameters will move the current to the first free position
-     :movew
 
 #### key bindings
 
@@ -64,3 +59,16 @@ ctrl-b Up/PgUp/Down/PgDown
 
     tmux new -s session_name
     tmux attach -t session_name
+
+#### 对窗口重编号
+
+     // then using movew -r to renumbered  all windows in sequential order in the session
+     :movew -r
+     // without parameters will move the current to the first free position
+     :movewwindows
+
+
+     // then using movew -r to renumbered  all windows in sequential order in the session
+     :movew -r
+     // without parameters will move the current to the first free position
+     :movew
