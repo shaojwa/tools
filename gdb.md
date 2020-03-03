@@ -5,6 +5,7 @@ b func if arg1->foo().bar().c_str() == "xxxx"
 interrupt
 thread apply 4 bt
 thread apply all continue
+gdb --command=gdbcmd1 routine
 ```
 
 #### 基本概念
