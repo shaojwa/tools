@@ -10,6 +10,8 @@ gdb --command=gdbcmd1 routine
 
 #### 基本概念
 ```
+CLI commands：Commnad Line Interface
+MI commands：Machine Interface。独立于常用的CLI命令，是给调试前端用的接口，实现类似libgdb功能。
 target: 待调试程序的执行环境，target有多种，进程，可执行文件，记录会话等等。
 ```
 
