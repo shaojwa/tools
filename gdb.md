@@ -1,34 +1,15 @@
 #### 基本概念
 ```
 target: 待调试程序的执行环境，target有多种，进程，可执行文件，记录会话等等。
-
 ```
-#### 权限
 
+#### 权限
 gdb 调试需要建议使用 root权限
 
-
-#### 多线程状态
+#### 挂载和解挂
 ```
-(1) attach 之后 all-t 状态
-(2) continue 之后 all-S 状态
-
-设置 pagination off 之后
-(1) attach 之后 all-t 状态
-(2) continue 之后 all-S 状态
-
-设置 target-async on 之后
-(1) attach 之后 all-t 状态
-(2) continue 之后 all-S 状态
-
-设置 non-stop on 之后
-(1) attach 之后 all-t 状态
-(2) continue 之后 one-S 状态
-
-设置 target-async on, non-stop on 之后
-(1) attach 之后 all-t 状态
-(2) continue 之后 one-S 状态
-
+attach 
+detach
 ```
 
 #### 启用 Non-Stop 模式
@@ -175,3 +156,30 @@ Cannot change this setting while the inferior is running.
 #### pagination off 
 
 如果命令到gdb输出的内容很多，默认情况下会分页，现在off就是关闭分页，等价于 set height unlimited 。
+
+#### 多线程调试
+```
+(1) attach 之后 all-t 状态
+(2) continue 之后 all-S 状态
+
+设置 pagination off 之后
+(1) attach 之后 all-t 状态
+(2) continue 之后 all-S 状态
+
+设置 target-async on 之后
+(1) attach 之后 all-t 状态
+(2) continue 之后 all-S 状态
+
+设置 non-stop on 之后
+(1) attach 之后 all-t 状态
+(2) continue 之后 one-S 状态
+
+设置 target-async on, non-stop on 之后
+(1) attach 之后 all-t 状态
+(2) continue 之后 one-S 状态
+```
+
+#### 只暂停多线程进程中的一个线程
+```
+attach <pid_of_thread>
+```
