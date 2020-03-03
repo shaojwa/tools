@@ -2,6 +2,30 @@
 
 gdb 调试需要建议使用 root权限
 
+
+#### 多线程状态
+```
+(1) attach 之后 all-t 状态
+(2) continue 之后 all-S 状态
+
+设置 pagination off 之后
+(1) attach 之后 all-t 状态
+(2) continue 之后 all-S 状态
+
+设置 target-async on 之后
+(1) attach 之后 all-t 状态
+(2) continue 之后 all-S 状态
+
+设置 non-stop on 之后
+(1) attach 之后 all-t 状态
+(2) continue 之后 one-S 状态
+
+设置 target-async on, non-stop on 之后
+(1) attach 之后 all-t 状态
+(2) continue 之后 one-S 状态
+
+```
+
 #### 启用 Non-Stop 模式
 
 在 `~/.gdbinit` 文件中写以下3行，当然也可以在启动gdb之后手动运行这三行。
@@ -142,3 +166,7 @@ Cannot change this setting while the inferior is running.
 
 一个软件的正式版本一般都是经过优化的，如果一个接口的参数，在调用这个接口之后不再使用，那么这个接口的参数一般会通过寄存器传入。
 这个参数也就不会在栈帧中看到，除非是对内层的调用。所以如果碰到某个接口的参数无法显示，不用觉得奇怪。
+
+#### pagination off 
+
+如果命令到gdb输出的内容很多，默认情况下会分页，现在off就是关闭分页，等价于 set height unlimited 。
