@@ -19,117 +19,116 @@ Cannot change this setting while the inferior is running.
 ```
 所以，如果程序已经attach，那么，以上三条命令只有 `set pagination off` 生效，所有线程t状态。
 0
-#### gdb基本用法
 
-远程调试
+#### 远程调试
 
     gdbserver --attach :4444 <pid>
     gdb ceph-mds
     target remote 192.168.0.11:4444
     
-搜索命令
+#### 搜索命令
 
     apropos 
     
-查看线程
+#### 查看线程
 
     info thread
 
-切换线程
+#### 切换线程
 
     thread <ID> 
 
-查看所有栈帧（backtrace）
+#### 查看所有栈帧（backtrace）
 
     bt      // 考虑用full 限定符
     where   // 等同于 bt 考虑用full 限定符
     
-切换到指定的栈帧
+#### 切换到指定的栈帧
 
     frame <frame_id>
     
-查看栈帧的详细情况
+#### 查看栈帧的详细情况
 
     info frame
 
-断点
+#### 断点
 
     save breakpoints <filename> // 保存断点
     break file.c:100 thread all
     
-符号
+#### 符号
 
     maint print symbol all.sym 
     info functions C_ObjectOperation_decodevals
     set multiple-symbols // 多符号匹配时的行为
 
 
-当前指令位置
+#### 当前指令位置
 
     
     p $rip
     
-变量类型
+#### 变量类型
     
     ptype
     whatis
     
-查看类
+#### 查看类
     
     p *this
     p *(C_MaybeExpiredSegment *)0x7f17d08d8560
     
-查看函数
+#### 查看函数
 
     p C_MaybeExpiredSegment::complete
     
-查看虚函数
+#### 查看虚函数
 
     p C_MaybeExpiredSegment::finish时报错
     Cannot reference virtual member function "finish"
     
-查看虚函数表
+#### 查看虚函数表
 
     info vtbl this
     
-反汇编函数
+#### 反汇编函数
     
     disass /m Server::handle_client_readdir
     
-显示汇编代码
+#### 显示汇编代码
 
     set disassemble-next-line on
     intel格式	set disassembly-flavor intel
     
-查看内存内容
+#### 查看内存内容
 
     x $rbp-0x18
     
-单行汇编执行
+#### 单行汇编执行
 
     si
     
-网络相关
+#### 网络相关
 
     set tcp auto-retry on
     
-调度器
+#### 调度器
 
     set scheduler-locking off|on|step
     
-信号捕捉
+#### 信号捕捉
 
     info signals // 显示所有信号以及默认的gdb处理方式
     info handle  // =  info signals
     handle signal keywords
     
-指定程序启动参数
+#### 指定程序启动参数
 
     (gdb) file /opt/bin/ceph-mds
     (gdb) set args -f --cluster ceph --id mds0 --setuser ceph --setgroup ceph
     (gdb) run
     
-指定命令启动
+#### 指定命令启动
     gdb -p 1234 -ex 'break MOSDOpReply::decode_payload'
 
 ### python debug
