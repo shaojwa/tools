@@ -14,9 +14,12 @@ CLI commands：Commnad Line Interface
 MI commands：Machine Interface。独立于常用的CLI命令，是给调试前端用的接口，实现类似libgdb功能。
 ```
 #### 异步执行
-
+```
+set target-async on
+```
 
 #### 权限
+
 gdb 调试需要建议使用 root权限
 
 #### 挂载和解挂
@@ -33,13 +36,9 @@ set target-async on
 set pagination off
 set non-stop on
 ```
-但是一定要注意，先不要启动测试进程，因为程序启动之后，non-stop模式和预想的不一样：ctrl-c停下所有线程，continue只启动当前线程。
-```
-(gdb) set target-async on
-Cannot change this setting while the inferior is running.
-(gdb) set non-stop on
-Cannot change this setting while the inferior is running.
-```
+但是一定要注意，如果是attch一个已经启动的程序，那么attach之后会把所有的线程stop。
+因为是non-stop模式，所以continue只会恢复当前线程，此时需要continue -a来恢复所有线程。
+然后ctrl -c 就可以stop当前线程。
 
 #### 远程调试
 
