@@ -33,15 +33,13 @@ set target-async on
 set pagination off
 set non-stop on
 ```
-但是一定要注意，先不要启动测试进程，因为程序启动之后，有的命令是无效的。
+但是一定要注意，先不要启动测试进程，因为程序启动之后，non-stop模式和预想的不一样：ctrl-c停下所有线程，continue只启动当前线程。
 ```
 (gdb) set target-async on
 Cannot change this setting while the inferior is running.
 (gdb) set non-stop on
 Cannot change this setting while the inferior is running.
 ```
-所以，如果程序已经attach，那么，以上三条命令只有 `set pagination off` 生效，所有线程t状态。
-0
 
 #### 远程调试
 
