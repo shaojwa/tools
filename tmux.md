@@ -4,6 +4,11 @@ ctrl-b [ 之后可以 Up/PgUp/Down/PgDown
 ```
 
 #### 进入 copy模式之后用vi的快捷键
+in .tmux.conf
+```
+set-window-option -g mode-keys vi # works in tmux 2.1 and above.
+setw -g mode-keys vi              # works in tmux 1.8
+```
 
 
 #### key bindings
