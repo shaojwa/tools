@@ -1,6 +1,9 @@
 #### todo
 ```
+break 25 thread 4
+interrupt
 thread apply 4 bt
+thread apply all continue
 ```
 
 #### 基本概念
