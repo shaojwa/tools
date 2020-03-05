@@ -1,6 +1,7 @@
 
 ```
-线程有创建它的父线程么？(done)
+线程有创建它的父线程么？(done， 没有，ppid只显示父进程pid) 
+当进程文件删除之后，gdb挂载之后，为什么无法查看线程？
 进程的状态和它的线程的状态什么关系？
 5.5.4 Thread-Specific Breakpoints
 https://sourceware.org/gdb/onlinedocs/gdb/Non_002dStop-Mode.html
