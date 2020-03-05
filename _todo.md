@@ -1,19 +1,13 @@
 
 ```
-线程有创建它的父线程么？(done， 没有，ppid只显示父进程pid) 
 当进程文件删除之后，gdb挂载之后，为什么无法查看线程？
-进程的状态和它的线程的状态什么关系？
 5.5.4 Thread-Specific Breakpoints
 https://sourceware.org/gdb/onlinedocs/gdb/Non_002dStop-Mode.html
 https://sourceware.org/gdb/onlinedocs/gdb/Asynchronous-and-non_002dstop-modes.html
 https://stackoverflow.com/questions/19181834/what-is-the-concept-of-vruntime-in-cfs
-```
+tmux卡死问题，client和server都只有一个线程，用tmux kill-window -t 1 终止该window。
+``` 
 
-#### 什么是 UP machine
-
-  The mpstat command can be used both on SMP and UP machines
-  
-  mux卡死问题，client和server都只有一个线程，用tmux kill-window -t 1 终止该window。
   
 #### sysprog
    
@@ -89,59 +83,13 @@ https://stackoverflow.com/questions/19181834/what-is-the-concept-of-vruntime-in-
     move也会抛出异常，所以不是所有的类型都是movable
     1234b2有其他算法需要了解下
 
-#### 英文
-
-https://wikidiff.com/deliver/send
-https://wikidiff.com/dispatch/deliver
-
-#### 名词
-
-三音节以上时，重音在第一个音节，比如symmetry（三音节），difficulty（是音节）。
-
-#### 动词
-
-#### 形容词
-
-三音节以上时，重音在倒数第三个音节，比如symmetrical，difficult。
-
-#### number
-
-nproc - print the number of processing units available.
-sched_getcpu() returns the number of the CPU on which the calling thread is currently executing.
-
-#### term
-
-* 命令行语法表示 可以参考 mpstat 中的表示方法
-*　命令参数：argument (ref: man shutdown)
-*　登入用户：logged-in users (ref: man shutdown)    
-*  wall message: the mssage sent by command wall 
-
-#### words
-
-    auditing        // 审计
-    authentication  // 认证
-    authority       // 权威
-    crude           // 初略的，大概的
-    collapse all    // 折叠所有
-    expand all      // 展开所有  
-    heuristic       // 启发式的
-    mastery         // 精通
-    nigotiate       // 协商
-    redundant       // 冗余的
-    trail           // n.痕迹 v.跟踪
-    vertex
-    IIRC：if I remember correctly // 如果我没记错的话
-    By default, on RedHat based distributions like CentOS and Fedora.
-    SUDO gives an audit trail I believe under /var/log/secure.
-
-#### log
+#### done
 
 ```
-12月25日
-网络丢包模拟工具tc
-12月26日
-logrotate
-12月27日
-excel锁定一行
-logrotate学习基本用法
+网络丢包模拟工具tc(done)
+logrotate基本用法(done)
+excel锁定一行(done)
+线程有创建它的父线程么？(done） 没有，ppid只显示父进程的pid 
+什么是 UP Machine (done) UP = uniprocessor, 单处理器
+进程的状态和它的线程的状态什么关系？(done)
 ```
