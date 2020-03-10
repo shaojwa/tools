@@ -10,15 +10,15 @@
     ctrl-h // 往后删一个字符
     ctrl-d // 往前删一个字符
     
-    esc-b // 往后移动一个词
-    esc-f // 往前移动一个词
-  
+    alt-b esc-b // 往后移动一个词
+    alt-f esc-f // 往前移动一个词
+    
     ctrl-w // 往后删一个词
-    esc-d // 往前删一个词
+    alt-d esc-d // 往前删一个词
 
     ctrl-x ctrl-u // undo 回退
     ctrl-_ // 回退
-    ctrl-y // 粘贴前一次通过ctrl-w或esc-d删除的词
+    ctrl-y // 粘贴前一次通过ctrl-w或alt-d删除的词
     ctrl-t // 互换两个字符
     esc-t  // 互换两个词
     ctrl-l // 清屏
