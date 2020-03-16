@@ -12,6 +12,7 @@ excel锁定一行(done)
 #### todo
  
 ```
+strace man 手册
 自动补全的原理
 std::unordered_map;
 std::unordered_multimap;
