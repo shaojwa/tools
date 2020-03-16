@@ -26,3 +26,13 @@
     ctrl-g
     !!:/s/--old_option/--new_option/
     ctrl-v ctrl-j 多行编辑
+    
+ #### 替换多次
+ 
+```
+twice:
+^string1^string2^:&
+all:
+!!:gs/string1/string2
+^string1^string2^:g&
+```
