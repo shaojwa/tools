@@ -8,7 +8,13 @@ excel锁定一行(done)
 什么是 UP Machine (done) UP = uniprocessor, 单处理器
 进程的状态和它的线程的状态什么关系？(done)
 ```
+```
+Your GCC is too old. Please run following command to add DTS to your environment:
+scl enable devtoolset-8 bash
 
+Or add following line to the end of ~/.bashrc to add it permanently:
+source scl_source enable devtoolset-8
+```
 #### todo
  
 ```
