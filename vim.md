@@ -1,5 +1,9 @@
 20151202
 
+#### modeline
+
+a number of lines at the beginning and end of the file are checked for modelines. 
+
 #### insert 多次
 
 ```
