@@ -1,8 +1,8 @@
-## 查看线程
+#### 查看线程
 ```
 查看线程	–Tp
 ```
-## 指定字段
+#### 指定字段
 ```
 进程命令行	cmd
 父进程id	ppid
@@ -54,3 +54,7 @@ F   UID     PID    SPID    PPID PRI  NI    VSZ   RSS WCHAN  STAT TTY        TIME
 -l -p输出的也不一定是线程名，-T是线程名，H 就不是，不知道是不是和H是unix-style有关系。
 所以，准确原因估计只能看ps的源代码了，因为proc文件系统中，有comm文件，也有cmdline文件，内容是不一样的。
 
+查看procps-ng-3.3.10的源代码：
+```
+/* SysV options */ 对 -p会设置：
+```
