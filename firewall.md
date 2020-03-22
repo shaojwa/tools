@@ -18,3 +18,8 @@ service firewalld start
 service firewalld stop    
 service firewalld disable
 ```
+
+#### add service
+```
+/usr/lib/firewalld/services
+```
