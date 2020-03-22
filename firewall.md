@@ -19,7 +19,9 @@ service firewalld stop
 service firewalld disable
 ```
 
-#### add service
+#### Add service
 ```
-/usr/lib/firewalld/services
+edit v2ray.xml in /usr/lib/firewalld/services
+firewall-cmd --add-service=v2ray
+firewall-cmd --list-services
 ```
