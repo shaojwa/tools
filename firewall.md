@@ -22,6 +22,13 @@ service firewalld disable
 #### Add service
 ```
 edit v2ray.xml in /usr/lib/firewalld/services
-firewall-cmd --add-service=v2ray
+
+// 永久添加一个服务到zone
+firewall-cmd --permanent --zone=public --add-service=v2ray
+
+// 重新加载
+firewall-cmd --reload
+
+// 确认已经添加到zone
 firewall-cmd --list-services
 ```
