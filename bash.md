@@ -2,7 +2,7 @@ bash是一个运行环境，运行环境本身有选项(OPTIONS)，参数(ARGUME
 
 当看到一个用法时，可以先考虑下这是属于什么部分的内容，比如test，shopt 就是BUILTIN COMMANDS。 星号的用法属于EXPANSION 大类下的pathname expansion下小类， bash光大类就有十几个，这是最基本的分配。
 
-#### 重定向
+## 重定向
 
 在命令被执行前，它的输出输出就被重定向。重定向按照它们出现的顺序，从左到右处理。两大类：输入和输出，输出再细分两类：标准输出和标准错误, 统一格式是: \[n\]{oper}{word}。<和>都是oper，n被忽略时，如果oper是<，那么n=0，如果oper是>, 那么n=1。
 
@@ -10,7 +10,9 @@ bash是一个运行环境，运行环境本身有选项(OPTIONS)，参数(ARGUME
 
 其实&>的真正语法叫 文件描述符复制（Duplicating File Descriptors），和重定向没有直接关联，可以查看man帮助。
 
-#### bash option是否enable的设置
+如果是重定向标准输入和输出到文件 ，最好简单的办法就是 &> word, 等价于 >word 2>&1。
+
+## bash option是否enable的设置
 
 -o  optname
 
