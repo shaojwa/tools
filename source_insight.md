@@ -1,4 +1,4 @@
-// 需要关注的默认快捷键
+需要关注的默认快捷键
 ```
 高亮关键字开关 f8
 下一个相同符号 f12
@@ -11,7 +11,7 @@
 调到基本类型 alt+0 
 ```
 
-// 跳转控制用ctrl
+跳转控制用ctrl
 ```
 ctrl+d // jump to definition
 ctrl+p // jump to prototype
@@ -24,14 +24,15 @@ ctrl+j // go next link
 ctrl+l // go forward
 ```
 
-// 窗口控制用alt
+窗口控制用alt
 ```
 符号窗口 alt+s  // 默认最左面
 工程窗口 alt+p  // 默认最右边
+关系窗口 alt+r
 搜索窗口 ctrl+f // 按惯例沿用
 ```
 
-// 代码修改用alt
+代码修改用alt
 ```
 注释一行 alt+c
 取消注释 alt+u
