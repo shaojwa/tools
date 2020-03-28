@@ -8,7 +8,7 @@
 向前搜索 F4
 切换tab页 shift+tab
 补全符号 ctrl+e
-alt+0      // jump to base type
+调到基本类型 alt+0 
 ```
 
 // 跳转控制用ctrl
