@@ -1,6 +1,35 @@
-特点：
-* 快速导航 quick navigate
-* 强大编辑 powerful editing
+// 跳转控制用ctrl
+```
+ctrl+d // jump to definition
+ctrl+p // jump to prototype
+ctrl+shift+c // jump to caller
+
+// h j k l
+ctrl+h // go back
+ctrl+k // go previous link
+ctrl+j // go next link
+ctrl+l // go forward
+```
+
+// 窗口控制用alt
+```
+符号窗口 alt+s  // 默认最左面
+工程窗口 alt+p  // 默认最右边
+查找窗口 ctrl+f // 没有用alt，按惯例沿用
+```
+代码修改用alt
+```
+注释一行 alt+c
+取消注释 alt+u
+```
+
+
+// 常用关键字
+```
+高亮关键字开关 shift+f8
+语法格式化开关 alt+f12
+```
+
 
 ```
 // edit 相关
@@ -26,7 +55,7 @@ alt+, // go back
 alt+. // go forward
 
 // options 相关
-alt+t // file type optiona
+alt+t // file type option
 
 // search 相关
 F3 // search backward
@@ -37,21 +66,10 @@ ctrl+f
 f7 // browse project sysbols
 f8 // browse local file symbols
 
-shift+tab // 切换tab页
-alt+0 // jump to base type
-ctrl+alt+c // jump to caller
-
-// view 相关
-shift+f8 // hight word
-alt+f12 // 是否关闭语法格式化
-alt+f7 // 打开/关闭工程窗口
-alt+f8  // 打开/关闭符号窗口
-
-// 自定义
-ctl+shift+c // comment lines
-ctl+shift+u // un-comment lines
-ctrl+shift+n // go to next change
-ctrl+shift+p // go to previous change
-ctrl+alt+d // jump to definition
-ctrl+alt+p // jump to prototype
+shift+tab  // 切换tab页
+alt+0      // jump to base type
 ```
+
+特点：
+* 快速导航 quick navigate
+* 强大编辑 powerful editing
