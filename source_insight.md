@@ -17,6 +17,8 @@ ctrl+d // jump to definition
 ctrl+p // jump to prototype
 ctrl+shift+c // jump to caller
 
+ctrl+a // beginning of line
+ctrl+e // end of line
 // h j k l
 ctrl+h // go back
 ctrl+k // go previous link
