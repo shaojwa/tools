@@ -1,12 +1,12 @@
-#### cmake 什么作用
+#### CMake什么作用
 
 跨平台，可用来构建软件，可用来安装软件。
 
-#### CMakeLists.txt 是什么
+#### CMakeLists.txt是什么
 
 是cmake的输入文件， cmake 通过 CMakeLists.txt 生成 Makefile文件和其他。
 
-#### cmake的输出是什么
+#### CMake的输出是什么
 
 比如mds目录下的：
 ```
