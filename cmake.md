@@ -25,6 +25,29 @@ CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  Makefile
 外部编译 out-of-source build， CMAKE_BINARY_DIR单独指定，不等于 CMAKE_SOURCE_DIR
 ```
 
+#### CMAKE_BINARY_DIR
+
+编译目录树的顶层目录
+
+#### CMAKE_SOURCE_DIR
+
+代码目录树的顶层目录
+
+#### RPATH 问题
+
+参考：
+
+```
+https://cmake.org/Wiki/CMake_RPATH_handling
+CMake默认不会对安装之后的目标，在头部加上RPATH信息。而对构建产生的中间文件，是会加上RAPTH信息的。
+RPATH中的路径信息，来自link_directories()中指定的库所在路径。
+```
+
+```
+SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
+```
+
 #### 调试输出
 
 ```
