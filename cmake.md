@@ -16,6 +16,8 @@ CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  Makefile
 
 按模块划分的CMake代码，就其他语言一样允许我们组织代码片段以方便重复利用。比如定义函数，宏等。
 
+https://cmake.org/cmake/help/latest/command/include.html
+
 #### 内部编译和外部编译
 ```
 内部编译 in-source build， CMAKE_BINARY_DIR 等于 CMAKE_SOURCE_DIR
