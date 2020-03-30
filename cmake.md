@@ -1,6 +1,31 @@
+#### cmake 什么作用
 
+跨平台，可用来构建软件，可用来安装软件。
 
-## 调试
+#### CMakeLists.txt 是什么
+
+是cmake的输入文件， cmake 通过 CMakeLists.txt 生成 Makefile文件和其他。
+
+#### cmake的输出是什么
+
+比如mds目录下的：
+```
+CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  Makefile
+// CMakeFiles 目录
+// cmake_install.cmake
+// CTestTestfile.cmake
+// Makefile
+```
+
+#### .cmake文件是什么
+
+#### 内部编译和外部编译
+```
+内部编译 in-source build， CMAKE_BINARY_DIR 等于 CMAKE_SOURCE_DIR
+外部编译 out-of-source build， CMAKE_BINARY_DIR单独指定，不等于 CMAKE_SOURCE_DIR
+```
+
+#### 调试输出
 
 ```
 message(STATUS "dbg: WITH_LIBCEPHFS: ${WITH_LIBCEPHFS}")
