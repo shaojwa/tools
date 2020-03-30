@@ -14,7 +14,7 @@ CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  Makefile
 ```
 #### .cmake文件是什么
 
-按模块划分的CMake代码，就其他语言一样允许我们组织代码片段以方便重复利用。比如定义函数，宏等。
+按模块划分的CMake代码，就其他语言一样允许我们组织代码片段以方便重复利用。比如定义函数，宏等。这就类似于一个CMake库，或者模块。
 
 https://cmake.org/cmake/help/latest/command/include.html
 
