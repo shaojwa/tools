@@ -11,13 +11,10 @@
 比如mds目录下的：
 ```
 CMakeFiles  cmake_install.cmake  CTestTestfile.cmake  Makefile
-// CMakeFiles 目录
-// cmake_install.cmake
-// CTestTestfile.cmake
-// Makefile
 ```
-
 #### .cmake文件是什么
+
+按模块划分的CMake代码，就其他语言一样允许我们组织代码片段以方便重复利用。比如定义函数，宏等。
 
 #### 内部编译和外部编译
 ```
