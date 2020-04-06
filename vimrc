@@ -15,7 +15,7 @@ set smarttab
 set shiftwidth=2
 set tabstop=2
 set expandtab
-set nolist
+set list
 set nonu
 set cindent
 set fenc=utf-8
