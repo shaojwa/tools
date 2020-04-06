@@ -1,7 +1,8 @@
 20151202
+#### 将已经存在的tab转换为空格
+在已经打开```:set expandtab```开关的基础上，执行```:retab```, 意思就是重新输入tab。
 
 #### modeline
-
 a number of lines at the beginning and end of the file are checked for modelines. 
 
 #### insert 多次
