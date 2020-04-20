@@ -4,9 +4,14 @@ https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts
 https://support.microsoft.com/zh-cn/kb/192806
 
 ```
-win+m  // Minimize all windows.
-f10 // Activate the menu bar in the active program
-shift + f10 // Display the shortcut menu for the selected item
+ctrl+v         // Paste the selected item
+Shift+Insert   // Paste the selected item
+Ctrl+Y	       // Redo an action
+Ctrl+D	       // Delete the selected item and move it to the Recycle Bin
+shift + Delete //	Delete the selected item without moving it to the Recycle Bin first
+win+m          // Minimize all windows.
+f10            // Activate the menu bar in the active program
+shift + f10    // Display the shortcut menu for the selected item
 ```
 cpl
 ```
