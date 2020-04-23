@@ -1,4 +1,4 @@
-## 更新ARP
+## 清除本地ARP缓存
 ```
 ip neigh flush dev <dev-name>
 ```
