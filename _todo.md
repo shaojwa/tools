@@ -18,6 +18,7 @@ source scl_source enable devtoolset-8
 #### todo
  
 ```
+atop中的slab内存
 ansible工具了解下
 命令ipcs了解一下
 strace man 手册
