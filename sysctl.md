@@ -1,4 +1,7 @@
-sysctl下的很多配置的解释可以到：https://www.kernel.org/doc/Documentation/sysctl找到。
+sysctl下的很多配置的解释可以在两个地方查看
+
+1. https://www.kernel.org/doc/Documentation/sysctl
+1. /usr/src/kernel4.4.0/Documentation/sysctl
 
 sysctl 和 在proc下的操作sys是一致的，所以相比/proc/sys这么长的路径，还是用sysctl来得快。
 
