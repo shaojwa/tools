@@ -8,11 +8,33 @@ v0.4@ 20160601
 git clone git@github.com:ceph/ceph.git
 ```
 
+#### push
+push的语法：
+```
+git push <repos> <refspec>
+<refspec>=<src>:<dst>
+```
+repos是远程仓库，不是远程主机，默认是origin
+
+```
+git push https://github.com/shaojwa/leetcode.git master  
+git push origin master
+```
+
+```
+git push origin HEAD:refs/for/UniStorOS_V100R001B01
+origin 远程仓库名不是远程主机
+HEAD:refs/for/UniStorOS_V100R001B01是refspec
+HEAD是refspec中的src ref
+refs/for/UniStorOS_V100R001B01是 dst ref
+```
+
 #### 查看某个commit中某个文件的修改
 
 #### checkout 
 
 * git checkout <new_branch>
+
 ```
 执行git checkout <branch_name>时，如果branch_name在本地分支中存在，那么就会签出这个本地分支的代码。 
 如果不存在而且，这个分支名匹配到远程库origin中的一个分支，那么将在本地创建一个同名的分支名，跟踪远程的分支。
@@ -26,7 +48,9 @@ git clone git@github.com:ceph/ceph.git
 
 * 在分支b上运行cherry-pick，commit号是分支a上的一个commit(将分支a上的某个提交应用到b上)
 
-    get cherry-pick e0e56
+```
+get cherry-pick e0e56
+```
 
 * 此时在分支b上运行git status 就可以看到有文件在"Unmerged paths"下：
 
@@ -46,158 +70,180 @@ git clone git@github.com:ceph/ceph.git
 
 #### 默认的库以及分支名字
 
-    origin 是库的名字
-    master 是分支名字
+```
+origin 是库的名字
+master 是分支名字
+```
 
-
-#### 克隆一个库    
-    git clone // clone a repository
-    git clone ssh://git@github.com/shaojwa/lang.git // can not commit
+#### 克隆一个库
+```
+git clone // clone a repository
+git clone ssh://git@github.com/shaojwa/lang.git // can not commit
+```
 
 #### 添加文件到index暂存
-
-    git add  <pathspec>
+```
+git add  <pathspec>
+```
     
 ##### 添加所有修改过的tracked files
-
-    git add -u
+```
+git add -u
+```
     
 #### 添加当前目录所有的文件到index（包括untracked的文件）
-  
-     git add .      
-   
+```
+git add .      
+```
+
 #### 把某个已经add的文件恢复到unstaged（本质上是恢复index）
-      
-      git reset HEAD <file_name>
+```
+git reset HEAD <file_name>
+```
       
 #### 把所有added的文件恢复到unstaged
+```
+git reset HEAD
+```
 
-     git reset HEAD
- 
 #### 把文件从index中的移出（即不再track，提交后这个文件自然就不在库中）
-    
-      git rm --cached <file_name>
+```   
+git rm --cached <file_name>
+```
  
 #### 分支管理 
+```
+git branch // list create or delete branched  
+git branch -r // list the remote-tracking branches  
+git branch -a // list remote-tracking branched and local branches
+```
 
-    git branch // list create or delete branched  
-    git branch -r // list the remote-tracking branches  
-    git branch -a // list remote-tracking branched and local branches
-    
 * 查看本地 branch 对应的的 远程库的upsteam分支信息
-
-        git config -l
-        git branch -vv
+```
+git config -l
+git branch -vv
+```
 
 * 创建一个和远程跟踪分支同名的本地分支
-
-        git checkout V100R001 # 本地没有这个分支且远程有这个分支
+```
+git checkout V100R001 # 本地没有这个分支且远程有这个分支
+```
 
 #### 把working中的文件更新为index中的文件
-
-    git checkout        // revert from index to working directory  
-    git checkout HEAD
-    get checkout <tag>
+```
+git checkout        // revert from index to working directory  
+git checkout HEAD
+get checkout <tag>
+```
 
 #### reset 
-
-    git reset --files // reset current HEAD to the specified state  
+```
+git reset --files // reset current HEAD to the specified state  
+```
 
 #### commit  
-
-    git commit -m <message> // from index to HEAD  
-    git commit -a -m <message> // from working directory to HEAD  
+```
+git commit -m <message> // from index to HEAD  
+git commit -a -m <message> // from working directory to HEAD  
+```
 
 #### diff
-
-    git diff // diff between work and index  
-    git diff HEAD  // diff between workspace and HEAD  
-    git diff HEAD~ // diff between workspace and remote  
-    git diff --cached // diff between index and head  
-    git diff --staged // same to above  
-    git diff --cached HEAD~ // diff between index and remote  
+```
+git diff // diff between work and index  
+git diff HEAD  // diff between workspace and HEAD  
+git diff HEAD~ // diff between workspace and remote  
+git diff --cached // diff between index and head  
+git diff --staged // same to above  
+git diff --cached HEAD~ // diff between index and remote  
+```
 
 #### init  
-
-    git init // create empty repository  
+```
+git init // create empty repository  
+```
 
 #### log
-
-    git log  
-    git log -p  
-    git log -2  
-
-#### push  
-
-    git push https://github.com/shaojwa/leetcode.git master  
-    git push origin master  
+```
+git log  
+git log -p  
+git log -2  
+```
 
 #### remote
 
-    git remote [-v]  
-    // rename remote repository  
-    git remote set-url origin https://github.com/shaojwa/man.git  
-    // query all branches in remote repository named origin  
-    git remote show origin  
-    git remote update // update from remote repository to local repository  
-    git remote add doc https://github.com/shaojwa/doc.git // add remote repository  
+```
+git remote [-v]  
+// rename remote repository  
+git remote set-url origin https://github.com/shaojwa/man.git  
+// query all branches in remote repository named origin  
+git remote show origin  
+git remote update // update from remote repository to local repository  
+git remote add doc https://github.com/shaojwa/doc.git // add remote repository  
+```
 
 #### rm  
-
-    git rm --cached <file> // remove file from the index only  
-    git rm [-f] <file> // file from index and working directory  
+```
+git rm --cached <file> // remove file from the index only  
+git rm [-f] <file> // file from index and working directory  
+```
 
 #### status 
-
-    git status  
-
+```
+git status  
+```
  #### HEAD^ 和 HEAD~ 的区别
  
  一个merge之后的commit就会有两个父提交，first-parent是merged-in的commit，second-parent是被合入的commit。
  
  ~是纵向第几层父节点
- 
-    HEAD~ == HEAD~1: HEAD的第一个parent
-    HEAD~2 == HEAD~1~1: HEAD的第一个parent的第一个parent
-    
+```
+HEAD~ == HEAD~1: HEAD的第一个parent
+HEAD~2 == HEAD~1~1: HEAD的第一个parent的第一个parent
+```
  ^ 横向第几个父节点
- 
-    HEAD^ == HEAD^1：HEAD的第一个parent
-    HEAD^2：HEAD的第2个parent
-   
-    HEAD^2 != HEAD^1^1
-    HEAD~2 == HEAD^1^1
-    
+```
+HEAD^ == HEAD^1：HEAD的第一个parent
+HEAD^2：HEAD的第2个parent
+
+HEAD^2 != HEAD^1^1
+HEAD~2 == HEAD^1^1
+```
   
 #### 设置单行 pretty-format
+```
+[format]
+pretty = format:"%C(yellow)%h %C(red)%ad %C(green)%<(8)%an %C(cyan)%s"
+```
 
-    [format]
-    pretty = format:"%C(yellow)%h %C(red)%ad %C(green)%<(8)%an %C(cyan)%s"
-    
 #### 设置vim为默认编辑器
-
-    [core]
-        editor = vim
-
+```
+[core]
+    editor = vim
+```
 
 #### 如何使用分支来修问题单
-
-    git branch bugfix01
-  
+```
+git branch bugfix01
+```  
   git会创建一个指针，指向当前的提交（commit），怎么找到当前的提交？通过HEAD，HEAD是一个指向分支的指针（可以理解为指针的指针）。  
   创建完成之后，HEAD还在原来的分支（指向原来的分支），并没有指向新创建的bugfix14。  
   此时，可以查看各个本地分支所指向的commit对象：git log --oneline --decorate，创建完成之后，需要checkout：
-  
-    git checkout bugfix01
+
+```
+git checkout bugfix01
+```
     
   这样HEAD就指向bugfix01分支。以上两条命令可以通过 git checkout -b bugfix01 等价完成。
   创建分支之后，有时候需要切换回master，切换之前最好保证修改已经提交到bugfix01上（即bugxi01已经干净，尽管可以通过stash等命令来绕过）
   如果你想将bugfix01上的修改合并到master上，那么需要先checkout到master分支：
-  
-    $ git checkout master
-    $ git merge bugfix01
+
+```
+$ git checkout master
+$ git merge bugfix01
+```
    
   何明完成之后，需要删除bugfix01分支：
-  
-    $ git branch -d bugfix01
 
+```
+$ git branch -d bugfix01
+```
