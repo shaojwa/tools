@@ -11,6 +11,7 @@ atop中的slab内存了解一下(done)
 #### todo
 
 ```
+https://git-scm.com/book/en/v2/Git-Internals-The-Refspec 了解一下
 ansible工具了解下
 命令ipcs了解一下
 命令mtr了解一下
