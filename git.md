@@ -25,8 +25,8 @@ git push origin master
 git push origin HEAD:refs/for/UniStorOS_V100R001B01
 origin 远程仓库名不是远程主机
 HEAD:refs/for/UniStorOS_V100R001B01是refspec
-HEAD是refspec中的src ref
-refs/for/UniStorOS_V100R001B01是 dst ref
+HEAD是refspec中的src-ref
+refs/for/UniStorOS_V100R001B01是dst-ref
 ```
 
 #### 查看某个commit中某个文件的修改
