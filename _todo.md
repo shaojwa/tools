@@ -11,6 +11,7 @@ atop中的slab内存了解一下(done)
 #### todo
 
 ```
+当进程文件删除之后，gdb挂载之后，为什么无法查看线程？
 https://git-scm.com/book/en/v2/Git-Internals-The-Refspec 了解一下
 ansible工具了解下
 命令ipcs了解一下
