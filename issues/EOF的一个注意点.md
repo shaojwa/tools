@@ -1,0 +1,15 @@
+用here-doc的时候，一定要注意结尾的EOF要定格写：
+```
+ssh root@$node <<EOF
+  mds_id=$(basename $(ls /var/lib/ceph/mds/)  | egrep -o mds[0-9])
+  echo "mds-id is ${mds_id}"
+
+  #cephfs-journal-tool journal reset
+  #ceph mds repaired 0
+
+  echo "reset-failed"
+  systemctl reset-failed ceph-mds@${mds_id}.service
+  echo "restart"
+  systemctl restart ceph-mds.target
+EOF
+```
