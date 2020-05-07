@@ -11,6 +11,7 @@ atop中的slab内存了解一下(done)
 #### todo
 
 ```
+内存泄露工具Valgrind了解
 WARNING REMOTE HOST IDENTIFICATION HAS CHANGED, 在使用mobaXterm的原有标签连接新安装的主机是出现这个提示
 Unfortunately, interactive shells are disabled. 在使用git时出现以上报错，interactive shell 还可以disable么
 当进程文件删除之后，gdb挂载之后，为什么无法查看线程？
