@@ -64,7 +64,9 @@ fwd=fwd1,fsd=fsd1,xfersize=(32k,30,8k,30,4k,40),fileio=random,fileselect=random,
 rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=600,interval=1
 ```
 
-#### 常见问题
+## 常见启动失败原因
 
 1. 总文件容量过大，空间不足
-2. 集群模式下，host不通
+2. vdbench脚本中的java路径错误
+3. 集群模式，host不通，记得配/etc/hosts文件
+4. 集群模式，免密没有配置
