@@ -1,8 +1,17 @@
 20151202
-#### 将已经存在的tab转换为空格
-在已经打开```:set expandtab```开关的基础上，执行```:retab```, 意思就是重新输入tab。
+
+## 最喜欢配色
+```
+industry
+blue
+```
+
+## 将已经存在的tab转换为空格
+
+在已经打开`:set expandtab`开关的基础上，执行`:retab`, 意思就是重新输入tab。
 
 #### modeline
+
 a number of lines at the beginning and end of the file are checked for modelines. 
 
 #### insert 多次
@@ -13,11 +22,13 @@ a number of lines at the beginning and end of the file are checked for modelines
 
 #### 建议配色
 
-    slate
-    darkblue
-    industry
-    elflord
-    ron
+```
+slate
+darkblue
+industry
+elflord
+ron
+```
 
 #### vim 升级后的问题
 
