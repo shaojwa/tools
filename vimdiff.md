@@ -20,6 +20,14 @@ $ vimdiff -d FILE_LEFT  FILE_RIGHT
 Ctrl-w, w
 ```
 
+## 修改配色
+.vimrc 中
+```
+if &diff
+  colorscheme blue
+endif
+```
+
 ## 其他常用命令
 ```
 vimdiff
