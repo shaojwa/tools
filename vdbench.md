@@ -1,6 +1,10 @@
 ## master 和 slave
 master解析配置，实际执行负载的是slave，master的ip从hostname解析出来。slave的ip我们在配置文件中设置。
 
+## fwd=format
+这个是格式化format。在执行每一个fwd之前都会先执行这个。
+
+
 ## 配置
 #### HD 
 host definitions，主机定义，一般只会在多主机测试场景下用。
