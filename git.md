@@ -3,6 +3,10 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
+## git stash
+
+运行之后，会清理working-directroy，可以通过` git stash list`查看已经产生的stash。
+
 ##  ssh 下载 github上ceph的代码
 ```
 git clone git@github.com:ceph/ceph.git
