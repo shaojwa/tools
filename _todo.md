@@ -11,6 +11,15 @@ atop中的slab内存了解一下(done)
 #### todo
 
 ```
+本期内容概要：
+1.	磁盘锁的实现原理。
+2.	磁盘锁是如何实现的。
+3.	磁盘锁如何使用。
+请提前思考以下问题：
+1.	磁盘锁有什么显著的特点？
+2.	什么情况下可以使用磁盘锁？
+3.	磁盘锁有什么优缺点？
+
 内存泄露工具Valgrind了解
 WARNING REMOTE HOST IDENTIFICATION HAS CHANGED, 在使用mobaXterm的原有标签连接新安装的主机是出现这个提示
 Unfortunately, interactive shells are disabled. 在使用git时出现以上报错，interactive shell 还可以disable么
