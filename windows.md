@@ -14,6 +14,7 @@ f10            // Activate the menu bar in the active program
 shift + f10    // Display the shortcut menu for the selected item
 ```
 cpl
+
 ```
 vol [drive:]   // 获取卷分区的序列号
 charmap // 获取字符映射表
@@ -30,7 +31,8 @@ Intl.cpl // 区域和语言
 ```
 
 #### console 系列
-``
+
+```
 control system
 control admintools
 control mouse
