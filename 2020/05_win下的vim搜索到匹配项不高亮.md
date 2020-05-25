@@ -6,4 +6,4 @@ hls 只是一个选项，不是命令。但是关闭hls的nohls是一个命令�
 
 ## 配置默认打开
 
-window是下在_vim中添加 set hls 就可以。
+windows下在_vimrc中添加`set hls`就可以。
