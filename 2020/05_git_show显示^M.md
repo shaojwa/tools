@@ -2,6 +2,10 @@
 
 ## 为什么会显示
 
+git中有一类error叫whitespace error，哪些被当做whitespace error受core.whitespace控制。
+
+默认情况下，结尾的空白符，以及缩进中的被tab紧跟着的空格会当做是whitespace error。
+
 因为 color.diff.whitespace 会显示
 
 ## 如何消除
