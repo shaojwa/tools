@@ -54,4 +54,8 @@ debug1: Trying private key: /c/Users/w13337/.ssh/id_xmss
 debug1: Next authentication method: password
 wsh@192.168.84.199's password:
 ```
-意思就是publickey和password密码登入都需要。
+看起来公钥登入失败了，提示我用密码登入，为什么会失败？网纱查一下是以为内sshd_config中的StrictMode配置为yes，这时候，系统会检查登入的用户wsh的home的权限是否过大，导致对其他用户也开放写权限，如果有开放，说明这个home下的.ssh目录下的
+authorized_keys文件可能被别人修改，也许就不安全。这样ssh就会拒绝链接。
+
+man一下sshd就可以看到： If this file, the ~/.ssh directory, or the user's home directory are writable by other users, then the file could be modified or replaced by unauthorized
+ users.  In this case, sshd will not allow it to be used unless the StrictModes option has been set to “no”.
