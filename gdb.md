@@ -85,7 +85,6 @@ set non-stop on
 
 #### 当前指令位置
 
-    
     p $rip
     
 #### 变量类型
