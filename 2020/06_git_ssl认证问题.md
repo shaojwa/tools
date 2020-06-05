@@ -2,6 +2,7 @@
 ```
 git config --global http.proxy http://shaojwa@proxy.hccc.com:8080
 ```
+配置文件windows也在 ~/.gitconfig
 
 ```
 $ git clone https://github.com/shaojwa/lceph.git
