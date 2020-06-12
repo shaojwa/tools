@@ -1,4 +1,4 @@
-add Binary 'Scancode Map' to Keyboard-Layout kay 
+add Binary `Scancode Map` to Keyboard-Layout kay 
 ```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 ```
