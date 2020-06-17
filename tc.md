@@ -1,5 +1,7 @@
 https://www.ibm.com/developerworks/cn/linux/1412_xiehy_tc/index.html
 
+http://www.tldp.org/HOWTO/html_single/Traffic-Control-HOWTO/
+
 ####  什么是流量控制
 
 tc， traffic control， 流量控制，简称流控，控制网卡进出流量，需要了解网卡工作原理。
