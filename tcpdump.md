@@ -26,5 +26,5 @@
     // icmp request    
     tcpdump -i ethA01-0 host 10.99.68.235 and icmp and icmp -e icmp[icmptype] == 8
     
-    // icmp rely
+    // icmp reply
     tcpdump -i ethA01-0 host 10.99.68.235 and icmp and icmp -e icmp[icmptype] == 0
