@@ -1,0 +1,7 @@
+wireshark抓包windows上的报文，发现报文中的ip报文中有一个字段叫Donet fragment已经被设置。所以ip报文本身必须已经很小，不然会被丢弃。
+IP报文找中有一个字段是Total Length，16位，所以最大大约可以有64k长度。ip报文较大时会进一步拆分为ip分片。ip分片的大小由MTU决定，一般小于1500。
+
+但是在linux下，icmp报文的DF这个标记未并没有设置而是MF被设置。但是tcp报文的ip报文也被设置。
+为什么发出的报文已经被设置？https://tools.ietf.org/html/rfc1191中说，TCP通过这只这个标记来发现PMTU，然后提高性能。
+
+这个问题似乎和ip_no_pmtu_disc这个内核参数有关，如果设置成1，就表示我们不想进行pmtu发现，所以就不会设置DF应该。
