@@ -4,4 +4,4 @@ IP报文找中有一个字段是Total Length，16位，所以最大大约可以�
 但是在linux下，icmp报文的DF这个标记未并没有设置而是MF被设置。但是tcp报文的ip报文也被设置。
 为什么发出的报文已经被设置？https://tools.ietf.org/html/rfc1191中说，TCP通过这只这个标记来发现PMTU，然后提高性能。
 
-这个问题似乎和ip_no_pmtu_disc这个内核参数有关，如果设置成1，就表示我们不想进行pmtu发现，所以就不会设置DF应该。
+这个问题似乎和ip_no_pmtu_disc这个内核参数有关，如果设置成1，就表示我们不想进行pmtu发现，所以就不会设置DF。
