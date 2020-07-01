@@ -1,4 +1,4 @@
 #### mobaxterm
 ```
-F4  // show mobaxterm
+Alt+M  // show/hide mobaXterm
 ```
