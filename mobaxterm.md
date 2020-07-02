@@ -1,6 +1,8 @@
 #### mobaxterm
 ```
-Ctrl+Shift+B // show/hide sidebar
-Alt+M  // show/hide mobaXterm
+// show/hide sidebar
+Ctrl+Shift+B
+// show/hide mobaXterm
+Alt+M  
 Font: MobaFont, size 11
 ```
