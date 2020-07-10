@@ -1,23 +1,19 @@
-#### 显示所有的设置
+#### 常用快捷键
+
+显示所有的设置
 ```
 Ctrl+,
 ```
-#### 显示快捷键
+显示按键绑定
 ```
 Ctrl+K Ctrl+S
 ```
-
-#### 选择颜色主题
-方法1
+选择颜色主题
 ```
 Ctrl+K Ctrl+T
 ```
-方法2
-```
 File > Preferences > Color Theme
 ```
-
-
 ####  智能感知 IntelliSense
 
 ```
