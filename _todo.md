@@ -8,7 +8,7 @@ vfs_cache_pressure对dentries和inode对象的释放影响了解一下（done）
 atop中的slab内存了解一下(done)
 内存泄露工具Valgrind了解(done, 20200606)
 tab键自动补全的机制（done）
-自动补全的原理(done, 需要有专门的shell命令支持）
+自动补全的原理(done, 20200604）
 ```
 
 #### todo
