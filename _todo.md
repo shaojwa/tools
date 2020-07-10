@@ -38,15 +38,12 @@ lowest priority APIC routing
 如果查看占用CPU高的程序？
 cat /sys/block/sda/queue/read_ahead_kb
 echo c > /proc/sysrq-trigger
-/proc/locks 什么作用
 /proc/net/dev
 /proc/net/snmp    
 ifdown和ifconfig区别？
-内存泄露工具Valgrind了解
 
 https://stackoverflow.com/questions/12600330/pop-back-return-value
 http://www.gotw.ca/gotw/008.htm
 https://stackoverflow.com/questions/596162/can-you-remove-elements-from-a-stdlist-while-iterating-through-it
 https://stackoverflow.com/questions/799314/difference-between-erase-and-remove
-
 ```
