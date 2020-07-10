@@ -9,6 +9,7 @@ atop中的slab内存了解一下(done)
 内存泄露工具Valgrind了解(done, 20200606)
 tab键自动补全的机制（done）
 自动补全的原理(done, 20200604）
+/proc/locks是什么(done, 20200710)
 ```
 
 #### todo
