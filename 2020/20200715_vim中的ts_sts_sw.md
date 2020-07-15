@@ -22,4 +22,5 @@ cindent 和smarttab并不矛盾，一开始的缩进单位都是shiftwidth，只
 ```
 所以一般说来，softtabstop一般为0，这样tab输入就是tab，长度有tabstop决定。
 对于缩进来说，一般就是2，这样开头缩进是2，所有移动代码也以最小单位2来进行，比较方便。
+对于写c/cpp代码来说，cindent几乎是必须的，只有smarttab帮助不大。
 ```
