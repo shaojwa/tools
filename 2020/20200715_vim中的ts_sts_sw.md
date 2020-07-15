@@ -16,6 +16,7 @@
 如果 shiftwidth != 0，那么就缩进这么多空格，和tabstop和softtabstop无关。
 如果 shiftwidth == 0，那么缩进的数量就由tabstop决定，和softtabstop无关，是否展开由expandtab决定
 ```
+cindent 和smarttab并不矛盾，一开始的缩进单位都是shiftwidth，只是cindent会计算底基层，需要几次缩进。
 
 #### 总结
 ```
