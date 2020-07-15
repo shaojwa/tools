@@ -1,5 +1,7 @@
-||:-readline|:-vim|:-less|:-tmux|:-source insight|:-vscode|
-|---|---|---|---|---|---|---|
+||readline|vim|less|tmux|source insight|vscode|
+|:-|:-|:-|:-|:-|:-|:-|
+|older cursor position in jump list||ctrl+o|||ctrl-h|alt-h|
+|newer cursor position in jump list||ctrl-i|||ctrl-l|alt-l|
 |one char left|ctrl-b|h|||||
 |one char right|ctrl-f|l|||||
 |one word left|esc-b||||||
