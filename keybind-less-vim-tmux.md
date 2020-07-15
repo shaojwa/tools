@@ -1,13 +1,13 @@
 ||readline|vim|less|tmux|
 |---|---|---|----|-----|
-|one char left|ctrl-b|h|||
-|one char right|ctrl-f|l|||
-|one word left|esc-b||||
-|one word right|esc-f||||
-|one line left|ctrl-a||||
-|one line right|ctrl-e||||
-|one line up||k|k||
-|one line down||j|j||
+|one char left|ctrl-b|h||||
+|one char right|ctrl-f|l||||
+|one word left|esc-b|||||
+|one word right|esc-f|||||
+|one line left|ctrl-a|||||
+|one line right|ctrl-e|||||
+|one line up||k|k|||
+|one line down||j|j|||
 |scroll backward one windows||ctrl-b|ctrl-b||
 |scroll forward one windows||ctrl-f|ctrl-f||
 |move to up windows||ctrl-w ctrl-k|||
