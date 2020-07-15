@@ -1,3 +1,20 @@
+#### 快捷键
+```
+Ctrl+K Ctrl+S // open keyboard shortcuts
+
+// jumps
+Alt+o         // switch header/source
+F12
+
+// edit
+F2            // rename
+Ctl+F2        // change all
+Ctrl+K Ctrl+C // addd line comment
+Ctrl+K Ctrl+U // remvoe line comment
+Ctrl+K Ctrl+F // format selection
+Shift+Alt+F   // format selection
+```
+
 ####  智能感知 IntelliSense
 
 ```
@@ -37,10 +54,6 @@ Workspace Settings
 显示所有的设置
 ```
 Ctrl+,
-```
-显示按键绑定
-```
-Ctrl+K Ctrl+S
 ```
 选择颜色主题
 ```
