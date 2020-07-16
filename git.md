@@ -2,6 +2,10 @@ v0.1@ 20131219
 v0.2@ 20141125  
 v0.3@ 20151127  
 v0.4@ 20160601
+## 目录下的checkout
+```
+git checkout -f dse/dcache/
+```
 
 ## git stash
 
