@@ -28,8 +28,9 @@ ctrl+l // go forward
 
 窗口控制用alt
 ```
-符号窗口 alt+s  // 默认最左面
-工程窗口 alt+p  // 默认最右边
+符号窗口（symbol window） alt+s  // 默认最左面
+项目窗口（project window） alt+p  // 默认最右边
+项目文件列表（project File list） alt+f // 默认最右边
 关系窗口 alt+r
 搜索窗口 ctrl+f // 按惯例沿用
 ```
