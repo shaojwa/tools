@@ -2,9 +2,20 @@ v0.1@ 20131219
 v0.2@ 20141125  
 v0.3@ 20151127  
 v0.4@ 20160601
+
 ## 目录下的checkout
 ```
 git checkout -f dse/dcache/
+```
+
+## 把文件从index中的移出
+不再track，提交后这个文件从库中删除
+```   
+git rm --cached <file_name>
+```
+注意，这个命令会把原先track的文件变为delete，很多时候你的意图并不是这个，只是想把已经add文件回复到add之前，此时应该用reset
+```
+git reset file.cc
 ```
 
 ## git stash
@@ -112,11 +123,6 @@ git reset HEAD <file_name>
 ## 把所有added的文件恢复到unstaged
 ```
 git reset HEAD
-```
-
-## 把文件从index中的移出（即不再track，提交后这个文件自然就不在库中）
-```   
-git rm --cached <file_name>
 ```
  
 ## 分支管理 
