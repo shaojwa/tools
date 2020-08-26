@@ -10,7 +10,7 @@
 |one char right|ctrl-f|l|||ctrl-f||
 |one word left|esc-b||||||
 |one word right|esc-f||||||
-|one line left|ctrl-a|||||ctrl-a||
+|one line left|ctrl-a||||ctrl-a||
 |one line right|ctrl-e||||ctrl-e||
 |one line up||k|k||ctrl-k||
 |one line down||j|j||ctrl-j||
