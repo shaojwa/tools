@@ -3,9 +3,9 @@
 |older cursor position in jump list||ctrl+o|||alt-o|alt-o|
 |newer cursor position in jump list||ctrl-i|||alt-i|alt-i|
 |previous link||||||alt-p|
-|goto definition link||||||ctrl-d|
-|goto phoyotype link||||||ctrl-p|
 |next link|||||alt-i|alt-n|
+|goto definition||||||ctrl-d|
+|goto prototype||||||ctrl-p|
 |one char left|ctrl-b|h|||ctrl-b||
 |one char right|ctrl-f|l|||ctrl-f||
 |one word left|esc-b||||||
