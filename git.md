@@ -24,7 +24,12 @@ git init  # reate empty repository
 #### clone
 ```
 git clone  # clone a repository
-git clone ssh://git@github.com/shaojwa/lang.git  # can not commit
+git clone ssh://git@github.com/shaojwa/lang.git  # cannot commit
+```
+
+#### ssh clone
+```
+git clone git@github.com:ceph/ceph.git
 ```
 
 #### status 
@@ -81,42 +86,6 @@ git checkout  # revert from index to working directory
 git checkout HEAD
 get checkout <tag>
 ```
-
-#### commit  
-```
-git commit -m <message>       # from index to HEAD  
-git commit -a -m <message>    # from working directory to HEAD  
-```
-
-#### stashing changes in Working Directroy
-```
-git stash list
-```
-
-#### ssh clone
-```
-git clone git@github.com:ceph/ceph.git
-```
-
-#### push
-```
-git push <repos> <refspec>  # <refspec>=<src>:<dst>
-```
-repos是远程仓库，不是远程主机，默认是origin
-
-```
-git push https://github.com/shaojwa/leetcode.git master  
-git push origin master
-git push origin HEAD:refs/for/UniStorOS_V100R001B01
-
-HEAD:refs/for/UniStorOS_V100R001B01是refspec，HEAD是refspec中的src-ref，refs/for/UniStorOS_V100R001B01是dst-ref
-```
-
-#### list file of the commit
-```
-git diff --stat 47f5af
-```
-
 #### checkout 
 
 * git checkout <new_branch>
@@ -153,7 +122,44 @@ $ git status
 
 * 手动解决每一个冲突的文件后，git add每一个文件。
 * 最后运行git cherry-pick --continue 来添加提交。
- 
+
+#### commit  
+```
+git commit -m <message>       # from index to HEAD  
+git commit -a -m <message>    # from working directory to HEAD  
+```
+
+#### stashing changes in Working Directroy
+```
+git stash list
+```
+
+#### merge
+branch-name is just the branch pointer, commit is the element of the list.
+1. fast-forward: the branch is in the same list of another.
+1. three-way merge: it has more than one parent.
+
+#### rebase
+```
+git checkout experiment
+git rebase master # replay the changes of experiment on master
+git checkout master
+```
+
+#### push
+```
+git push <repos> <refspec>  # <refspec>=<src>:<dst>
+```
+repos is the remote-repo, not remote-host, default-name is origin
+
+```
+git push https://github.com/shaojwa/leetcode.git master  
+git push origin master
+git push origin HEAD:refs/for/UniStorOS_V100R001B01
+
+HEAD:refs/for/UniStorOS_V100R001B01是refspec，HEAD是refspec中的src-ref，refs/for/UniStorOS_V100R001B01是dst-ref
+```
+
 #### 分支管理 
 ```
 git branch     # list create or delete branched  
@@ -170,6 +176,11 @@ git branch -vv
 * 创建一个和远程跟踪分支同名的本地分支
 ```
 git checkout V100R001 # 本地没有这个分支且远程有这个分支
+```
+
+#### list file of the commit
+```
+git diff --stat 47f5af
 ```
 
 #### diff
@@ -198,7 +209,7 @@ git remote update  # update from remote repository to local repository
 git remote add doc https://github.com/shaojwa/doc.git  # add remote repository  
 ```
 
-#### HEAD^ 和 HEAD~ 的区别
+#### difference of HEAD^ and  HEAD~ 
 一个merge之后的commit就会有两个父提交，first-parent是merged-in的commit，second-parent是被合入的commit。
  
 ~是纵向第几层父节点
