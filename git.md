@@ -5,58 +5,119 @@ v0.4@ 20160601
 
 #### three tree
 ```
-working tree
-index
 HEAD
+Index
+Working Directory
+```
+
+#### default repo-name and branch-name
+```
+origin // repo name
+master // branch name
+```
+
+#### init  
+```
+git init // create empty repository  
+```
+
+#### clone
+```
+git clone // clone a repository
+git clone ssh://git@github.com/shaojwa/lang.git // can not commit
+```
+
+#### status 
+```
+git status  
+```
+
+#### add to index
+```
+git add  <pathspec>
+git add -u // add all update tracked files
+git add .  // all files include untracked files
+```
+
+#### delete from Index
+```
+git rm src/test/dse/dcache/dm/dcache_dm_test.cc // / delete file from index and working directory 
+git rm --cached <file_name> // delete file from the index only, not working directory
+```
+
+#### delete from Working Direcory
+```
+rm src/test/dse/dcache/dm/dcache_dm_test.cc
+```
+
+#### reset 
+```
+git reset --files // reset current HEAD to the specified state  
+```
+
+#### restore the delete of Index
+```
+git reset src/test/dse/dcache/dm/dcache_dm_test.cc
+```
+####  restore the addition of modified files (tracked files) or added files (untracked files)
+```
+git reset HEAD <file_name>
+git reset HEAD // restore all added files to unstaged
 ```
 
 
-#### checkout
+
+#### restore the delete of Working Directory
+```
+git checkout src/test/dse/dcache/dm/dcache_dm_test.cc
+```
+
+#### restore one directory
 ```
 git checkout -f dse/dcache/
 ```
 
-#### 把文件从index中的移出
-不再track，提交后这个文件从库中删除
-```   
-git rm --cached <file_name>
+#### other checkouts
 ```
-注意，这个命令会把原先track的文件变为delete，很多时候你的意图并不是这个，只是想把已经add文件回复到add之前，此时应该用reset
-```
-git reset file.cc
+git checkout  // revert from index to working directory  
+git checkout HEAD
+get checkout <tag>
 ```
 
-#### git stash
+#### commit  
+```
+git commit -m <message> // from index to HEAD  
+git commit -a -m <message> // from working directory to HEAD  
+```
 
-运行之后，会清理working-directroy，可以通过` git stash list`查看已经产生的stash。
+#### stashing changes in Working Directroy
+```
+git stash list
+```
 
-####  ssh 下载 github上ceph的代码
+####  ssh clone
 ```
 git clone git@github.com:ceph/ceph.git
 ```
 
 #### push
-push的语法：
 ```
-git push <repos> <refspec>
-<refspec>=<src>:<dst>
+git push <repos> <refspec> // <refspec>=<src>:<dst>
 ```
 repos是远程仓库，不是远程主机，默认是origin
 
 ```
 git push https://github.com/shaojwa/leetcode.git master  
 git push origin master
-```
-
-```
 git push origin HEAD:refs/for/UniStorOS_V100R001B01
-origin 远程仓库名不是远程主机
-HEAD:refs/for/UniStorOS_V100R001B01是refspec
-HEAD是refspec中的src-ref
-refs/for/UniStorOS_V100R001B01是dst-ref
+
+HEAD:refs/for/UniStorOS_V100R001B01是refspec，HEAD是refspec中的src-ref，refs/for/UniStorOS_V100R001B01是dst-ref
 ```
 
-#### 查看某个commit中某个文件的修改
+#### list file of the commit
+```
+git diff --stat 47f5af
+```
 
 #### checkout 
 
@@ -71,7 +132,7 @@ refs/for/UniStorOS_V100R001B01是dst-ref
 * git checkout -b <new_branch>
 而如果用 git checkout -b <new_branch>时，branch 就是新的分支名，没有指定源分支，所以默认是当前分支。
 
-#### 怎么使用cherry pick
+#### cherry pick
 
 * 在分支b上运行cherry-pick，commit号是分支a上的一个commit(将分支a上的某个提交应用到b上)
 
@@ -81,57 +142,19 @@ get cherry-pick e0e56
 
 * 此时在分支b上运行git status 就可以看到有文件在"Unmerged paths"下：
 
-    
-       $ git status
-       # Unmerged paths:
-       #   (use "git add <file>..." to mark resolution)
-       #
-       #       both modified:      src/a.h
-       #       both modified:      src/b.cc
-       #       both modified:      src/c.cc
-       #       both modified:      src/d.cc
-
+```   
+$ git status
+# Unmerged paths:
+#   (use "git add <file>..." to mark resolution)
+#
+#       both modified:      src/a.h
+#       both modified:      src/b.cc
+#       both modified:      src/c.cc
+#       both modified:      src/d.cc
+```
 
 * 手动解决每一个冲突的文件后，git add每一个文件。
 * 最后运行git cherry-pick --continue 来添加提交。
-
-#### 默认的库以及分支名字
-
-```
-origin 是库的名字
-master 是分支名字
-```
-
-#### 克隆一个库
-```
-git clone // clone a repository
-git clone ssh://git@github.com/shaojwa/lang.git // can not commit
-```
-
-#### 添加文件到index暂存
-```
-git add  <pathspec>
-```
-    
-## ##添加所有修改过的tracked files
-```
-git add -u
-```
-    
-#### 添加当前目录所有的文件到index（包括untracked的文件）
-```
-git add .      
-```
-
-#### 把某个已经add的文件恢复到unstaged（本质上是恢复index）
-```
-git reset HEAD <file_name>
-```
-      
-#### 把所有added的文件恢复到unstaged
-```
-git reset HEAD
-```
  
 #### 分支管理 
 ```
@@ -151,24 +174,6 @@ git branch -vv
 git checkout V100R001 # 本地没有这个分支且远程有这个分支
 ```
 
-#### 把working中的文件更新为index中的文件
-```
-git checkout        // revert from index to working directory  
-git checkout HEAD
-get checkout <tag>
-```
-
-#### reset 
-```
-git reset --files // reset current HEAD to the specified state  
-```
-
-#### commit  
-```
-git commit -m <message> // from index to HEAD  
-git commit -a -m <message> // from working directory to HEAD  
-```
-
 #### diff
 ```
 git diff // diff between work and index  
@@ -179,11 +184,6 @@ git diff --staged // same to above
 git diff --cached HEAD~ // diff between index and remote  
 ```
 
-#### init  
-```
-git init // create empty repository  
-```
-
 #### log
 ```
 git log  
@@ -192,7 +192,6 @@ git log -2
 ```
 
 #### remote
-
 ```
 git remote [-v]  
 // rename remote repository  
@@ -203,27 +202,15 @@ git remote update // update from remote repository to local repository
 git remote add doc https://github.com/shaojwa/doc.git // add remote repository  
 ```
 
-#### rm  
-```
-git rm --cached <file> // remove file from the index only  
-git rm [-f] <file> // file from index and working directory  
-```
-
-#### status 
-```
-git status  
-```
-
 #### HEAD^ 和 HEAD~ 的区别
+一个merge之后的commit就会有两个父提交，first-parent是merged-in的commit，second-parent是被合入的commit。
  
- 一个merge之后的commit就会有两个父提交，first-parent是merged-in的commit，second-parent是被合入的commit。
- 
- ~是纵向第几层父节点
+~是纵向第几层父节点
 ```
 HEAD~ == HEAD~1: HEAD的第一个parent
 HEAD~2 == HEAD~1~1: HEAD的第一个parent的第一个parent
 ```
- ^ 横向第几个父节点
+^ 横向第几个父节点
 ```
 HEAD^ == HEAD^1：HEAD的第一个parent
 HEAD^2：HEAD的第2个parent
@@ -231,42 +218,34 @@ HEAD^2：HEAD的第2个parent
 HEAD^2 != HEAD^1^1
 HEAD~2 == HEAD^1^1
 ```
-  
-#### 设置单行 pretty-format
-```
-[format]
-pretty = format:"%C(yellow)%h %C(red)%ad %C(green)%<(8)%an %C(cyan)%s"
-```
-
-#### 设置vim为默认编辑器
-```
-[core]
-    editor = vim
-```
-
 #### 如何使用分支来修问题单
 ```
 git branch bugfix01
 ```  
-  git会创建一个指针，指向当前的提交（commit），怎么找到当前的提交？通过HEAD，HEAD是一个指向分支的指针（可以理解为指针的指针）。  
-  创建完成之后，HEAD还在原来的分支（指向原来的分支），并没有指向新创建的bugfix14。  
-  此时，可以查看各个本地分支所指向的commit对象：git log --oneline --decorate，创建完成之后，需要checkout：
-
+git会创建一个指针，指向当前的提交（commit），怎么找到当前的提交？通过HEAD，HEAD是一个指向分支的指针（可以理解为指针的指针）。  
+创建完成之后，HEAD还在原来的分支（指向原来的分支），并没有指向新创建的bugfix14。  
+此时，可以查看各个本地分支所指向的commit对象：git log --oneline --decorate，创建完成之后，需要checkout：
 ```
 git checkout bugfix01
-```
-    
-  这样HEAD就指向bugfix01分支。以上两条命令可以通过 git checkout -b bugfix01 等价完成。
-  创建分支之后，有时候需要切换回master，切换之前最好保证修改已经提交到bugfix01上（即bugxi01已经干净，尽管可以通过stash等命令来绕过）
-  如果你想将bugfix01上的修改合并到master上，那么需要先checkout到master分支：
-
+```  
+这样HEAD就指向bugfix01分支。以上两条命令可以通过 git checkout -b bugfix01 等价完成。
+创建分支之后，有时候需要切换回master，切换之前最好保证修改已经提交到bugfix01上（即bugxi01已经干净，尽管可以通过stash等命令来绕过）
+如果你想将bugfix01上的修改合并到master上，那么需要先checkout到master分支：
 ```
 $ git checkout master
 $ git merge bugfix01
-```
-   
+``` 
 完成之后，需要删除bugfix01分支：
-
 ```
 $ git branch -d bugfix01
+```
+#### pretty-format
+```
+[format]
+pretty = format:"%C(yellow)%h %C(red)%ad %C(green)%<(8)%an %C(cyan)%s"
+```
+#### set vim as default-editor
+```
+[core]
+    editor = vim
 ```
