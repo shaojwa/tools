@@ -3,17 +3,31 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
+#### default repo-name and branch-name
+```
+origin     # repo name
+master     # branch name
+```
+
+#### remote branch
+远程分支，不再本地厂库，是远程服务器上的某个分支，名字常常和本地的一样，只是仓库是远程的。
+
+#### Remote-tracking branches
+这是一种本地分支，类似本地的书签，用来跟踪远程分支，一般以origin/master类似的名字命名，但是一般也会叫成远程分支。
+```
+git branch -r  # List the remote-tracking branches.
+````
+
+#### both remote-tracking branches and local branches
+```
+git branch -a # List both remote-tracking branches and local branches.
+```
+
 #### three tree
 ```
 HEAD
 Index
 Working Directory
-```
-
-#### default repo-name and branch-name
-```
-origin     # repo name
-master     # branch name
 ```
 
 #### init  
@@ -86,28 +100,25 @@ git checkout  # revert from index to working directory
 git checkout HEAD
 get checkout <tag>
 ```
+
 #### checkout 
-
-* git checkout <new_branch>
-
 ```
-执行git checkout <branch_name>时，如果branch_name在本地分支中存在，那么就会签出这个本地分支的代码。 
-如果不存在而且，这个分支名匹配到远程库origin中的一个分支，那么将在本地创建一个同名的分支名，跟踪远程的分支。
-所以这种情况就相当于新建一个本地分支（-b）参数，然后这个本地分支跟踪远程的的同名分支。
-即 man git checkout里说的，等同于：git checkout -b <branch> --track <remote>/<branch>
+git checkout <new_branch>    # To prepare for working on <branch>
 ```
-* git checkout -b <new_branch>
-而如果用 git checkout -b <new_branch>时，branch 就是新的分支名，没有指定源分支，所以默认是当前分支。
+
+执行git checkout branch_name时，如果branch_name在本地分支中存在，那么就会签出这个本地分支的代码。 
+如果不存在，而且这个分支名匹配到远程库origin中的一个分支，那么将在本地创建一个同名的本地分支名，并设置这个本地分支的upstream为对应的远程分支。
+```
+git checkout -b <branch> --track <remote>/<branch>
+```
 
 #### cherry pick
 
-* 在分支b上运行cherry-pick，commit号是分支a上的一个commit(将分支a上的某个提交应用到b上)
-
+在check pick的目的分支上运行cherry-pick，commit号是源分支上的一个commit。
 ```
 get cherry-pick e0e56
 ```
-
-* 此时在分支b上运行git status 就可以看到有文件在"Unmerged paths"下：
+ 此时在当前分支上运行git status 就可以看到有文件在Unmerged paths下：
 
 ```   
 $ git status
@@ -119,9 +130,7 @@ $ git status
 #       both modified:      src/c.cc
 #       both modified:      src/d.cc
 ```
-
-* 手动解决每一个冲突的文件后，git add每一个文件。
-* 最后运行git cherry-pick --continue 来添加提交。
+手动解决每一个冲突的文件后，git add每一个文件，最后运行git cherry-pick --continue 来添加提交。
 
 #### commit  
 ```
@@ -135,6 +144,9 @@ git stash list
 ```
 
 #### merge
+```
+git merge hot-fix  # merge hot-fix to the current branch
+```
 branch-name is just the branch pointer, commit is the element of the list.
 1. fast-forward: the branch is in the same list of another.
 1. three-way merge: it has more than one parent.
@@ -160,22 +172,16 @@ git push origin HEAD:refs/for/UniStorOS_V100R001B01
 HEAD:refs/for/UniStorOS_V100R001B01是refspec，HEAD是refspec中的src-ref，refs/for/UniStorOS_V100R001B01是dst-ref
 ```
 
-#### 分支管理 
+#### branch management
 ```
 git branch     # list create or delete branched  
 git branch -r  # list the remote-tracking branches  
 git branch -a  # list remote-tracking branched and local branches
 ```
 
-* 查看本地 branch 对应的的 远程库的upsteam分支信息
+get the upstream info of the local branch
 ```
-git config -l
 git branch -vv
-```
-
-* 创建一个和远程跟踪分支同名的本地分支
-```
-git checkout V100R001 # 本地没有这个分支且远程有这个分支
 ```
 
 #### list file of the commit
@@ -209,50 +215,22 @@ git remote update  # update from remote repository to local repository
 git remote add doc https://github.com/shaojwa/doc.git  # add remote repository  
 ```
 
-#### difference of HEAD^ and  HEAD~ 
-一个merge之后的commit就会有两个父提交，first-parent是merged-in的commit，second-parent是被合入的commit。
- 
-~是纵向第几层父节点
-```
-HEAD~ == HEAD~1: HEAD的第一个parent
-HEAD~2 == HEAD~1~1: HEAD的第一个parent的第一个parent
-```
-^ 横向第几个父节点
-```
-HEAD^ == HEAD^1：HEAD的第一个parent
-HEAD^2：HEAD的第2个parent
-
-HEAD^2 != HEAD^1^1
-HEAD~2 == HEAD^1^1
-```
-#### 如何使用分支来修问题单
-```
-git branch bugfix01
-```  
-git会创建一个指针，指向当前的提交（commit），怎么找到当前的提交？通过HEAD，HEAD是一个指向分支的指针（可以理解为指针的指针）。  
-创建完成之后，HEAD还在原来的分支（指向原来的分支），并没有指向新创建的bugfix14。  
-此时，可以查看各个本地分支所指向的commit对象：git log --oneline --decorate，创建完成之后，需要checkout：
-```
-git checkout bugfix01
-```  
-这样HEAD就指向bugfix01分支。以上两条命令可以通过 git checkout -b bugfix01 等价完成。
-创建分支之后，有时候需要切换回master，切换之前最好保证修改已经提交到bugfix01上（即bugxi01已经干净，尽管可以通过stash等命令来绕过）
-如果你想将bugfix01上的修改合并到master上，那么需要先checkout到master分支：
-```
-$ git checkout master
-$ git merge bugfix01
-``` 
-完成之后，需要删除bugfix01分支：
-```
-$ git branch -d bugfix01
-```
 #### pretty-format
 ```
 [format]
 pretty = format:"%C(yellow)%h %C(red)%ad %C(green)%<(8)%an %C(cyan)%s"
 ```
+
 #### set vim as default-editor
 ```
 [core]
     editor = vim
+```
+
+#### difference of HEAD^ and  HEAD~ 
+merge之后的commit就会有两个父提交，first-parent是merged-in的commit，second-parent是被合入的commit。
+```
+~是纵向第几层父节点，HEAD~ == HEAD~1: HEAD的第一个parent，HEAD~2 == HEAD~1~1: HEAD的第一个parent的第一个parent
+^ 横向第几个父节点,  HEAD^ == HEAD^1：HEAD的第一个parent, HEAD^2：HEAD的第2个parent
+所以，HEAD^2 != HEAD^1^1，HEAD~2 == HEAD^1^1
 ```
