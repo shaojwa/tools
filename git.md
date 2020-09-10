@@ -102,12 +102,11 @@ get checkout <tag>
 ```
 
 #### checkout 
+执行git checkout branch_name时，如果branch_name在本地分支中存在，那么就会签出这个本地分支的代码。 
 ```
 git checkout <new_branch>    # To prepare for working on <branch>
 ```
-
-执行git checkout branch_name时，如果branch_name在本地分支中存在，那么就会签出这个本地分支的代码。 
-如果不存在，而且这个分支名匹配到远程库origin中的一个分支，那么将在本地创建一个同名的本地分支名，并设置这个本地分支的upstream为对应的远程分支。
+如果本地不存在，而分支名能匹配到远程库origin中的一个分支，那将在本地创建一个同名的本地branch，并设置本地分支的upstream为对应的远程分支。
 ```
 git checkout -b <branch> --track <remote>/<branch>
 ```
@@ -230,7 +229,7 @@ pretty = format:"%C(yellow)%h %C(red)%ad %C(green)%<(8)%an %C(cyan)%s"
 #### difference of HEAD^ and  HEAD~ 
 merge之后的commit就会有两个父提交，first-parent是merged-in的commit，second-parent是被合入的commit。
 ```
-~是纵向第几层父节点，HEAD~ == HEAD~1: HEAD的第一个parent，HEAD~2 == HEAD~1~1: HEAD的第一个parent的第一个parent
-^ 横向第几个父节点,  HEAD^ == HEAD^1：HEAD的第一个parent, HEAD^2：HEAD的第2个parent
+~是纵向第几层父节点，HEAD~ == HEAD~1：HEAD的第一个parent，HEAD~2 == HEAD~1~1：HEAD的第一个parent的第一个parent。
+^是横向第几个父节点，HEAD^ == HEAD^1：HEAD的第一个parent，HEAD^2：HEAD的第2个parent
 所以，HEAD^2 != HEAD^1^1，HEAD~2 == HEAD^1^1
 ```
