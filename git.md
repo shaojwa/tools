@@ -12,19 +12,19 @@ Working Directory
 
 #### default repo-name and branch-name
 ```
-origin // repo name
-master // branch name
+origin     # repo name
+master     # branch name
 ```
 
 #### init  
 ```
-git init // create empty repository  
+git init  # reate empty repository  
 ```
 
 #### clone
 ```
-git clone // clone a repository
-git clone ssh://git@github.com/shaojwa/lang.git // can not commit
+git clone  # clone a repository
+git clone ssh://git@github.com/shaojwa/lang.git  # can not commit
 ```
 
 #### status 
@@ -52,17 +52,17 @@ rm src/test/dse/dcache/dm/dcache_dm_test.cc
 
 #### reset 
 ```
-git reset --files // reset current HEAD to the specified state  
+git reset -- <filename>   # reset current HEAD to the specified state  
 ```
 
 #### restore the delete of Index
 ```
-git reset src/test/dse/dcache/dm/dcache_dm_test.cc
+git reset -- src/test/dse/dcache/dm/dcache_dm_test.cc
 ```
 ####  restore the addition of modified files (tracked files) or added files (untracked files)
 ```
 git reset HEAD <file_name>
-git reset HEAD // restore all added files to unstaged
+git reset HEAD   # restore all added files to unstaged
 ```
 
 #### restore the delete of Working Directory
@@ -93,14 +93,14 @@ git commit -a -m <message>    # from working directory to HEAD
 git stash list
 ```
 
-####  ssh clone
+#### ssh clone
 ```
 git clone git@github.com:ceph/ceph.git
 ```
 
 #### push
 ```
-git push <repos> <refspec> // <refspec>=<src>:<dst>
+git push <repos> <refspec>  # <refspec>=<src>:<dst>
 ```
 repos是远程仓库，不是远程主机，默认是origin
 
@@ -156,9 +156,9 @@ $ git status
  
 #### 分支管理 
 ```
-git branch // list create or delete branched  
-git branch -r // list the remote-tracking branches  
-git branch -a // list remote-tracking branched and local branches
+git branch     # list create or delete branched  
+git branch -r  # list the remote-tracking branches  
+git branch -a  # list remote-tracking branched and local branches
 ```
 
 * 查看本地 branch 对应的的 远程库的upsteam分支信息
@@ -174,12 +174,12 @@ git checkout V100R001 # 本地没有这个分支且远程有这个分支
 
 #### diff
 ```
-git diff // diff between work and index  
-git diff HEAD  // diff between workspace and HEAD  
-git diff HEAD~ // diff between workspace and remote  
-git diff --cached // diff between index and head  
-git diff --staged // same to above  
-git diff --cached HEAD~ // diff between index and remote  
+git diff                # diff between work and index  
+git diff HEAD           # diff between workspace and HEAD  
+git diff HEAD~          # diff between workspace and remote  
+git diff --cached       # diff between index and head  
+git diff --staged       # same to above  
+git diff --cached HEAD~ # diff between index and remote  
 ```
 
 #### log
@@ -191,13 +191,11 @@ git log -2
 
 #### remote
 ```
-git remote [-v]  
-// rename remote repository  
-git remote set-url origin https://github.com/shaojwa/man.git  
-// query all branches in remote repository named origin  
-git remote show origin  
-git remote update // update from remote repository to local repository  
-git remote add doc https://github.com/shaojwa/doc.git // add remote repository  
+git remote [-v]
+git remote set-url origin https://github.com/shaojwa/man.git   #  rename remote repository  
+git remote show origin   # query all branches in remote repository named origin  
+git remote update  # update from remote repository to local repository  
+git remote add doc https://github.com/shaojwa/doc.git  # add remote repository  
 ```
 
 #### HEAD^ 和 HEAD~ 的区别
