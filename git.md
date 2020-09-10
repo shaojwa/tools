@@ -32,17 +32,17 @@ git clone ssh://git@github.com/shaojwa/lang.git // can not commit
 git status  
 ```
 
-#### add to index
+#### add to Index
 ```
 git add  <pathspec>
-git add -u // add all update tracked files
-git add .  // all files include untracked files
+git add -u  # add all update tracked files
+git add .   # all files include untracked files
 ```
 
 #### delete from Index
 ```
-git rm src/test/dse/dcache/dm/dcache_dm_test.cc // / delete file from index and working directory 
-git rm --cached <file_name> // delete file from the index only, not working directory
+git rm src/test/dse/dcache/dm/dcache_dm_test.cc   # delete file from index and working directory 
+git rm --cached <file_name>                       # delete file from the index only, not working directory
 ```
 
 #### delete from Working Direcory
@@ -65,8 +65,6 @@ git reset HEAD <file_name>
 git reset HEAD // restore all added files to unstaged
 ```
 
-
-
 #### restore the delete of Working Directory
 ```
 git checkout src/test/dse/dcache/dm/dcache_dm_test.cc
@@ -79,15 +77,15 @@ git checkout -f dse/dcache/
 
 #### other checkouts
 ```
-git checkout  // revert from index to working directory  
+git checkout  # revert from index to working directory  
 git checkout HEAD
 get checkout <tag>
 ```
 
 #### commit  
 ```
-git commit -m <message> // from index to HEAD  
-git commit -a -m <message> // from working directory to HEAD  
+git commit -m <message>       # from index to HEAD  
+git commit -a -m <message>    # from working directory to HEAD  
 ```
 
 #### stashing changes in Working Directroy
