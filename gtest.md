@@ -77,7 +77,6 @@ class IsPrimeParamTest : public::testing::TestWithParam<int>
 };
 ```
 
-
 ----
 #### 死亡测试：专门针对程序的预期崩溃进行测试。
 ```
@@ -102,6 +101,26 @@ testing::FLAGS_gtest_death_test_style = "fast";
 TEST(ExitDeathTest, Demo)
 {
     EXPECT_EXIT(_exit(1),  testing::ExitedWithCode(1),  "");
+}
+```
+
+
+----
+#### 运行参数
+这里说的运行参数，是测试套件（TestSuite）编译后的可执行文件运行时的参数，所以我们可以直接传入在运行命令行传入。
+```
+// --gtest_list_tests 罗列测试用例
+bin/dcache-dm-test --gtest_list_tests
+```
+运行参数建议有三个优先级：命令行参数 > 代码中指定FLAG > 系统环境变量。 
+
+```
+// 代码中用FLAG建议放在testing::InitGoogleTest(&argc, argv) 之前。
+int _tmain(int argc, _TCHAR* argv[])
+{
+    testing::GTEST_FLAG(output) = "xml:";
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
 ```
 
