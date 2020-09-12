@@ -1,14 +1,14 @@
 参考文档： https://github.com/google/googletest/blob/master/googletest/docs/primer.md
 
 ----
-基本概念
+#### 基本概念
 01. https://github.com/google/googletest
 1. 它支持任何类型的测试而不只是单元测试。
 1. 分TEST和TEST_F测试，TEST是针对静态或者全局对象的测试的，TEST_F是专门用来访问对象和子例程的测试模式。
 1. TEST_P就是参数化测试，原先针对不同的值，需要写多个测试用例，现在一个用例就搞定，这个用例里面用到的多个值用参数来指定。
 
 ----
-TEST基本用法
+#### TEST基本用法
 ```
 TEST(TestSuiteName, TestName) {
   ... test body ...
@@ -23,7 +23,7 @@ TEST_F(TestFixtureName, TestName) {
 TestSuite，一般翻译为测试套件，是一系列测试用例的集合，TestName就是测试用例名。
 
 ----
-事件机制，目的是在一些时间点执行一些操作，分三种，1.全局，1.TestSuite级，3.TestCase级。
+#### 事件机制：目的是在一些时间点执行一些操作。分三种，1.全局，1.TestSuite 级别，3.TestCase 级别。
 ```
 // 全局
 class FooEnvironment : public testing::Environment
@@ -39,7 +39,7 @@ public:
     }
 };
 
-// TestSuite 级
+// TestSuite 级别
 class FooTest : public testing::Test {
  protected:
   static void SetUpTestCase()
@@ -53,7 +53,7 @@ class FooTest : public testing::Test {
   }
 };
 
-// TestCase级
+// TestCase 级别
 class FooCalcTest:public testing::Test
 {
 protected:
@@ -69,7 +69,7 @@ protected:
 ```
 
 ----
-参数化
+#### 参数化
 ```
 你必须添加一个类，继承testing::TestWithParam<T>
 class IsPrimeParamTest : public::testing::TestWithParam<int>
@@ -79,7 +79,7 @@ class IsPrimeParamTest : public::testing::TestWithParam<int>
 
 
 ----
-死亡测试：专门针对程序的预期崩溃进行测试。
+#### 死亡测试：专门针对程序的预期崩溃进行测试。
 ```
 ASSERT_DEATH(statement, regex`);
 EXPECT_DEATH(statement, regex`);
@@ -97,7 +97,6 @@ testing::KilledBySignal(signal_number)  # 如果程序被signal_number信号kill
 testing::FLAGS_gtest_death_test_style = "threadsafe";
 testing::FLAGS_gtest_death_test_style = "fast";
 ```
-
 用法
 ```
 TEST(ExitDeathTest, Demo)
@@ -106,11 +105,8 @@ TEST(ExitDeathTest, Demo)
 }
 ```
 
-常见的
-
-
 ----
-其他
+#### 其他
 1. 其他的宏
 ```
 SUCCEED();                       # 测试用例直接返回成功
