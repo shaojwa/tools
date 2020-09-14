@@ -13,13 +13,23 @@
 TEST(TestSuiteName, TestName) {
   ... test body ...
 }
+```
+1. TestSuiteName 和 TestName 都必须是可用的c++标识符并且不能包含下划线。
+1. 一个测试用例的全名（fullname）包括TestSuiteName.TestName。
+1. 不同的TestSuitName下可以有相同的TestName。
+1. 逻辑相关的测试用例应该在一个TestSuite中。
 
+
+#### TEST_F: Test Fixture
+1. 什么时候需要？ 当你发现有好几个测试用例针对的都是类似的数据时，也就是当有重用数据的需要时，可以考虑。
+1. 先要派生出一个类，testing::Test，因为我们需要从子类中访问特定的成员。
+```
 TEST_F(TestFixtureName, TestName) {
   ... test body ...
 }
-
-// TEST 和 TEST_F 的区别是
 ```
+#### TEST 和 TEST_F 的区别是
+
 TestSuite，一般翻译为测试套件，是一系列测试用例的集合，TestName就是测试用例名。
 
 ----
@@ -133,6 +143,6 @@ EXPECT_ANY_THROW(Foo(10, 0));    # 期望得到任何的异常
 EXPECT_THROW(Foo(0, 5), char*);  # 期望得到char* 类型的异常
 ASSERT_PRED1(pred1, val1);       # pred1(val1) returns true
 ASSERT_PRED2(pred2, val1, val2); # pred2(val1, val2) returns true
-EXPECT_PRED1(pred1, val1);	     # pred1(val1) returns true
+EXPECT_PRED1(pred1, val1);       # pred1(val1) returns true
 EXPECT_PRED2(pred2, val1, val2); # pred2(val1, val2) returns true
 ```
