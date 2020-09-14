@@ -28,6 +28,8 @@ TEST_F(TestFixtureName, TestName) {
   ... test body ...
 }
 ```
+1. fixture test 需要一个固定类 fixtrue class，在这个类中需要重载一些函数。
+
 #### TEST 和 TEST_F 的区别是
 
 TestSuite，一般翻译为测试套件，是一系列测试用例的集合，TestName就是测试用例名。
