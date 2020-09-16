@@ -8,7 +8,7 @@
 /var/lib/publog/logrotate_ceph 中描述把 /var/log/ceph/*.log的日志替换到 /var/log/storage/backup/
 ```
 
-####　man logrotate
+#### man logrotate
 
 * logrotate 设计的目的就是为了更好的管理系统产生的大量日志。
 * log允许自动的轮换，压缩，删除，邮递。
