@@ -20,7 +20,20 @@ mock一般称为模拟，对待测对象行为（也就是接口）的模拟。
 1. gMock也可以模拟non-virtual方法，这种情况下，不需要继承基类，定义两个不相关的类。
 1. gMock可以模拟free-function，就是c-style function，或者 static method。
 
-#### 
+####  Nice, Strict, Naggy
+没有指定EXPECT_CALL的模拟方法被调用，被称为uninteresting call。那么这个mock方法将会调用ON_CALL指定的行为。
+
+
+#### 一条重要的C++ rule
+C++'s general rule: if a constructor or destructor calls a virtual method of this object, that method is treated as non-virtual. 
+In other words, to the base class's constructor or destructor, this object behaves like an instance of the base class, not the derived class.
+This rule is required for safety.
+
+#### 在不破坏原有代码的前提下简化接口
+
+#### 把一个non-virtual接口变成virtual接口是一个很重大的决定
+
+建议引入接口类。
 
 #### ON_CALL
 
@@ -40,5 +53,3 @@ EXPECT_CALL(turtle, PenDown()).Times(AtLeast(1));
 #### cardinality
 
 #### Sticky
-
-
