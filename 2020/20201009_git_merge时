@@ -1,0 +1,10 @@
+git merge时报错：
+```
+[wsh@dev ~/git]$ git merge
+fatal: No commit specified and merge.defaultToUpstream not set.
+```
+因为merge需要指定branch
+```
+git merge origin/UniStorOS-V100R001B51D001_AF
+```
+注意必须要有origin，这样才表示是远程跟踪分支，不然表示的是自己，自己merge自己是没有意义的。
