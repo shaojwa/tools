@@ -3,6 +3,9 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
+#### 先fetch 在merge
+如果你先把本地的文件staged（比如add进去），然后远程分支上有更新，此时git pull吗，如果有冲突，那pull会出错。
+
 #### default repo-name and branch-name
 ```
 origin     # repo name
