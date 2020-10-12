@@ -18,6 +18,10 @@ jump-list 中较老的光标位置
 ctrl+o
 ```
 
+#### 查看jump-list
+```
+:jump
+```
 
 #### tab 打开多个文件
 ```
