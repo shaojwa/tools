@@ -241,3 +241,14 @@ yw  // 拷贝从当前字符到下一个单词开始
 
 搜一下看到说是`backspace`为空导致，正常情况下是`backspace=indent,eol,start`，表示可以删除`indent / eol`。
 8.0以后，如果没有`user vimrc`，才会把`backspace`设置为`indent,eol,start`,否则为空。查看版本为 version 8.1.1777，将`.vimrc`文件改名后，backspace恢复正常。
+
+
+#### encoding fileencoding fileencodings
+1. encoding 是vim内部用的编码格式，用在buffer中，register中，以及viminfo等文件的存储中。
+
+#### fileencoding
+这是buffer本地配置，是当前buffer对应的file使用的encode。如果filecoding和encoding不一样，在写入文件的时候转换会自动发生。
+在读的时候，fileencoding会从fileencodings中选一个可用的。
+
+#### fileencodings
+这是global配置，读取文件的时候会使用，会将fileencoding设置为fileencodings中的一个。
