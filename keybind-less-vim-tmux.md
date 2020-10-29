@@ -10,8 +10,9 @@
 |one char right|ctrl-f|l|||ctrl-f||
 |one word left|esc-b||||||
 |one word right|esc-f||||||
-|one line left|ctrl-a||||ctrl-a||
-|one line right|ctrl-e||||ctrl-e||
+|beginning-of-line|ctrl-a|0|||ctrl-a||
+|end-of-line|ctrl-e||||ctrl-e||
+|non-blank beginning-of-line||^|||||
 |one line up||k|k||ctrl-k||
 |one line down||j|j||ctrl-j||
 |scroll backward one windows||ctrl-b|ctrl-b|||
