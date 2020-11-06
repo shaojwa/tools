@@ -8,6 +8,8 @@
 |end-of-line|ctrl-e||||ctrl-e||
 |kill-word|alt-d||||||
 |unix-word-rubout|ctrl-w||||||
+|indent-left|||||ctrl-<||
+|indent-rigfht|||||ctrl->||
 |older cursor position in jump list||ctrl+o|||alt-o|alt-o|
 |newer cursor position in jump list||ctrl-i|||alt-i|alt-i|
 |previous link|||||alt-p||
