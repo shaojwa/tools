@@ -1,17 +1,19 @@
 ||readline|vim|less|tmux|source insight|vscode|
 |:-|:-|:-|:-|:-|:-|:-|
-|older cursor position in jump list||ctrl+o|||alt-o|alt-o|
-|newer cursor position in jump list||ctrl-i|||alt-i|alt-i|
-|previous link|||||alt-p||
-|next link|||||alt-n||
-|goto definition|||||ctrl-d||
-|goto prototype|||||ctrl-p||
 |one char left|ctrl-b|h|||ctrl-b||
 |one char right|ctrl-f|l|||ctrl-f||
 |one word left|esc-b||||||
 |one word right|esc-f||||||
 |beginning-of-line|ctrl-a|0|||ctrl-a||
 |end-of-line|ctrl-e||||ctrl-e||
+|kill-word|alt-d||||||
+|unix-word-rubout|ctrl-w||||||
+|older cursor position in jump list||ctrl+o|||alt-o|alt-o|
+|newer cursor position in jump list||ctrl-i|||alt-i|alt-i|
+|previous link|||||alt-p||
+|next link|||||alt-n||
+|goto definition|||||ctrl-d||
+|goto prototype|||||ctrl-p||
 |non-blank beginning-of-line||^|||||
 |one line up||k|k||ctrl-k||
 |one line down||j|j||ctrl-j||
