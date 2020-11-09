@@ -1,0 +1,2 @@
+add_dependencies，可以指定顶层target的编译顺序，某些target的build必须等其他build完成之后才可以build。
+而target_link_library()不会指定这种先后顺序，只是表示某个taget链接的时候需要什么lib。
