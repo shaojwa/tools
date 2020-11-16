@@ -3,6 +3,12 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
+#### 看某个commit中某个文件的修改
+https://stackoverflow.com/questions/44245286/git-see-changes-to-a-specific-file-by-a-commit
+```
+git show commit -- <path-to-file>
+```
+
 #### 查看只与指定目录相关的提交记录并显示修改的文件名
 ```
 git log --name-only .
