@@ -68,7 +68,7 @@
 
 以上在创建分区的时候指定文件类型，但是创建完成print，如上所示，FileSytem 并没有看到 xfs，过 mount -t xfs 尝试挂载也会报错，暂时不清楚原因，但是此时分区已经建立。
 
-* 此时已经存在分区，通过mkfs.xfs 命令来唉创建xfs文件系统
+* 此时已经存在分区，通过mkfs.xfs 命令创建xfs文件系统
 
         $ sudo mkfs.xfs -f /dev/sdp
         meta-data=/dev/sdp               isize=512    agcount=4, agsize=29293888 blks
@@ -97,7 +97,7 @@
     
     可以看到此时的print打印的字段比用mkfs命令前print显示的少，没有Name字段，不清楚原因，网上都是通过mkfs.xfs的方式来格式化。
 
-* 通过 mount -t /dev/sdp1 /home/wsh 来挂载，注意sdp1中的1不能省略。
+* 通过 mount /dev/sdp1 /home/wsh 来挂载，注意sdp1中的1不能省略。
 
 * 最后如果想开机挂载，需要编辑/etc/fstab 文件。
 
