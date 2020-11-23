@@ -8,12 +8,14 @@ thread apply all continue
 gdb --command=gdbcmd1 routine
 ```
 
-#### 基本概念
-```
+#### CLI
 CLI commands：Commnad Line Interface
-MI commands：Machine Interface。独立于常用的CLI命令，是给调试前端用的接口，实现类似libgdb功能。
-```
-#### 异步执行
+
+#### MI
+MI commands：Machine Interface。
+独立于常用的CLI命令，是给调试前端用的接口，实现类似libgdb功能。
+
+#### async
 ```
 set target-async on
 ```
