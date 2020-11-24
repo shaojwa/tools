@@ -9,3 +9,7 @@ Merge: d0957d3 5da1138
 git show --stat 9cce9672^1
 git show --stat 9cce9672^2
 ```
+或者：
+```
+git cat-file -p 9cce9672
+```
