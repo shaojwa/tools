@@ -35,8 +35,7 @@
 1. Ctrl+Shift+C， 只复制格式。
 
 #### 字体设置
-1. Ctrl+t，打开【字体】对话框更改字体。
-1. Ctrl+Shift+F，打开【字体】对话框更改字体。
+1. Ctrl+T，打开【字体】对话框更改字体。同，Ctrl+Shift+F，打开【字体】对话框更改字体。
 1. Ctrl+\]， 同Ctrl+Shift+>，增大字号。
 1. Ctrl+\[， 同trl+Shift+<，减小字号。
 1. Ctrl+B，应用加粗格式。
