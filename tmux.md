@@ -1,8 +1,13 @@
-#### tmux attch
+#### tmux attach
 
-#### 光标上下移动
+#### enter copy mode to copy text or view history
 ```
 ctrl-b [ 之后可以 Up/PgUp/Down/PgDown
+```
+
+#### quit copy-mode
+```
+q
 ```
 
 #### 进入 copy模式之后用vi的快捷键
