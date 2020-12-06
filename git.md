@@ -3,7 +3,16 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
-#### 看某个commit中某个文件的修改
+#### local branches
+```
+.git/refs/heads
+```
+####  remote-tracking branches
+```
+.git/refs/remotes/<remote>/.
+```
+
+#### show change of particular file in the specified commit
 https://stackoverflow.com/questions/44245286/git-see-changes-to-a-specific-file-by-a-commit
 ```
 git show commit -- <path-to-file>
@@ -15,7 +24,7 @@ git log --name-only .
 ```
 
 #### 先fetch 在merge
-如果你先把本地的文件staged（比如add进去），然后远程分支上有更新，此时git pull吗，如果有冲突，那pull会出错。
+如果你先把本地的文件 cached（比如add进去），然后远程分支上有更新，此时git pull吗，如果有冲突，那pull会出错。
 
 #### default repo-name and branch-name
 ```
