@@ -1,5 +1,11 @@
 需要关注的默认快捷键
 ```
+alt+s 符号窗口（symbol window） 
+alt+p 项目窗口（project window）
+alt+f 项目文件列表（project File list）
+alt+r 关系窗口
+ctrl+f 搜索窗口
+
 高亮关键字开关 f8
 下一个相同符号 f12
 语法格式化开关 alt + f12
@@ -24,15 +30,6 @@ ctrl+h // go back
 ctrl+k // go previous link
 ctrl+j // go next link
 ctrl+l // go forward
-```
-
-窗口控制用alt
-```
-符号窗口（symbol window） alt+s  // 默认最左面
-项目窗口（project window） alt+p  // 默认最右边
-项目文件列表（project File list） alt+f // 默认最右边
-关系窗口 alt+r
-搜索窗口 ctrl+f // 按惯例沿用
 ```
 
 代码修改用alt
