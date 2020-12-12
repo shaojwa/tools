@@ -20,6 +20,11 @@ git stash show stash@{1}
 git stash show -p stash@{1} // in patch form
 ```
 
+#### shot stash timestamp
+```
+git stash list --date=local
+```
+
 #### local branches
 ```
 .git/refs/heads
