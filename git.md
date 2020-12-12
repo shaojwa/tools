@@ -3,6 +3,17 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
+##### get the log of the specified file
+```
+git log src/test/dse/dcache/CMakeLists.txt
+```
+
+#### get the change of the particular file on the specified commit
+https://stackoverflow.com/questions/44245286/git-see-changes-to-a-specific-file-by-a-commit
+```
+git show <commit> -- <file>
+```
+
 #### local branches
 ```
 .git/refs/heads
@@ -10,12 +21,6 @@ v0.4@ 20160601
 ####  remote-tracking branches
 ```
 .git/refs/remotes/<remote>/.
-```
-
-#### show change of particular file in the specified commit
-https://stackoverflow.com/questions/44245286/git-see-changes-to-a-specific-file-by-a-commit
-```
-git show commit -- <path-to-file>
 ```
 
 #### 查看只与指定目录相关的提交记录并显示修改的文件名
