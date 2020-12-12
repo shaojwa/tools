@@ -14,6 +14,12 @@ https://stackoverflow.com/questions/44245286/git-see-changes-to-a-specific-file-
 git show <commit> -- <file>
 ```
 
+#### Show the changes recorded in the stash as a diff 
+```
+git stash show stash@{1}
+git stash show -p stash@{1} // in patch form
+```
+
 #### local branches
 ```
 .git/refs/heads
