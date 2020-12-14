@@ -1,9 +1,9 @@
 ||readline|vim|less|tmux|source insight|vscode|
 |:-|:-|:-|:-|:-|:-|:-|
-|one char left|ctrl-b|h|||ctrl-b||
-|one char right|ctrl-f|l|||ctrl-f||
-|one word left|esc-b||||||
-|one word right|esc-f||||||
+|one char left|ctrl-b|h|||ctrl-h||
+|one char right|ctrl-f|l|||ctrl-l||
+|one word left|esc-b||||ctrl-b||
+|one word right|esc-f||||ctrl-f||
 |beginning-of-line|ctrl-a|0|||ctrl-a||
 |end-of-line|ctrl-e||||ctrl-e||
 |kill-word|alt-d||||||
