@@ -17,14 +17,14 @@ ctrl-d // 往前删一个字符
 alt-b esc-b // 往后移动一个词
 alt-f esc-f // 往前移动一个词
 
-ctrl-w // 往后删一个词
-alt-d esc-d // 往前删一个词
+ctrl-w // 往左删一个词
+alt-d  // 往右删一个词 (= esc-d)
 
 ctrl-x ctrl-u // undo 回退
 ctrl-_ // 回退
 ctrl-y // 粘贴前一次通过ctrl-w或alt-d删除的词
-ctrl-t // 互换两个字符
-esc-t  // 互换两个词
+ctrl-t // 互换两个字符 (transpose char)
+esc-t  // 互换两个词 (transpose word)
 ctrl-l // 清屏
 ctrl-j
 ctrl-g
