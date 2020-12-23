@@ -154,7 +154,7 @@ git checkout -b <branch> --track <remote>/<branch>
 
 在check pick的目的分支上运行cherry-pick，commit号是源分支上的一个commit。
 ```
-get cherry-pick e0e56
+git cherry-pick e0e56
 ```
  此时在当前分支上运行git status 就可以看到有文件在Unmerged paths下：
 
