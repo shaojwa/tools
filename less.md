@@ -1,5 +1,5 @@
-https://www.thegeekstuff.com/2010/02/unix-less-command-10-tips-for-effective-navigation/
-https://www.thegeekstuff.com/2009/04/linux-less-command-open-view-different-files-less-is-more/
+1. https://www.thegeekstuff.com/2010/02/unix-less-command-10-tips-for-effective-navigation/
+1. https://www.thegeekstuff.com/2009/04/linux-less-command-open-view-different-files-less-is-more/
 
 #### 10 tips
 1. I personally prefer to use less command to view files.
