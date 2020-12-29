@@ -11,6 +11,8 @@
 
 #### jump
 ```
+g             // begin of file
+shift-g       // end of file
 [N]g          // goto line N
 [n]p          // go to N percent
 less +10      // 10 is a command of less
@@ -34,8 +36,6 @@ ctrl+f or f   // forward one windows
 ctrl+b or b   // backward one windows
 ctrl+d or d   // forward half windows (d is down)
 ctrl+u or u   // backward half windows (u is up)
-G             // go to the end of file
-g             // go to the start of file
 q or ZZ       // exit the less pager
 10j           // 10 lines forward.
 10k           // 10 lines backward.
