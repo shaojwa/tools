@@ -1,7 +1,7 @@
 1. https://www.thegeekstuff.com/2010/02/unix-less-command-10-tips-for-effective-navigation/
 1. https://www.thegeekstuff.com/2009/04/linux-less-command-open-view-different-files-less-is-more/
 
-#### 10 tips
+#### summary
 1. I personally prefer to use less command to view files.
 1. less allows both forward and backward movements.
 1. less donot require to load the whole file before viewing. 
