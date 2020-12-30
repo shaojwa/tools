@@ -119,7 +119,11 @@ set non-stop on
 #### 显示汇编代码
 
     set disassemble-next-line on
-    intel格式	set disassembly-flavor intel
+
+#### 设置汇编样式
+```
+set disassembly-flavor intel
+```
     
 #### 查看内存内容
 
