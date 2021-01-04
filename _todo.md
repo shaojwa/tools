@@ -1,19 +1,5 @@
-#### done
-```
-网络丢包模拟工具tc(done)
-logrotate基本用法(done)
-excel锁定一行(done)
-什么是 UP Machine (done) UP就是uniprocessor, 单处理器
-vfs_cache_pressure对dentries和inode对象的释放影响了解一下（done）
-atop中的slab内存了解一下(done)
-内存泄露工具Valgrind了解(done, 20200606)
-tab键自动补全的机制（done）
-自动补全的原理(done, 20200604）
-/proc/locks是什么(done, 20200710)
-```
-
 #### todo
-
+1. http://linuxperf.com/?p=102
 ```
 磁盘锁的实现原理,使用方法，优缺点
 WARNING REMOTE HOST IDENTIFICATION HAS CHANGED, 在使用mobaXterm的原有标签连接新安装的主机是出现这个提示
@@ -47,4 +33,18 @@ https://stackoverflow.com/questions/12600330/pop-back-return-value
 http://www.gotw.ca/gotw/008.htm
 https://stackoverflow.com/questions/596162/can-you-remove-elements-from-a-stdlist-while-iterating-through-it
 https://stackoverflow.com/questions/799314/difference-between-erase-and-remove
+```
+
+#### done
+```
+网络丢包模拟工具tc(done)
+logrotate基本用法(done)
+excel锁定一行(done)
+什么是 UP Machine (done) UP就是uniprocessor, 单处理器
+vfs_cache_pressure对dentries和inode对象的释放影响了解一下（done）
+atop中的slab内存了解一下(done)
+内存泄露工具Valgrind了解(done, 20200606)
+tab键自动补全的机制（done）
+自动补全的原理(done, 20200604）
+/proc/locks是什么(done, 20200710)
 ```
