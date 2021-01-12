@@ -5,7 +5,7 @@ v0.4@ 20160601
 
 ####  show log graph
 ```
-git log --graph
+git log --graph // draw graphical commit history
 ```
 
 ##### get the log of the specified file
