@@ -3,6 +3,11 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
+####  show log graph
+```
+git log --graph
+```
+
 ##### get the log of the specified file
 ```
 git log src/test/dse/dcache/CMakeLists.txt
