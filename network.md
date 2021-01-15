@@ -6,14 +6,14 @@ Inferface: local netcard ip
 after adding 2 default-gateway 172.16.84.1 and 192.168.84.1
 ```
 Active Routes:
-Network Destination     Netmask     Gateway     Interface       Metric
-            0.0.0.0     0.0.0.0     10.99.68.1  10.99.68.176    10
-            0.0.0.0     0.0.0.0     172.16.84.1 172.16.84.141   266
+Network Destination     Netmask     Gateway                 Interface       Metric
+            0.0.0.0     0.0.0.0     10.99.68.1              10.99.68.176    10
+            0.0.0.0     0.0.0.0     172.16.202.254          172.16.84.141   266
             
 Persistent Routes:
 Network Destination     Netmask     Gateway                 Metric
-            0.0.0.0     0.0.0.0     172.16.84.1             Default
-            0.0.0.0     0.0.0.0     192.168.84.1            Default  
+            0.0.0.0     0.0.0.0     172.16.202.254          Default
+
 ```
 Persistent Routes: manually configed Gateway
 
