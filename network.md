@@ -1,6 +1,6 @@
 #### route print
 ```
-O-link:
+On-link:
 Inferface: local netcard ip
 ```
 after adding 2 default-gateway 172.16.84.1 and 192.168.84.1
