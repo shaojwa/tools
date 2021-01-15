@@ -67,6 +67,10 @@ tracert, goto gateway 10.99.68.1, because the first route
 6.          10.132.32.201
 ```
 
+#### add route
+```
+route add 182.200.0.0/16 182.100.0.1
+```
 
 #### clear the DNS cache on Microsoft Windows
 ```
