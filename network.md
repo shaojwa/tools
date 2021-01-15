@@ -15,6 +15,7 @@ Network Destination     Netmask     Gateway                 Metric
             0.0.0.0     0.0.0.0     172.16.84.1             Default
             0.0.0.0     0.0.0.0     192.168.84.1            Default  
 ```
+Persistent Routes: manually configed Gateway
 
 #### bnet
 ```
