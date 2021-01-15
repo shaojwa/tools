@@ -67,5 +67,7 @@ tracert, goto gateway 10.99.68.1, because the first route
 ```
 
 
-#### 刷缓存
-net cache flush
+#### clear the DNS cache on Microsoft Windows
+```
+ipconfig /flushdns
+```
