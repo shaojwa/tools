@@ -12,10 +12,10 @@
 |unix-word-rubout|ctrl-w||||||
 |indent-left|||||ctrl-<||
 |indent-rigfht|||||ctrl->||
-|older cursor position in jump list||ctrl+o|||alt-o|alt-o|
-|newer cursor position in jump list||ctrl-i|||alt-i|alt-i|
-|previous link|||||alt-p||
-|next link|||||alt-n||
+|older cursor position in jump list||ctrl+o|||ctrl-o|alt-o|
+|newer cursor position in jump list||ctrl-i|||ctrl-i|alt-i|
+|previous link|||||ctrl-p||
+|next link|||||ctrl-n||
 |goto definition|||||ctrl-d||
 |goto prototype|||||ctrl-p||
 |non-blank beginning-of-line||^|||||
