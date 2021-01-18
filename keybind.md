@@ -4,8 +4,8 @@
 |:-|:-|:-|:-|:-|:-|:-|
 |one char left|ctrl-b|h|||ctrl-h||
 |one char right|ctrl-f|l|||ctrl-l||
-|one word left|esc-b||||ctrl-b||
-|one word right|esc-f||||ctrl-f||
+|one word left|alt-b/esc-f||||ctrl-b||
+|one word right|alt-f/esc-f||||ctrl-f||
 |beginning-of-line|ctrl-a|0|||ctrl-a||
 |end-of-line|ctrl-e||||ctrl-e||
 |kill-word|alt-d||||||
