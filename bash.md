@@ -12,7 +12,8 @@ $
 #### expr
 do NOT use expr any more in bash 
 ```
-echo "lun$j+`expr \( $i + 1 \) \* 256`"
+i=0; j=1; echo "lun$i+`expr \( $j + 1 \) \* 256`"
+i=0; j=1; echo "lun$i+$((($j+1)*256))"
 ```
 
 #### bash
