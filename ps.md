@@ -1,3 +1,9 @@
+#### 按CPU占用率排序进程
+```
+ps aux --sort -pcpu 
+top -bn1 -o %CPU
+```
+
 #### 查看线程
 ```
 查看线程	–Tp
