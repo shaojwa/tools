@@ -1,3 +1,22 @@
+#### unset
+```
+$ i=1
+$ echo $i
+1
+$ unset i
+$ echo $i
+
+$
+```
+
+#### expr
+do NOT use expr any more in bash 
+```
+echo "lun$j+`expr \( $i + 1 \) \* 256`"
+```
+
+#### bash
+
 bash是一个运行环境，运行环境本身有选项(OPTIONS)，参数(ARGUMENTS)，调用方式(INVOCATION)，运行环境支持自己的语言，所以有定义(DEFINITIONS)，保留字(RESERVED WORDS)，以及语法（GRAMMER），当然还有 EXIT STATUS 以及 BUILTIN COMMANDS 等等。
 
 当看到一个用法时，可以先考虑下这是属于什么部分的内容，比如test，shopt 就是BUILTIN COMMANDS。 星号的用法属于EXPANSION 大类下的pathname expansion下小类， bash光大类就有十几个，这是最基本的分配。
