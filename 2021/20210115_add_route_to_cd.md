@@ -1,7 +1,8 @@
-windows cmd
+#### Windows 命令行
+配置路由，-p表示持久化persistent，默认情况下，路由在重启之后并不保留，当然对route的其他子命令来说，-p没有作用。
 ```
 // 172.20.0.0 local-net
 // 255.255.0.0 mask
 // 182.200.0.1 gateway
-route add -p 172.20.0.0 mask 255.255.0.0 182.200.0.1
+route -p add  172.20.0.0 mask 255.255.0.0 182.200.0.1
 ```
