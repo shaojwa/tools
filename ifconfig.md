@@ -10,7 +10,7 @@ ifconfig eth1:0 172.16.84.199/24
 
 #### ifup 和 ifconfig <interface> up 的区别
 
-根据https://access.redhat.com/solutions/27166的解释：
+根据redhat的解释(https://access.redhat.com/solutions/27166)：
 
 1. ifconfig直接控制interface，而ifup/ifdown是执行network-scripts下的脚本。
 1. ifconfig up eth0" 只是启用网口，但是并不设置IP地址，而ifdown一般会直接设置ip地址。
