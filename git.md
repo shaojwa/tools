@@ -196,9 +196,8 @@ branch-name is just the branch pointer, commit is the element of the list.
 
 #### rebase
 ```
-git checkout experiment
-git rebase master # replay the changes of experiment on master
-git checkout master
+# current branch is "topic"
+git rebase master # replay the changes of master to topic
 ```
 
 #### push
