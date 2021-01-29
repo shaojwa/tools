@@ -173,3 +173,4 @@ error: Failed dependencies:
         libldb.so.1(LDB_1.1.30)(64bit) is needed by (installed) samba-client-libs-0:4.10.16-5.el7.x86_64
         libldb.so.1(LDB_1.3.0)(64bit) is needed by (installed) samba-client-libs-0:4.10.16-5.el7.x86_64
 ```
+没办法，网上找找：https://bugzilla.redhat.com/show_bug.cgi?id=1736013
