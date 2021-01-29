@@ -26,9 +26,7 @@
 yum list tmux
 
 #### show detrail infos of package
-
-          yum provides <package>
-          yum whatprovides <package>
-
-yum provides ifconfig
-yum whatprovides ifconfig
+```
+yum provides <package>
+yum whatprovides <package>
+```
