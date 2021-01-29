@@ -173,4 +173,43 @@ error: Failed dependencies:
         libldb.so.1(LDB_1.1.30)(64bit) is needed by (installed) samba-client-libs-0:4.10.16-5.el7.x86_64
         libldb.so.1(LDB_1.3.0)(64bit) is needed by (installed) samba-client-libs-0:4.10.16-5.el7.x86_64
 ```
-没办法，网上找找：https://bugzilla.redhat.com/show_bug.cgi?id=1736013
+没办法，网上找找：`https://bugzilla.redhat.com/show_bug.cgi?id=1736013`，换成其他的包安装都类似。然后想看看，samba卸载之后，库还在不在，结果发现libldb下载之后，libldb还有一个文件：
+```
+drwxr-xr-x  2 root root     31 Jan  7 20:30 ldb
+lrwxrwxrwx  1 root root     16 Jan  7 20:30 libldb.so -> libldb.so.1.1.29
+lrwxrwxrwx  1 root root     16 Jan  7 20:30 libldb.so.1 -> libldb.so.1.1.29
+-rwxr-xr-x  1 root root 261120 Jan  7 20:30 libldb.so.1.1.29
+```
+然后重新安装samba，查看libldbsamba-samba4.so的 rpath：
+```
+[root@node lib]# readelf -d /usr/lib64/samba/libldbsamba-samba4.so | grep rpath
+0x000000000000000f (RPATH)              Library rpath: [/usr/lib64/samba]
+```
+此时的libldb有两个：
+```
+[root@node lib]# pwd
+/usr/local/lib
+[root@node32 lib]# ll | grep ldb
+drwxr-xr-x  2 root root     31 Jan  7 20:30 ldb
+lrwxrwxrwx  1 root root     16 Jan  7 20:30 libldb.so -> libldb.so.1.1.29
+lrwxrwxrwx  1 root root     16 Jan  7 20:30 libldb.so.1 -> libldb.so.1.1.29
+-rwxr-xr-x  1 root root      0 Jan 29 23:11 libldb.so.1.1.29
+lrwxrwxrwx  1 root root     23 Jan  7 20:30 libpyldb-util.so -> libpyldb-util.so.1.1.29
+lrwxrwxrwx  1 root root     23 Jan  7 20:30 libpyldb-util.so.1 -> libpyldb-util.so.1.1.29
+-rwxr-xr-x  1 root root  14048 Jan  7 20:30 libpyldb-util.so.1.1.29
+```
+和
+```
+[root@node lib64]# pwd
+/usr/lib64
+[root@node lib64]# ll | grep ldb
+drwxr-xr-x   3 root root       102 Jan 29 23:11 ldb
+lrwxrwxrwx   1 root root        15 Jan 29 23:11 libldb.so.1 -> libldb.so.1.5.4
+-rwxr-xr-x   1 root root    208424 Apr  2  2020 libldb.so.1.5.4
+lrwxrwxrwx.  1 root root        19 Jan  6 22:18 libleveldb.so -> libleveldb.so.1.0.7
+lrwxrwxrwx.  1 root root        19 Jan  6 22:17 libleveldb.so.1 -> libleveldb.so.1.0.7
+-rwxr-xr-x.  1 root root    348928 May 18  2016 libleveldb.so.1.0.7
+lrwxrwxrwx   1 root root        22 Jan 29 23:11 libpyldb-util.so.1 -> libpyldb-util.so.1.5.4
+-rwxr-xr-x   1 root root     15672 Apr  2  2020 libpyldb-util.so.1.5.4
+```
+这样，基本就确定原因，是加载的路径不对，为什么libldbsamba-samba4.so选择的是`/usr/local/lib` 而不是`/usr/lib64`
