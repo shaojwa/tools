@@ -20,8 +20,8 @@ $ readelf --version-info /usr/lib64/samba/libldbsamba-samba4.so
 ```
 看一看：
 ```
-[root@node wsh]# readelf --version-info /usr/local/lib/libldb.so.1  | grep 1.1.30
-[root@node wsh]# readelf --version-info /usr/local/lib/libldb.so.1  | grep 1.3.1
+[root@node32 wsh]# readelf --version-info /usr/local/lib/libldb.so.1  | grep 1.1.30
+[root@node32 wsh]# readelf --version-info /usr/local/lib/libldb.so.1  | grep 1.3.1
 ```
 libldb.so中确实没有 1.3.0和1.1.30，估计是libldb太老？
 ```
@@ -124,7 +124,7 @@ dependency: libldb.so.1()(64bit)
 其实是一样的，也是说1.5.4-1.el7会提供这些版本的libldb，然后，事实是并没有提供：
 
 ```
-[root@node wsh]# yum info libldb.x86_64
+[root@node32 wsh]# yum info libldb.x86_64
 Loaded plugins: fastestmirror
 Loading mirror speeds from cached hostfile
 Installed Packages
@@ -143,15 +143,15 @@ Description : An extensible library that implements an LDAP like API to access r
 ```
 怎么解决, 我决定在iso中找到安装包，重新安装试试：
 ```
-$[root@node ~] cd /mnt/cdrom/Packages
+$[root@node32 ~] cd /mnt/cdrom/Packages
 [root@node Packages]# ll | grep libldb
 -rw-rw-r--  6 root root    153488 Apr  4  2020 libldb-1.5.4-1.el7.i686.rpm
 -rw-rw-r--  3 root root    152376 Apr  4  2020 libldb-1.5.4-1.el7.x86_64.rpm
 -rw-rw-r--  6 root root     76844 Apr  4  2020 libldb-devel-1.5.4-1.el7.i686.rpm
 -rw-rw-r--  3 root root     76804 Apr  4  2020 libldb-devel-1.5.4-1.el7.x86_64.rpm
-[root@node Packages]# rpm -q libldb
+[root@node32 Packages]# rpm -q libldb
 libldb-1.5.4-1.el7.x86_64
-[root@node Packages]# rpm -e libldb-1.5.4-1.el7.x86_64
+[root@node32 Packages]# rpm -e libldb-1.5.4-1.el7.x86_64
 error: Failed dependencies:
         libldb(x86-64) = 1.5.4-1.el7 is needed by (installed) pyldb-1.5.4-1.el7.x86_64
         libldb.so.1()(64bit) is needed by (installed) pyldb-1.5.4-1.el7.x86_64
@@ -182,12 +182,12 @@ lrwxrwxrwx  1 root root     16 Jan  7 20:30 libldb.so.1 -> libldb.so.1.1.29
 ```
 然后重新安装samba，查看libldbsamba-samba4.so的 rpath：
 ```
-[root@node lib]# readelf -d /usr/lib64/samba/libldbsamba-samba4.so | grep rpath
+[root@node32 lib]# readelf -d /usr/lib64/samba/libldbsamba-samba4.so | grep rpath
 0x000000000000000f (RPATH)              Library rpath: [/usr/lib64/samba]
 ```
 此时的libldb有两个：
 ```
-[root@node lib]# pwd
+[root@node32 lib]# pwd
 /usr/local/lib
 [root@node32 lib]# ll | grep ldb
 drwxr-xr-x  2 root root     31 Jan  7 20:30 ldb
@@ -200,9 +200,9 @@ lrwxrwxrwx  1 root root     23 Jan  7 20:30 libpyldb-util.so.1 -> libpyldb-util.
 ```
 和
 ```
-[root@node lib64]# pwd
+[root@node32 lib64]# pwd
 /usr/lib64
-[root@node lib64]# ll | grep ldb
+[root@node32 lib64]# ll | grep ldb
 drwxr-xr-x   3 root root       102 Jan 29 23:11 ldb
 lrwxrwxrwx   1 root root        15 Jan 29 23:11 libldb.so.1 -> libldb.so.1.5.4
 -rwxr-xr-x   1 root root    208424 Apr  2  2020 libldb.so.1.5.4
@@ -212,4 +212,31 @@ lrwxrwxrwx.  1 root root        19 Jan  6 22:17 libleveldb.so.1 -> libleveldb.so
 lrwxrwxrwx   1 root root        22 Jan 29 23:11 libpyldb-util.so.1 -> libpyldb-util.so.1.5.4
 -rwxr-xr-x   1 root root     15672 Apr  2  2020 libpyldb-util.so.1.5.4
 ```
-这样，基本就确定原因，是加载的路径不对，为什么libldbsamba-samba4.so选择的是`/usr/local/lib` 而不是`/usr/lib64`
+而我们看smbd或者testparm找的libldb文件可以看到,正常的是加载`/lib64`目录（这个是目录软链接，指向`/usr/lib64`）。
+而问题版本并不是指向这个，而是指向 `/usr/loca/lib`, 这样，基本就确定原因，是加载的路径不对。
+现在的问题是：为什么libldbsamba-samba4.so选择的是`/usr/local/lib` 而不是`/usr/lib64`
+原因是：在node32节点上的`/etc/ld.so.conf`下的内容是
+```
+include ld.so.conf.d/*.conf
+```
+最终, `ld.so.conf.d`下的所有conf包含的的一个有效目录是:
+```
+/usr/lib64/atlas
+/usr/lib64//bind9-export/
+/usr/lib64/mysql
+/usr/local/lib
+```
+也就是有一个路径指向 `/usr/local/lib`， 而这个路径下，确实有libldb库文件(1.1.29文件):
+```
+libldb.so -> libldb.so.1.1.29
+libldb.so.1 -> libldb.so.1.1.29
+libldb.so.1.1.29
+```
+而正确环境下,`/etc/ld.so.conf`文件的内容是：
+```
+include ld.so.conf.d/*.conf
+/usr/local/lib
+```
+其实内容一样，但是`/usr/local/lib`下并没有`libldb.so`可以加载。
+所以，最终找到了`/lib64下`(最终指向`/usr/lib64`)下的正确库文件。
+现在还剩最后一个问题，系统是如何找到`/lib64`的，是系统内置的么？
