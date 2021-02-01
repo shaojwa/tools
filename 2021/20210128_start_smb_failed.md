@@ -1,4 +1,4 @@
-bug:
+bug现象
 ```
 $ testparm
 testparm: /usr/local/lib/libldb.so.1: version `LDB_1.3.0' not found (required by /usr/lib64/samba/libldbsamba-samba4.so)
