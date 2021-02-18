@@ -3,7 +3,13 @@
 ```
 top -bn1 -o -PID
 ```
+因为：
+```
+You can prepend a `+' or `-' to the field name to also override the sort direction.
+A leading `+' will force sorting high to low, whereas a `-' will ensure a low to high ordering.
 
+This option exists primarily to support automated/scripted batch mode operation.
+``` 
 #### 按进程号排序
 默认是降序
 ```
