@@ -32,6 +32,7 @@ RET: Follow the hypertext link under the cursor
 l
 [
 ]
+u:上一级node
 p：当前level的前一个node
 n: 当前level的后一个node
 t: 当前文档的topnode
