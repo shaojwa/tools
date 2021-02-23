@@ -10,22 +10,39 @@
 info windows
 cross reference
 manu item
+node
 ```
 
 #### info常用命令
-首先是查看帮助
+案件和readline挺像的，emacs风格，首先是查看帮助
 ```
 ctrl-h:get-help-window
 ```
-然后是基本的光标移动，和less非常像
+然后是文档内的光标定位：
+```
+DEL: scroll backward
+SPACE :scrol forward
+Home: go to the begining of this node
+End: to to the end of this node
+TAB: Skip to the next hypertext link
+RET: Follow the hypertext link under the cursor
+l
+[
+]
+p：当前level的前一个node
+n: 当前level的后一个node
+t: 当前文档的topnode
+```
+
+然后是基本的光标移动，
 ```
 ctrl-a: begining-of-line
 ctrl-e: end-of-line
 ctrl-b: backward-char
 ctrl-f: forward-char
-ctrl-p: prev-line       // 对应 less 中的 previous-history
-ctrl-n: next-line     // 对应 less 中的 next-history
-ctrl-g: abort-key，其实less中也有
+ctrl-p: prev-line // 对应 less 中的 previous-history
+ctrl-n: next-line // 对应 less 中的 next-history
+ctrl-g: abort-key // 其实less中也有
 ```
 特定的几个键
 ```
