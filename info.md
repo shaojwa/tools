@@ -1,11 +1,11 @@
-#### info 简介
+#### Info 简介
 
 1. 大部分GNU项目通过info格式发布他们的在线文档。
 1. 有两个info阅读器，其中一个是独立的程序，只用来阅读info文件。另外一个就是Emacs中的info-package，一个通用编辑器。
 1. 就目前来说，只有Emacs中的info支持鼠标使用。
 2. info是一个在线的，菜单驱动（menu-driven）的文档系统。
 
-#### info 几个概念
+#### Info 几个概念
 info 浏览机制基于目录层级，所以有同一level的不同node的概念。
 screen：
 
