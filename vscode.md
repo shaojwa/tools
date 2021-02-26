@@ -8,11 +8,9 @@ ctrl + shift + x // eXtension
 
 #### 跳转
 ```
-文件跳转 ctrl + p
-行号跳转 ctrl + g
-定义跳转 F12
-头文件和源文件切换 Alt+o 
-文件内搜索 ctrl + shift + f
+ctrl + p  // go to file 
+ctrl + g  // go to line
+F12       // go to definiation
 ```
 
 #### 代码编辑
