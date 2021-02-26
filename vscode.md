@@ -1,3 +1,10 @@
+## 跳转
+文件跳转 ctrl + p
+行号跳转 ctrl + g
+定义跳转 F12
+头文件和源文件切换 Alt+o 
+
+## 编辑
 #### 代码编辑
 ```
 Ctrl+K Ctrl+C // add line comment
@@ -6,14 +13,8 @@ Ctrl+K Ctrl+F // format selection
 Shift+Alt+F   // format selection
 ```
 
-####　文件跳转
-```
-ctrl + p
-```
 
-// jumps
-Alt+o         // switch header/source
-F12
+
 
 #### 文件名修改
 ```
