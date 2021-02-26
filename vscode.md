@@ -1,18 +1,29 @@
-#### 快捷键
+#### 代码编辑
 ```
-Ctrl+K Ctrl+S // open keyboard shortcuts
+Ctrl+K Ctrl+C // add line comment
+Ctrl+K Ctrl+U // remvoe line comment
+Ctrl+K Ctrl+F // format selection
+Shift+Alt+F   // format selection
+```
+
+####　文件跳转
+```
+ctrl + p
+```
 
 // jumps
 Alt+o         // switch header/source
 F12
 
-// edit
+#### 文件名修改
+```
 F2            // rename
 Ctl+F2        // change all
-Ctrl+K Ctrl+C // addd line comment
-Ctrl+K Ctrl+U // remvoe line comment
-Ctrl+K Ctrl+F // format selection
-Shift+Alt+F   // format selection
+```
+
+#### 设置快捷键
+```
+Ctrl+K Ctrl+S // open keyboard shortcuts
 ```
 
 ####  智能感知 IntelliSense
