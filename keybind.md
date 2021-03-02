@@ -17,7 +17,7 @@
 |previous link|||||ctrl-p||
 |next link|||||ctrl-n||
 |goto definition|||||ctrl-d||
-|goto prototype|||||ctrl-p||
+|goto prototype|||||alt-d||
 |non-blank beginning-of-line||^|||||
 |one line up||k|k||ctrl-k||
 |one line down||j|j||ctrl-j||
