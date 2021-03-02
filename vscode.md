@@ -1,16 +1,10 @@
-#### 窗口
-```
-ctrl + shift + e // explorer
-ctrl + shift + f // find in file
-ctrl + shift + d // debug
-ctrl + shift + x // eXtension
-```
-
 #### 跳转
 ```
 ctrl + p  // go to file 
 ctrl + g  // go to line
 F12       // go to definiation
+alt + Leftarrow // go back
+alt + RightArrow // go forward
 ```
 
 #### 代码编辑
@@ -25,6 +19,14 @@ Shift+Alt+F   // format selection
 ```
 F2            // rename
 Ctl+F2        // change all
+```
+
+#### 窗口
+```
+ctrl + shift + e // explorer
+ctrl + shift + f // find in file
+ctrl + shift + d // debug
+ctrl + shift + x // eXtension
 ```
 
 #### 设置快捷键
