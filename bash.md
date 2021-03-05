@@ -1,3 +1,13 @@
+#### parameter expansion中offset为负数的一个注意点
+```
+${@: -1}
+```
+请注意冒号后面的空格，当offset为负数时，需要加上空格，原因是：
+```
+Note that a negative offset must be separated from the colon by at least one space to avoid being confused with the ‘:-’ expansion.
+```
+什么是 `‘:-’ expansion`, 格式是`${parameter:-word}`用来测试变量是否设置以及是否为null，为了避免混淆，所以offset为负数时需要加空格。
+
 #### unset
 ```
 $ i=1
