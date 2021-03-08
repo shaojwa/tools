@@ -20,3 +20,7 @@ check
 [wsh@localhost etc]$ ll /etc/localtime
 lrwxrwxrwx. 1 root root 25 Mar  8 00:55 /etc/localtime -> ../usr/share/zoneinfo/UTC
 ```
+using shanghai
+```
+sudo timedatectl set-timezone Asia/Shanghai
+```
