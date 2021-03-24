@@ -1,0 +1,1 @@
+The command `:set wrap lbr` will wrap long lines between words. However, when you move the cursor down (or up), the cursor will jump from one physical line to the next. You can press **j** to move down one physical line, or **gj** to move down one displayed line.
