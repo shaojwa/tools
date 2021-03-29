@@ -38,9 +38,9 @@ ctrl + r  // isearch-backward
 
 Xref commands
 ```
-TAB     // Skip to the next hypertext link
-RET     // Follow the hypertext link under the cursor
-LFD     // select-reference-this-line
+TAB       // move-to-next-xref
+Alt-Tab   // move-to-prev-xref
+RET       // select-reference-this-line
 ```
 
 window command
@@ -62,5 +62,6 @@ ctrl-g    // abort-key
 info browse doc based on the concept of **level**, and **nodes** in the same level.
 - screen, screen  = some windows, only one active window
 - window, window = view area + mode line
-- node，是一个文档中的概念，node有不同的层级，就类似于一棵树，node可以展开也可以聚拢。
--cross reference
+- node, 是一个文档中的概念，node有不同的层级，就类似于一棵树，node可以展开也可以聚拢。
+- 'Next', 'Prev', and 'Up' pointers which appear at the top of a node.
+-cross reference, pointers which refer you to a different node, perhaps in another Info file. 
