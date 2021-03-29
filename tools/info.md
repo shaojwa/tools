@@ -1,67 +1,76 @@
-#### Info 简介
+#### basic commands
 
-1. 大部分GNU项目通过info格式发布他们的在线文档。
-1. 有两个info阅读器，其中一个是独立的程序，只用来阅读info文件。另外一个就是Emacs中的info-package，一个通用编辑器。
-1. 就目前来说，只有Emacs中的info支持鼠标使用。
-2. info是一个在线的，菜单驱动（menu-driven）的文档系统。
-
-#### Info 几个概念
-info 浏览机制基于目录层级，所以有同一level的不同node的概念。
-screen：
-
-window:
-用来显示一个node的文本。window有两部分，一个是view area，一个是mode line，这个和大多数的浏览工具是一样的。
-info自然也支持一个screen下有多个window。任何时间只有一个是active window。
-
-node：是一个文档中的概念，node有不同的层级，就类似于一棵树，node可以展开也可以聚拢。
-
-cross reference： 这也是一个文档中的概念，如果要走到另外一个reference，可以用
-
-#### info 常用命令
-
-下面是info的基本命令
-
+Cursor commands
 ```
-ctrl-h:get-help-window
-DEL: scroll backward
-SPACE :scrol forward
-Home: go to the begining of this node
-End: to to the end of this node
-TAB: Skip to the next hypertext link
-RET: Follow the hypertext link under the cursor
-l
-[
-]
-u:上一级node
-p：当前level的前一个node
-n: 当前level的后一个node
-t: 当前文档的topnode
+ctrl-p    // prev-line
+ctrl-n    // next-line
+ctrl-a    // begining-of-line
+ctrl-e    // end-of-line
+ctrl-f    // forward-char
+ctrl-b    // backward-char
+alt-f
+alt-b
+```
+Scrolling command: Moving text within a window
+```
+SPACE     // scrol forward
+DEL       // scroll backward
 ```
 
-#### windows内的命令
+Node commands
 ```
-ctrl-a: begining-of-line
-ctrl-e: end-of-line
-ctrl-b: backward-char
-ctrl-f: forward-char
-ctrl-p: prev-line // 对应 less 中的 previous-history
-ctrl-n: next-line // 对应 less 中的 next-history
-ctrl-g: abort-key // 其实less中也有
+t   // goto the top node
+u   // goto up level node
+p   // previous node in current level
+n   // next node in current level
+[   // global-prev-node
+]   // global-next-node
+l   // history node
 ```
-reference相关
+
+Searching commands
 ```
-TAB: move-to-next-xref
-LFD: select-reference-this-line
-RET: select-reference-this-line
+ctrl + s  // isearch-forward 
+ctrl + r  // isearch-backward
+} = ctrl-x n  // search-next
+{ = ctrl-x N  // search-previous
 ```
-搜索相关
+
+Xref commands
 ```
-ctrl-r: isearch-backward
-ctrl-s: isearch-forward
+TAB     // Skip to the next hypertext link
+RET     // Follow the hypertext link under the cursor
+LFD     // select-reference-this-line
 ```
-#### window之间
+
+## others commands
 ```
-切换window：ctrl-x o
-关闭当前window：ctrl-x 0
-关闭其他window：ctrl-x 1
+Home    // go to the begining of this node
+End     // to to the end of this node
+ctrl-h  // get-help-window
+ctrl-g    // abort-key
+```
+
+#### Info intro
+
+- 大部分GNU项目通过info格式发布他们的在线文档。
+- 有两个info阅读器，其中一个是独立的程序，只用来阅读info文件。另外一个就是Emacs中的info-package，一个通用编辑器。
+- 就目前来说，只有Emacs中的info支持鼠标使用。
+- info是一个在线的，菜单驱动（menu-driven）的文档系统。
+
+#### basic concept 
+info browse doc based on the concept of **level**, and **nodes** in the same level.
+- screen, screen  = some windows, only one active window
+- window, window = view area + mode line
+- node，是一个文档中的概念，node有不同的层级，就类似于一棵树，node可以展开也可以聚拢。
+
+## terms
+-cross reference： 这也是一个文档中的概念，如果要走到另外一个reference，可以用
+
+
+#### window
+```
+siwtch window：ctrl-x o
+close current window：ctrl-x 0
+close other window：ctrl-x 1
 ```
