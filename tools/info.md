@@ -1,4 +1,13 @@
-#### basic commands
+## basic concept 
+info browse doc based on the concept of **level**, and **nodes** in the same level.
+- node, a node contains text describing a specific topic at a specific level of detail.
+- node header, the top line of a node.
+- screen, screen  = some windows, only one active window
+- window, window = view area + mode line
+- 'Next', 'Prev', and 'Up' pointers which appear at the top of a node.
+-cross reference, pointers which refer you to a different node, perhaps in another Info file. 
+
+## basic commands
 
 Cursor commands
 ```
@@ -57,11 +66,3 @@ End     // to to the end of this node
 ctrl-h  // get-help-window
 ctrl-g    // abort-key
 ```
-
-## basic concept 
-info browse doc based on the concept of **level**, and **nodes** in the same level.
-- screen, screen  = some windows, only one active window
-- window, window = view area + mode line
-- node, 是一个文档中的概念，node有不同的层级，就类似于一棵树，node可以展开也可以聚拢。
-- 'Next', 'Prev', and 'Up' pointers which appear at the top of a node.
--cross reference, pointers which refer you to a different node, perhaps in another Info file. 
