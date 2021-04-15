@@ -3,59 +3,35 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
-#### oneline log
+## tree
+#### three
 ```
-git log --oneline
-```
-
-####  show log graph
-```
-git log --graph // draw graphical commit history
+HEAD
+Index
+Working Directory
 ```
 
-##### get the log of the specified file
+## branch
+#### list branches
 ```
-git log src/test/dse/dcache/CMakeLists.txt
-```
-
-#### get the change of the particular file on the specified commit
-https://stackoverflow.com/questions/44245286/git-see-changes-to-a-specific-file-by-a-commit
-```
-git show <commit> -- <file>
+git branch     # list create or delete branched  
+git branch -r  # list the remote-tracking branches  
+git branch -a  # list remote-tracking branched and local branches
 ```
 
-#### Show the changes recorded in the stash as a diff 
+#### get the upstream info of the local branch
 ```
-git stash show stash@{1}
-git stash show -p stash@{1} // in patch form
-```
-
-#### shot stash timestamp
-```
-git stash list --date=local
+git branch -vv
 ```
 
 #### local branches
 ```
 .git/refs/heads
 ```
+
 ####  remote-tracking branches
 ```
 .git/refs/remotes/<remote>/.
-```
-
-#### 查看只与指定目录相关的提交记录并显示修改的文件名
-```
-git log --name-only .
-```
-
-#### 先fetch 在merge
-如果你先把本地的文件 cached（比如add进去），然后远程分支上有更新，此时git pull吗，如果有冲突，那pull会出错。
-
-#### default repo-name and branch-name
-```
-origin     # repo name
-master     # branch name
 ```
 
 #### remote branch
@@ -66,17 +42,71 @@ master     # branch name
 ```
 git branch -r  # List the remote-tracking branches.
 ````
-
 #### both remote-tracking branches and local branches
 ```
 git branch -a # List both remote-tracking branches and local branches.
 ```
 
-#### three tree
+#### default repo name and branch name
 ```
-HEAD
-Index
-Working Directory
+origin     # repo name
+master     # branch name
+```
+
+## remote
+```
+git remote [-v]
+git remote set-url origin https://github.com/shaojwa/man.git   #  rename remote repository  
+git remote show origin   # query all branches in remote repository named origin  
+git remote update  # update from remote repository to local repository  
+git remote add doc https://github.com/shaojwa/doc.git  # add remote repository  
+```
+
+## log
+#### log basic
+```
+git log  
+git log -p  
+git log -2  
+```
+
+#### oneline log
+```
+git log --oneline
+```
+
+#### only the specified dir logs
+```
+git log --name-only .
+```
+
+####  show log graph
+```
+git log --graph // draw graphical commit history
+```
+
+#### get the log of the specified file
+```
+git log src/test/dse/dcache/CMakeLists.txt
+```
+
+#### get the change of the particular file on the specified commit
+https://stackoverflow.com/questions/44245286/git-see-changes-to-a-specific-file-by-a-commit
+```
+git show <commit> -- <file>
+```
+
+## git show
+#### show the changes recorded in the stash as a diff 
+```
+git stash show stash@{1}
+git stash show -p stash@{1} // in patch form
+```
+
+## git stash
+#### show stash timestamp
+```
+git stash list --date=local
 ```
 
 #### init  
@@ -100,7 +130,7 @@ git clone git@github.com:ceph/ceph.git
 git status  
 ```
 
-#### add to Index
+#### add
 ```
 git add  <pathspec>
 git add -u  # add all update tracked files
@@ -127,12 +157,14 @@ git reset -- <filename>   # reset current HEAD to the specified state
 ```
 git reset -- src/test/dse/dcache/dm/dcache_dm_test.cc
 ```
+
 ####  restore the addition of modified files (tracked files) or added files (untracked files)
 ```
 git reset HEAD <file_name>
-git reset HEAD   # restore all added files to unstaged
+git reset HEAD # restore all added files to unstaged
 ```
 
+## checkout
 #### restore the delete of Working Directory
 ```
 git checkout src/test/dse/dcache/dm/dcache_dm_test.cc
@@ -151,6 +183,7 @@ get checkout <tag>
 ```
 
 #### checkout 
+
 执行git checkout branch_name时，如果branch_name在本地分支中存在，那么就会签出这个本地分支的代码。 
 ```
 git checkout <new_branch>    # To prepare for working on <branch>
@@ -160,7 +193,7 @@ git checkout <new_branch>    # To prepare for working on <branch>
 git checkout -b <branch> --track <remote>/<branch>
 ```
 
-#### cherry pick
+## cherry-pick
 
 在check pick的目的分支上运行cherry-pick，commit号是源分支上的一个commit。
 ```
@@ -180,18 +213,20 @@ $ git status
 ```
 手动解决每一个冲突的文件后，git add每一个文件，最后运行git cherry-pick --continue 来添加提交。
 
-#### commit  
+
+## stash
+stashing changes in Working Directroy
+```
+git stash list
+```
+
+## commit 
 ```
 git commit -m <message>       # from index to HEAD  
 git commit -a -m <message>    # from working directory to HEAD  
 ```
 
-#### stashing changes in Working Directroy
-```
-git stash list
-```
-
-#### merge
+## merge
 ```
 git merge hot-fix  # merge hot-fix to the current branch
 ```
@@ -219,17 +254,6 @@ git push origin HEAD:refs/for/UniStorOS_V100R001B01
 HEAD:refs/for/UniStorOS_V100R001B01是refspec，HEAD是refspec中的src-ref，refs/for/UniStorOS_V100R001B01是dst-ref
 ```
 
-#### branch management
-```
-git branch     # list create or delete branched  
-git branch -r  # list the remote-tracking branches  
-git branch -a  # list remote-tracking branched and local branches
-```
-
-get the upstream info of the local branch
-```
-git branch -vv
-```
 
 #### list file of the commit
 ```
@@ -246,22 +270,6 @@ git diff --staged       # same to above
 git diff --cached HEAD~ # diff between index and remote  
 ```
 
-#### log
-```
-git log  
-git log -p  
-git log -2  
-```
-
-#### remote
-```
-git remote [-v]
-git remote set-url origin https://github.com/shaojwa/man.git   #  rename remote repository  
-git remote show origin   # query all branches in remote repository named origin  
-git remote update  # update from remote repository to local repository  
-git remote add doc https://github.com/shaojwa/doc.git  # add remote repository  
-```
-
 #### pretty-format
 ```
 [format]
@@ -274,10 +282,17 @@ pretty = format:"%C(yellow)%h %C(red)%ad %C(green)%<(8)%an %C(cyan)%s"
     editor = vim
 ```
 
-#### difference of HEAD^ and  HEAD~ 
-merge之后的commit就会有两个父提交，first-parent是merged-in的commit，second-parent是被合入的commit。
+## fetch or pull
+
+如果你先把本地的文件 cached（比如add进去），然后远程分支上有更新，此时git pull吗，如果有冲突，那pull会出错。
+
+##  HEAD^ or  HEAD~ 
+there are 2 commits after merge, first-parent is the prevous commit of the branch, is also called merged-in commit.
+the second-parent is the commit of from which the patches are merged. in git doc,
+`<rev>~<n>` to a revision parameter means the commit object that is the <n>th genetation ancestor of the named commit object,
+ following only the first parnets, but `<rev>^n measn the <n>th parnet. so
+
 ```
-~是纵向第几层父节点，HEAD~ == HEAD~1：HEAD的第一个parent，HEAD~2 == HEAD~1~1：HEAD的第一个parent的第一个parent。
-^是横向第几个父节点，HEAD^ == HEAD^1：HEAD的第一个parent，HEAD^2：HEAD的第2个parent
-所以，HEAD^2 != HEAD^1^1，HEAD~2 == HEAD^1^1
+HEAD~ is equivalent to HEAD~1, HEAD~2 equivalent to HEAD~1~1
+HEAD^ is same as HEAD^1, HEAD^^ is same as HEAD~2 but NOT equivalent to  HEAD^2
 ```
