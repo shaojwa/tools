@@ -294,5 +294,5 @@ the second-parent is the commit of from which the patches are merged. in git doc
 
 ```
 HEAD~ is equivalent to HEAD~1, HEAD~2 equivalent to HEAD~1~1
-HEAD^ is same as HEAD^1, HEAD^^ is same as HEAD~2 but NOT equivalent to  HEAD^2
+HEAD^ is same as HEAD^1, HEAD^^ is same as HEAD~2 but NOT equivalent to HEAD^2
 ```
