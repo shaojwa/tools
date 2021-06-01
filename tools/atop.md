@@ -1,11 +1,10 @@
-```
 MEM列：
-tot：总的物理内存
-cache：page cache：页缓存。
-dirty：cache中脏当前版本仅仅支持离线升级，不支持配置更新，会在版本说明书中说明。
-的部分，也就是需要下刷到磁盘上的。
-buff：文件系统元数据占用内存。
-slab：内存分配机制占用的内存。
+```
+tot   ：总的物理内存
+cache ：page cache：页缓存。
+dirty ：cache中脏的部分，也就是需要下刷到磁盘上的。
+buff  ：文件系统元数据占用内存。
+slab  ：内存分配机制占用的内存。
 ```
 
 ## BASICS
@@ -13,10 +12,10 @@ slab：内存分配机制占用的内存。
 2. column has a particular weight
 3. 
 
-## key b
+#### key b
 viewing raw file, go to a certain timestamp, b meas begin
 
-## key t/T
+#### key t/T
 show previous/next sample from the file
 
 ## key m
@@ -26,10 +25,12 @@ show previous/next sample from the file
 atop -r atop_20210601
 ```
 
-## key z
+## MISC commands
+#### key z
 freeze the current situation
 
-## key i
+#### key i
 trigger a new sample manually
 
-## key r
+#### key r
+reset
