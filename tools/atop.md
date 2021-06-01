@@ -10,7 +10,6 @@ slab  ：内存分配机制占用的内存。
 ## BASICS
 1. interactive commands
 2. column has a particular weight
-3. 
 
 #### key b
 viewing raw file, go to a certain timestamp, b meas begin
@@ -18,7 +17,14 @@ viewing raw file, go to a certain timestamp, b meas begin
 #### key t/T
 show previous/next sample from the file
 
-## key m
+#### key m
+show memory related output
+
+#### key y
+show the individual threads within a process
+
+#### key s
+show scheduling characteristics
 
 ## read atop file
 ```
