@@ -6,19 +6,18 @@ alt+backspace // 往左删除一个语义上的单词(以斜杠为分隔符)
 ```
 ctrl-a // 光标跳转到行头
 ctrl-e // 光标跳转到行尾
-ctrl-b // 往后移动一个字符
-ctrl-f // 往前移动一个字符
-
-ctrl-u // 从光标位置删除到行头
-ctrl-k // 从光标位置删除到行尾
-ctrl-h // 往后删一个字符
-ctrl-d // 往前删一个字符
+ctrl-u // 光标删除到行头
+ctrl-k // 光标删除到行尾
 
 alt-b esc-b // 往后移动一个词
 alt-f esc-f // 往前移动一个词
-
 ctrl-w // 往左删一个词
 alt-d  // 往右删一个词 (= esc-d)
+
+ctrl-b // 往后移动一个字符
+ctrl-f // 往前移动一个字符
+ctrl-h // 往后删一个字符
+ctrl-d // 往前删一个字符
 
 ctrl-x ctrl-u // undo 回退
 ctrl-_ // 回退
