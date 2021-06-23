@@ -1,8 +1,11 @@
-## background green
+## 暗绿
 4,32,40
 
-## green
+## 亮绿
 3,210,55
 
-## background blue
+## 黄绿
+155,195,75
+
+## 深蓝
 1,36,86
