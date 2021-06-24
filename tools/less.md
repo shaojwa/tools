@@ -9,6 +9,15 @@
 1. it will make you a better command line warrior.
 1.  use backward search(?pattern) to search directory or path.
 
+#### commands may be preceded by a decimal number, called N in the descriptions below
+```
+ENTER or RETURN or ^N or e o ^E or j or ^j
+  Scroll forward N lines, default 1.
+  
+g or < or ESC-<
+  Go to line N in the file, default 1 (beginning of file)
+```
+
 #### jump
 ```
 g             // begin of file
