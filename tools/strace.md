@@ -30,8 +30,8 @@
 #### 示例
 用例1
 ```
-strace -o dd.strace -T -e all -tt dd if=/dev/zeof of=ddfile bs=4k count=1024
-strace -o dd.strace -T -e all -c dd if=/dev/zeof of=ddfile bs=4k count=1024
+strace -o dd.strace -T -e all -tt dd if=/dev/zero of=ddfile bs=4k count=1024
+strace -o dd.strace -T -e all -c dd if=/dev/zero of=ddfile bs=4k count=1024
 ```
 
 用例2：
