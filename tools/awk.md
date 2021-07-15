@@ -3,8 +3,8 @@
 
 #### 实例
 ```
-cat timestamp.txt | awk '{print $1}' | awk -F . '{ print $2 }' | \\
-awk 'BEGIN {sum = 0} { if (NR % 2 == 1) t = $1; if (NR % 2 == 0) sum += $1 - t; } END {print sum}'
+cat timestamp.txt | awk '{print $1}' | awk -F . '{ print $2 }' |
+  awk 'BEGIN {sum = 0} { if (NR % 2 == 1) t = $1; if (NR % 2 == 0) sum += $1 - t; } END {print sum}'
 ```
 
 #### OFS
