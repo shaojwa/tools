@@ -20,7 +20,7 @@ CPU因为正在等待磁盘IO而空闲的时间比例，一般说来，这个比
 每秒钟发送到设备上的传输数（number of transfers per second），一个传输就是发给设备的一次IO，上层的多次逻辑IO会合并成一个Device IO 请求。
 所以这种transfer的大小并不是固定的。
 
--rrqm/wrqm
+- rrqm/wrqm
 这是所谓的合并的请求数，这些请求会放入设备的队列，io合并一般是 IOscheduler负责的，把相邻的数据读写合并到一个来提高效率。
 
 - await
