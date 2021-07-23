@@ -89,4 +89,4 @@ rd=rd1,fwd=fwd*,fwdrate=max,format=(restart,only),elapsed=10,interval=1
 1. 总文件容量过大，空间不足
 2. vdbench脚本中的java路径错误
 3. 集群模式，免密没有配置
-4. 集群模式，host不通，记得配/etc/hosts文件
+4. 集群模式，运行后显示slave连接不上，记得配/etc/hosts文件
