@@ -1,0 +1,9 @@
+#### issue
+```
+Welcome to emergency mode! After logging in, type "journalctl -xb" to view
+system logs, "systemctl reboot" to reboot, "systemctl default" or ^D to
+try again to boot into default mode.
+Give root password for maintenance
+(or press Control-D to continue):
+```
+#### 
