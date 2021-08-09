@@ -2,11 +2,10 @@ TOTAL SPACE 894.26 GiB
 
 DATA
 ```
-/home
+centos-home
 Mount Poin: /home/
 Device(s): ATA Micron_5200_MTFD(sda) and 1 other
 Desired Capacity: 839.06 GiB
-
 Device Type: LVM
 Volume Group: centos
 FileSystem: xfs
