@@ -1,3 +1,5 @@
+TOTAL SPACE 894.26 GiB
+
 DATA
 ```
 /home
