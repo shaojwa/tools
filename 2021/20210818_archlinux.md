@@ -1,17 +1,19 @@
 
 #### VirtualBox 
-Bridged Adapter
+采用桥接模式：Bridged Adapter
 
 #### partition
-parted
-boot-partition, swap-partition，root-partition，
-```
-```
+用parted进行分区，分成三个分区，采用MBR分区表（partition table）。
+boot-partition, swap-partition，root-partition。
 
-#### mount
-···
+#### 格式化文件系统以及挂载
+```
 mkfs.ext4 /dev/sda3
 mount /dev/sda3 /mnt
+```
+
+#### 格式化swap分区并启用
+```
 mkswap /dev/sda2
 swapon /dev/sda2
 ```
@@ -47,4 +49,5 @@ pacstrap /mnt base linux linux-firmware
 pacman -S grub
 ```
 
-#### 
+#### 生成gurb配置文件
+
