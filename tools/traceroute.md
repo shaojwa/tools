@@ -1,0 +1,1 @@
+windows下是tracert，linux下是traceroute
