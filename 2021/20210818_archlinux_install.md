@@ -53,3 +53,9 @@ pacman -S grub
 
 #### why there is no DHCP after installation but in it exist in live-installation
 because we have not make some script in `/etc/systemd/network/`
+
+
+#### install ssh
+```
+pacman -S openssh
+```
