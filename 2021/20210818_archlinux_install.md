@@ -49,5 +49,7 @@ pacstrap /mnt base linux linux-firmware
 pacman -S grub
 ```
 
-#### 生成gurb配置文件
+#### generate gurb config file
 
+#### why there is no DHCP after installation but in it exist in live-installation
+because we have not make some script in `/etc/systemd/network/`
