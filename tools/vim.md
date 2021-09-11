@@ -1,6 +1,15 @@
 20151202
-#### remove ^M
+#### 在expandtab开启的情况下插入tab
+ 在insert模式下，先按ctrl-v，然后按tab。如果这个需求很常用，那么可以添加remap
+```
+:inoremap <S-Tab> <C-V><Tab>
+```
+查看`1.3 MAPPING AND MODES`,i就是insert模式，noremap意思是no-recursive map。
 
+#### vim 回到上次编辑的地方
+vim打开之后按`g`+`i`
+
+#### remove ^M
 vim打开之后，如果出现^M等标记，说明是dos风格的文件以unix的格式打开。所以先用
 ```
 :e ++ff=dos
