@@ -3,12 +3,17 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
-## tree
-#### three
+#### 查看某次提交中某个文件的修改
+https://stackoverflow.com/questions/44245286/git-see-changes-to-a-specific-file-by-a-commit
+```
+git show <commit> -- <file>
+```
+
+## three tree
 ```
 HEAD
-Index
-Working Directory
+index
+working
 ```
 
 ## branch
@@ -35,13 +40,14 @@ git branch -vv
 ```
 
 #### remote branch
-远程分支，不再本地厂库，是远程服务器上的某个分支，名字常常和本地的一样，只是仓库是远程的。
+远程分支，不再本地库，是远程服务器上的某个分支，名字常常和本地的一样，只是仓库是远程的。
 
 #### Remote-tracking branches
 这是一种本地分支，类似本地的书签，用来跟踪远程分支，一般以origin/master类似的名字命名，但是一般也会叫成远程分支。
 ```
 git branch -r  # List the remote-tracking branches.
 ````
+
 #### both remote-tracking branches and local branches
 ```
 git branch -a # List both remote-tracking branches and local branches.
@@ -90,17 +96,17 @@ git log --graph // draw graphical commit history
 git log src/test/dse/dcache/CMakeLists.txt
 ```
 
-#### get the change of the particular file on the specified commit
-https://stackoverflow.com/questions/44245286/git-see-changes-to-a-specific-file-by-a-commit
-```
-git show <commit> -- <file>
-```
-
 ## git show
 #### show the changes recorded in the stash as a diff 
 ```
 git stash show stash@{1}
 git stash show -p stash@{1} // in patch form
+```
+
+#### get the change of the particular file on the specified commit
+https://stackoverflow.com/questions/44245286/git-see-changes-to-a-specific-file-by-a-commit
+```
+git show <commit> -- <file>
 ```
 
 ## git stash
@@ -254,7 +260,6 @@ git push origin HEAD:refs/for/UniStorOS_V100R001B01
 HEAD:refs/for/UniStorOS_V100R001B01是refspec，HEAD是refspec中的src-ref，refs/for/UniStorOS_V100R001B01是dst-ref
 ```
 
-
 #### list file of the commit
 ```
 git diff --stat 47f5af
@@ -283,7 +288,6 @@ pretty = format:"%C(yellow)%h %C(red)%ad %C(green)%<(8)%an %C(cyan)%s"
 ```
 
 ## fetch or pull
-
 如果你先把本地的文件 cached（比如add进去），然后远程分支上有更新，此时git pull吗，如果有冲突，那pull会出错。
 
 ##  HEAD^ or  HEAD~ 
