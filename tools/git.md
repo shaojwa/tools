@@ -9,6 +9,11 @@ https://stackoverflow.com/questions/44245286/git-see-changes-to-a-specific-file-
 git show <commit> -- <file>
 ```
 
+#### 查看某次stash
+```
+git show stash@{n}
+```
+
 ## three tree
 ```
 HEAD
