@@ -44,7 +44,7 @@ pacstrap /mnt base linux linux-firmware
 # genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-####　install grub
+#### install grub
 ```
 pacman -S grub
 ```
