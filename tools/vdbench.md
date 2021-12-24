@@ -1,8 +1,11 @@
+## 常见启动失败原因
+1. 总文件容量过大，空间不足
+2. vdbench脚本中的java路径错误
+3. 集群模式，免密没有配置
+4. 集群模式，运行后显示slave连接不上，记得配/etc/hosts文件
+
 ## master 和 slave
 master解析配置，实际执行负载的是slave，master的ip从hostname解析出来。slave的ip我们在配置文件中设置。
-
-## fwd=format
-这个是格式化format。在执行每一个fwd之前都会先执行这个。
 
 
 ## 配置
@@ -45,6 +48,9 @@ format=yes // 目录层次的完全创建以及所有文件的初始化，会先
 format=restart // 只会生成缺少的文件以及扩展大小不足的文件，但是并不会创建目录结构
 ```
 
+#### fwd=format
+这个是格式化format。在执行每一个fwd之前都会先执行这个。
+
 #### 样例
 
 ```
@@ -83,10 +89,3 @@ fsd=fsd1,anchor=/mnt/opm,depth=1,width=1000,files=2000,size=32k,shared=yes
 fwd=fwd1,fsd=fsd1,xfersize=32k,operation=create,threads=1
 rd=rd1,fwd=fwd*,fwdrate=max,format=(restart,only),elapsed=10,interval=1
 ```
-
-## 常见启动失败原因
-
-1. 总文件容量过大，空间不足
-2. vdbench脚本中的java路径错误
-3. 集群模式，免密没有配置
-4. 集群模式，运行后显示slave连接不上，记得配/etc/hosts文件
