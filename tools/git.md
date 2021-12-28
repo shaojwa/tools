@@ -95,7 +95,7 @@ git log --oneline
 git log --name-only .
 ```
 
-####  show log graph
+####  log graph
 ```
 git log --graph  # draw graphical commit history
 ```
@@ -106,7 +106,6 @@ git log src/test/dse/dcache/CMakeLists.txt
 ```
 
 ## git show
-```
 #### get the change of the particular file on the specified commit
 https://stackoverflow.com/questions/44245286/git-see-changes-to-a-specific-file-by-a-commit
 ```
