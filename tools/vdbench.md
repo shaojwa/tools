@@ -3,6 +3,7 @@
 2. vdbench脚本中的java路径错误
 3. 集群模式，免密没有配置
 4. 集群模式，运行后显示slave连接不上，记得配/etc/hosts文件
+5. 'no such file or directory', 路径用的相对路径，然后slave启动时走ssh后，home目录下没有对应的执行脚本。
 
 ## master 和 slave
 master解析配置，实际执行负载的是slave，master的ip从hostname解析出来。slave的ip我们在配置文件中设置。
