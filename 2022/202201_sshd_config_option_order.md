@@ -7,4 +7,5 @@ PermitRootLogin no
 PermitRootLogin no
 PermitRootLogin yes
 ```
-WHY?
+WHY? SEE HERE:
+https://serverfault.com/questions/673013/can-i-overwrite-a-setting-within-sshd-config-with-a-duplicate-setting
