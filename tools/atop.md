@@ -1,6 +1,21 @@
 ## atop-explained
 https://linuxwheel.com/atop-explained/
 
+#### 1st line: System Level Information
+```
+PRC line: Process level totals
+#sys: Total CPU time consumed in system mode
+#user: Total CPU time consumed in user mode
+#proc: Total number of processes present at this moment
+#trun: Total number of running threads present at this moment
+#tslpi: Total number of sleeping threads present at this moment
+#tslpu: Total number of sleeping uninterruptible threads present at this moment
+#zombie: Total number of zombie processes
+#clones: Number of clone system calls
+#exit: Number of processes that ended during this interval
+#exit: Number of processes that ended during this interval
+```
+
 ## BASICS
 1. interactive commands
 2. column has a particular weight
