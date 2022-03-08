@@ -1,4 +1,4 @@
-`ethtool`可以检测，如果`ethtool <devname>`的输出中的下面三个字段有数据那就就表示有网线连接件：
+`ethtool`可以检测，如果`ethtool <devname>`的输出中的下面三个字段有数据那就就表示有网线连接：
 ```
  Speed: 25000Mb/s
  Duplex: Full
