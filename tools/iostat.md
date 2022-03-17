@@ -49,7 +49,7 @@ await: 每个请求平均的处理时长（单位毫秒），包括排队时间�
 
 #### 注意点
 1. wait的时间需要注意，这个是磁盘处理时间加上IO排队时间,体现不了硬盘设备的速度。
-2. 要看某一段时间的系统繁忙程度需要加上<interval>，因为否者显示的是从系统启动开始到现在的负载。
+2. 要看某一段时间的系统繁忙程度需要加上`interval`，因为否者显示的是从系统启动开始到现在的负载。
 3. iostat和sar都是依赖/proc/diskstats，所以要理解iostat应该从立即/proc/diskstats开始
 4. 注意/proc/diskstats中的rd_tick和wr_ticks和io_ticks的区别。
 5. 查看/sys/block/sdx/queue/scheduler可以查看硬盘的调度器。
