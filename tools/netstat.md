@@ -1,7 +1,12 @@
 #### 查看丢包
 
 netstat 是在查看网络延时问题是首先想到的命令，因为 man netstat 说就有 inferface statistics信息。但是这个命令已经被废弃，建议使用ss。
-但是用netstat 实在是成习惯，所以首选命令netstat -i提供相关信息。
+但是用netstat 实在是成习惯。
+
+#### 查看网卡统计信息
+```
+netstat -i
+```
 
 #### 查看链接
     -t，-u分别表示tcp，udp的socket。
