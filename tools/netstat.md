@@ -5,9 +5,10 @@ netstat 是在查看网络延时问题是首先想到的命令，因为 man nets
 
 #### 查看网卡统计信息
 ```
+// Replacement for netstat -i is ip -s link.
 netstat -i
+netstat -I=ethA3d-0
 ```
-用`ip -s link`来替换。
 
 #### 查看链接
     -t，-u分别表示tcp，udp的socket。
