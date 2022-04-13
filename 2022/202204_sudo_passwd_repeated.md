@@ -1,5 +1,5 @@
 #### 问题
-最近碰到一个问题，用wsh账户登入集群后，每次ll命令，都提示我敲入password。
+最近碰到一个问题，用wsh账户登入集群后，每次`ll`命令，都提示我敲入password。
 ```
 [sudo] password for wsh:
 ```
