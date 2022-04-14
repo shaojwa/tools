@@ -12,7 +12,7 @@ target ... : prerequisites ...
 
 #### prerequisites
 1. A prerequisite is a file that is used as input to create the target.
-2. However, the rule that specifies a recipe for the target need not have prerequisites.
+2. However the rule that specifies a recipe for the target need not have prerequisites.
 
 **it looks that the prerequisite can be the name of another target.**
 
