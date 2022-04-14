@@ -40,6 +40,11 @@ The other rules are processed because their targets appear as prerequisites of t
 If some other rule is not depended on by the goal (or anything it depends on, etc.), that
 rule is not processed, unless you tell make to do so.
 
+#### Target not exist
+After recompiling whichever object files need it, make decides whether to relink edit.
+This must be done if the file edit does not exist, or if any of the object files are newer thanit.
+
+
 #### 注意
 Prerequisites 可以不是具体的文件名，可以只是一个label，如果这个lavel是一个target，那么这个target是跟新也就会依赖于这个target的Prerequisites，比如：
 ```
@@ -54,4 +59,4 @@ run: last
 run依赖last，因为last没有依赖的项目，所以last每次都会执行。
 
 #### 有依赖项，但是这个target并不存在对应的文件，每次都会执行。
-如果last依赖的其他文件，那么会比较last和其他文件的时间，但是如果没有名为last的文件，那么这个target也会每次都执行，就算有依赖的文件。
+如果last依赖其他文件，那么会比较last和其他文件的时间，如果没有名为last的文件，那么这个target对应的recipe每次都要执行，就算有依赖的文件。
