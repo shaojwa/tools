@@ -14,7 +14,7 @@ target ... : prerequisites ...
 1. A prerequisite is a file that is used as input to create the target.
 2. However, the rule that specifies a recipe for the target need not have prerequisites.
 
-**it looks that the prerequisite can be the name of another target. **
+**it looks that the prerequisite can be the name of another target.**
 
 #### recipe
 A recipe is an action that make carries out. These recipes say how to update the target file.
