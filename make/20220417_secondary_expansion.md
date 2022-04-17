@@ -15,3 +15,8 @@ automatic variables
 
 #### 隐式规则
 隐式规则（implicit rules）也叫模式规则 （pattern rules）
+
+#### 函数使用
+````
+main lib: $$(patsubst %.c,%.o,$$($$@_SRCS))
+```
