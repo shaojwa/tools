@@ -30,7 +30,8 @@ Data block，就是一个xfersize大小的数据块，key block就是用户指�
 
 #### 错误信息理解
 ```
-Block lba: 0xa7d8bfd000; sector lba: 0xa7d8c00000; Key block size: 17408; relative sector in data block: 0x18 (24); current pid: 3677954 (0x381f02)
+Block lba: 0xa7d8bfd000; sector lba: 0xa7d8c00000; Key block size: 17408; 
+        relative sector in data block: 0x18 (24); current pid: 3677954 (0x381f02)
         ===> Compression pattern miscompare.
 0x000   000000a7 d8c00000 ........ ........   000000a7 d8c00000 00000180 c142f8df
 0x010   01..0000 20316473 20202020 00000000   015b0000 20316473 20202020 00381f02
@@ -57,6 +58,15 @@ Block lba: 0xa7d8bfd000; sector lba: 0xa7d8c00000; Key block size: 17408; relati
 
 #### 校验数据是在什么位置记录的
 校验数据是记录在什么位置的，比如我写入的数据是7k，校验数据加上之后就会超过7k，如果输随机写入，这个校验数据记录在什么为地方？
+每次写的数据都会记录在内存表中，每一个扇区都会有一个把8字节的lba，和一个1字节的data-validation-key。
+这个data-validation-key是一个从1-126的值，每次写同一个block就会增加1，达到126之后，这个值就会回到1。而0是表示，这个block没有被写过。
+
+这种key的方案，开发出来是为了定位数据丢失，如果一个block被多次写入，但是却没有修改内容。我们没法知道其中一次或者多次write丢失。
+
+当一个block写入一次之后，那么后续的read操作就会进行数据校验，而这一次write之前，也一定会有一次read操作。
+
+从版本50407开始，这个key不再总是从1开始，
+
 内存中会有记录，正对每个xfersize，会有一个one-byte项，所以800G的空间，对于17k的数据块来说，会有800/17=47.059M的校验数据会被分配在内存中。
 类似的信息如下：
 ```
