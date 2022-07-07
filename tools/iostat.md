@@ -47,9 +47,22 @@ For more details refer to Documentation/admin-guide/iostats.rst
 
 在我们环境的版本中，一般是20个字段，我们需要理解每一个字段的含义：
 
-#### #1 Read completed
+#### 为什么read会merge
+io到大disk之后，相邻的IO会merge，这个在什么环节完成？排队时计算的IO个数是merge之后的。
+
+#### 用时的统计
+as measured from __make_request() to end_that_request_last()
+
+#### milliseconds spent doing I/Os
+这个不是等于  milliseconds_spent_reading + milliseconds_spent_writing，而是表示有IO需要处理的时间，磁盘非空闲时间。
+
+#### 什么叫weighted
+好像就是 milliseconds_spent_reading + milliseconds_spent_writing。
+
+#### 什么叫discards completed
 
 
+## iostat
 
 #### 每个io的平均耗时
 这可能是我们最新关心的性能数据，在Linux中，一个io的耗时包括queuing-time以及servicing-time。
