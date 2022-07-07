@@ -1,6 +1,19 @@
-注意：iostat 的默认输出是从系统启动之后的数据，如果设置interval，那么从第二组数据开始，后续的每次都是增量。
+[linuxperf参考](linuxperf.com/?p=156)
+[内核中的diskstats](https://www.kernel.org/doc/Documentation/iostats.txt)
+
+#### 每个io的平均耗时
+这可能是我们最新关心的性能数据，在Linux中，一个io的耗时包括queuing-time以及servicing-time。
+这个时间是await，因为他包括排队时间，所以这个指标不能反映硬盘的性能。
+
+
+#### iostat 中的svctm
+#### 为什么svctm 不再可信
+svctm本来表示的意思是，一个IO请求发送给设备得到处理的平均时间，现在的IO统计是在block层，我们并不知道磁盘驱动什么时候开始处理这个请求。
+看起来意思是，IO发送到block队列后返回，磁盘驱动的处理是异步的。
+
 
 #### 基本用法
+注意：iostat 的默认输出是从系统启动之后的数据，如果设置interval，那么从第二组数据开始，后续的每次都是增量。
 ```
 iostat -x       // Display extended statistics
 iostat -p sda   // specify the devices and all their partitions
@@ -27,9 +40,7 @@ CPU因为正在等待磁盘IO而空闲的时间比例，一般说来，这个比
 单位毫秒，是包括硬盘处理io时间和io请求在kernel队列中的时间，但是因为一般说来队列等待时间可以忽略不计。
 所以姑且可以用await来代表硬盘速度，一般机械硬盘await是5-10ms。
 
-#### 为什么svctm 不再可信
-svctm本来表示的意思是，一个IO请求发送给设备得到处理的平均时间，现在的IO统计是在block层，我们并不知道磁盘驱动什么时候开始处理这个请求。
-看起来意思是，IO发送到block队列后返回，磁盘驱动的处理是异步的。
+
 
 #### 输出字段
 使用 –x 参数时，最后一列中的 %util表示繁忙程度。
@@ -55,5 +66,5 @@ await: 每个请求平均的处理时长（单位毫秒），包括排队时间�
 5. 查看/sys/block/sdx/queue/scheduler可以查看硬盘的调度器。
 6. %util因为硬盘的并行能力所以即使达到100%也不代表达到饱和。
 
-#### 另外
-文章linuxperf.com/?p=156
+#### 遗留问题
+1. 硬盘IO有返回时间么？
