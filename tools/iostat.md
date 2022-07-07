@@ -56,11 +56,12 @@ as measured from __make_request() to end_that_request_last()
 #### milliseconds spent doing I/Os
 这个不是等于  milliseconds_spent_reading + milliseconds_spent_writing，而是表示有IO需要处理的时间，磁盘非空闲时间。
 
-#### 什么叫weighted
+#### 什么是weighted
 好像就是 milliseconds_spent_reading + milliseconds_spent_writing。
 
-#### 什么叫discards completed
+#### 什么是discards completed
 
+#### 什么是flush time spent
 
 ## iostat
 
