@@ -109,9 +109,10 @@ Sleeping in Function
 
 #### line oriented input
 
+## normal mode
 ## batch mode
 top -bn1 // 所谓的batch mode，就是不会动态变化，只显示某个时间点的数据，用-b参数。常常和-n搭配使用。
 
 ## secure mode
 
-## view display mode
+## view  mode
