@@ -57,8 +57,7 @@ top -bn1 -o -PID
 top -bn1 -o %CPU
 
 #### 内存占用率排序进程
-top -bn1 -o %MEM 
-> 这里使用的%MEM是RES内存，就是实际使用的物理内存。
+top -bn1 -o %MEM  # 这里使用的%MEM是RES内存，就是实际使用的物理内存。
 
 #### 指定监控的线程
 -p参数，可以多次使用，最多20次，也可以用-p后加pid-list，pid-list中用逗号分隔，详细见man手册。
@@ -73,21 +72,46 @@ y	高亮正运行的进程
 b	选中一行
 ```
 
-
-
-
-## top的运行模式
-#### batch mode
-所谓的batch mode，就是不会动态变化，只显示某个时间点的数据，用-b参数。常常和-n搭配使用。
-```
-top -bn1
-```
-#### Secure mode
-
-
 ## top 中的字段
 top提供了49个字段可供显示，都是和进程相关的。
 
+#### 如何管理字段 MANAGING Fields
 
-## top 中的字段管理
+#### top中的Status字段
+一共有6个，R/T(stopped)/S(sleeping)/Z(zombie)/D/t(traced)，值得注意的是t状态，表示正在被调试。
+
+#### top 中的CODE字段
+Code Size (KiB)，这个好像从来没用过，有点意思。
+
+#### top 中的 DATA字段
+Data + Stack Size (KiB)
+
+#### top 中的FLAG字段
+Task Flags，标记调度标记，有时候估计很有用。
+
+#### top 中的NI字段
+nice值，值越低，越冷酷，不nice。
+
+#### top 中的P字段
+Last used CPU (SMP), A number representing the last used processor. 这个是用来干什么的，探测是否存在CPU亲和性估计是。
+
+#### top 中的 PR字段
+和NI差不多，但是是两套算法，一般可以对应起来。
+
+#### top 中的 TTY字段
+注意man中的解释：The  name  of the controlling terminal. 
+
+#### top 中的 WCHAN 字段
+Sleeping in Function
+
+#### top中的RES字段
+和%MEM区别在哪里？ %MEM是比例，RES是具体的大小。
+
 #### line oriented input
+
+## batch mode
+top -bn1 // 所谓的batch mode，就是不会动态变化，只显示某个时间点的数据，用-b参数。常常和-n搭配使用。
+
+## secure mode
+
+## view display mode
