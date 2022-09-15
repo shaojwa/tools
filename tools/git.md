@@ -3,6 +3,11 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
+## 创建一个新的branch并指定up-stream
+```
+git branch b01_engine_readonly
+get branch b01_engine_readonly -u origin/unistor_vrb01_engine_readonly
+```
 
 ##  HEAD^ or  HEAD~ 
 there are 2 commits after merge, first-parent is the prevous commit of the branch, is also called merged-in commit.
