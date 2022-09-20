@@ -1,3 +1,4 @@
+用4k随机读测硬盘的响应时延
 ```
 [SDS_Admin@node61 wsh]$ sudo fio fio.wsh
 hdd_randread_test: (g=0): rw=randread, bs=4K-4K/4K-4K/4K-4K, ioengine=libaio, iodepth=1
@@ -43,3 +44,5 @@ Disk stats (read/write):
 ```
 lat (usec): min=33, max=33741, avg=3756.14, stdev=2241.16
 ```
+#### HDD的磁盘io时延
+平均3毫秒，最大33毫秒
