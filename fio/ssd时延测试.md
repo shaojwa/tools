@@ -70,3 +70,39 @@ Run status group 0 (all jobs):
 Disk stats (read/write):
   sdt: ios=255037/13, merge=0/2, ticks=49967/3, in_queue=49970, util=96.08%
 ```
+#### numjobs设置为10,iops和iodepth=10上差不多
+```
+[SDS_Admin@node61 wsh]$ sudo fio wsh_4k_randread.fio
+hdd_randread_test: (g=0): rw=randread, bs=4K-4K/4K-4K/4K-4K, ioengine=libaio, iodepth=1
+...
+fio-2.2.10
+Starting 10 processes
+Jobs: 6 (f=6): [r(3),_(2),r(1),_(2),r(2)] [100.0% done] [192.6MB/0KB/0KB /s] [49.3K/0/0 iops] [eta 00m:00s]
+hdd_randread_test: (groupid=0, jobs=10): err= 0: pid=2812665: Tue Sep 20 22:11:00 2022
+  read : io=10240MB, bw=196683KB/s, iops=49170, runt= 53313msec
+    slat (usec): min=4, max=264, avg= 7.64, stdev= 3.08
+    clat (usec): min=1, max=29629, avg=192.71, stdev=410.84
+     lat (usec): min=48, max=29637, avg=200.48, stdev=410.90
+    clat percentiles (usec):
+     |  1.00th=[   62],  5.00th=[   96], 10.00th=[  115], 20.00th=[  143],
+     | 30.00th=[  155], 40.00th=[  167], 50.00th=[  175], 60.00th=[  181],
+     | 70.00th=[  189], 80.00th=[  193], 90.00th=[  199], 95.00th=[  211],
+     | 99.00th=[  350], 99.50th=[ 1080], 99.90th=[ 8160], 99.95th=[10304],
+     | 99.99th=[10944]
+    bw (KB  /s): min=10344, max=29896, per=10.03%, avg=19730.85, stdev=1583.97
+    lat (usec) : 2=0.01%, 10=0.01%, 20=0.01%, 50=0.21%, 100=5.45%
+    lat (usec) : 250=90.98%, 500=2.69%, 750=0.09%, 1000=0.07%
+    lat (msec) : 2=0.14%, 4=0.13%, 10=0.19%, 20=0.06%, 50=0.01%
+  cpu          : usr=1.75%, sys=5.22%, ctx=2621655, majf=0, minf=266
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued    : total=r=2621440/w=0/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: io=10240MB, aggrb=196682KB/s, minb=196682KB/s, maxb=196682KB/s, mint=53313msec, maxt=53313msec
+
+Disk stats (read/write):
+  sdt: ios=2618552/47, merge=0/11, ticks=450239/9, in_queue=450248, util=99.87%
+```
