@@ -1,3 +1,7 @@
+# iscsiadm 是干什么的？
+man手册说得好，就是拿来发现以登入Target，以及用来访问和管理Database的。
+（discovery and login to iSCSI targets, as well as access and management of the open-iscsi database.）
+
 ## Node
 #### 什么是一个 Node
 一个iSCSI initiator或者iSCSI target (a single iSCSI initiator or iSCSI target.) 
