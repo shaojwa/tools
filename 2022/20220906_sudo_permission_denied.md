@@ -7,7 +7,7 @@
 ```
 
 #### 可能的原因
-sudo 命令创建的文件，uid还是原来的uid，而不是root：
+sudo 命令创建的文件，uid还是原来的uid，而不是root：// 并不是，sudo创建的文件的uid和gid都是root
 ```
 -rw-r--r--   1 SDS_Admin root      23355 Sep 18 13:14 package.out
 ```
