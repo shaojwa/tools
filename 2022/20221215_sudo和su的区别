@@ -1,0 +1,7 @@
+sudo创建的文件的所有者是root，而不是当前账户，之前一直以为是当前账户，但是这里要处以touch进程启动的uid和euid是不一样的。
+```
+[SDS_Admin@node80 ~]$ sudo touch t1
+[SDS_Admin@node80 ~]$ ll | grep t1
+-rw-r--r--   1 root      root          0 Dec 15 12:50 t1
+```
+但是我怀疑不同的环境，会有所变化。
