@@ -3,6 +3,13 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
+
+## git basics
+- object: blobs, trees, commits
+- references
+
+
+
 ## 创建一个新的branch并指定up-stream
 ```
 git branch b01_engine_readonly
