@@ -1,0 +1,3 @@
+```
+git show tag  <tagname>
+```
