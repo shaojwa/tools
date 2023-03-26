@@ -1,7 +1,8 @@
 ```
 (gdb) list *0x400e33
 0x400e33 is in std::operator+<char, std::char_traits<char>, std::allocator<char> >(
-char const*,std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/usr/include/c++/4.8.2/bits/basic_string.tcc:692).
+    char const*,std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+    (/usr/include/c++/4.8.2/bits/basic_string.tcc:692).
 687           return *this;
 688         }
 689
