@@ -13,27 +13,25 @@ CLI commands：Commnad Line Interface
 
 #### MI
 MI commands：Machine Interface。
-独立于常用的CLI命令，是给调试前端用的接口，实现类似libgdb功能。
 
 #### async
 ```
 set target-async on
 ```
 
-#### 权限
-```
-gdb 调试需要建议使用 root权限
-```
+#### permission
+gdb need root
 
-#### 挂载和解挂
+
+#### attach and detach
 ```
 attach 
 detach
 ```
 
-#### 启用 Non-Stop 模式
+#### enable non-Stop mode
 
-在 `~/.gdbinit` 文件中写以下3行，当然也可以在启动gdb之后手动运行这三行。
+in `~/.gdbinit` 
 ```
 set target-async on
 set pagination off
@@ -43,14 +41,14 @@ set non-stop on
 因为是non-stop模式，所以continue只会恢复当前线程，此时需要continue -a来恢复所有线程。
 然后ctrl -c 就可以stop当前线程。
 
-#### 远程调试
+#### remote debug
 ```
 gdbserver --attach :4444 <pid>
 gdb ceph-mds
 target remote 192.168.0.11:4444
 ```    
 
-#### 断点
+#### break point
 ```
 save breakpoints <filename>
 break file.c:100 thread all
@@ -60,7 +58,7 @@ break file.c:100 thread all
 ```
 maint print symbol all.sym 
 info functions C_ObjectOperation_decodevals    
-set multiple-symbols  // 多符号匹配时的行为
+set multiple-symbols
 ```
 
 #### 当前指令位置
