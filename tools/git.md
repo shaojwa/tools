@@ -9,6 +9,11 @@ v0.4@ 20160601
 - references
 
 
+## unstage files
+```
+git reset HEAD code/global_instance_construct.s
+```
+
 
 ## 创建一个新的branch并指定up-stream
 ```
