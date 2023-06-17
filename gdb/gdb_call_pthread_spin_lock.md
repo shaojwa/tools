@@ -29,9 +29,12 @@ $2 = 0
 #4  0x00007f6053d8bb8d in clone () from /lib64/libc.so.6
 (gdb) info thread
   Id   Target Id         Frame
-* 3    Thread 0x7f6053c8c700 (LWP 3319311) "out" 0x000000000040092a in routine1 (ptr=0x7ffedb49db2c) at spinlock_gdbcall.cc:21
-  2    Thread 0x7f605348b700 (LWP 3319312) "out" 0x00007f6053d7cc3d in write () from /lib64/libc.so.6
-  1    Thread 0x7f6054ca7740 (LWP 3319310) "out" 0x00007f6054883017 in pthread_join () from /lib64/libpthread.so.0
+* 3    Thread 0x7f6053c8c700 (LWP 3319311) "out" 0x000000000040092a
+                                                 in routine1 (ptr=0x7ffedb49db2c) at spinlock_gdbcall.cc:21
+  2    Thread 0x7f605348b700 (LWP 3319312) "out" 0x00007f6053d7cc3d
+                                                 in write () from /lib64/libc.so.6
+  1    Thread 0x7f6054ca7740 (LWP 3319310) "out" 0x00007f6054883017
+                                                 in pthread_join () from /lib64/libpthread.so.0
 (gdb) c
 Continuing.
 ```
