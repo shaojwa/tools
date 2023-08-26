@@ -1,0 +1,1 @@
+reset soft可以保持修改的文件已经added，而不需要重新add，这个是比不加soft好的地方。
