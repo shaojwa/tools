@@ -1,18 +1,18 @@
-#### 安装 
+#### install  
 ```
 sudo yum install nginx
 ```
 
-#### 配置文件
+#### config the service
 ```
 /etc/nginx/nginx.conf
 ```
-从配置文件中，可以看到网站默认的路径在
+defult path of the site
 ```
 /usr/share/nginx/html
 ```
 
-####  nginx主进程号
+#### the main process id
 ```
 /var/run/nginx.pid
 ```
