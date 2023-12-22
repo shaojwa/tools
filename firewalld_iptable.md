@@ -7,7 +7,7 @@ Error: INVALID_PORT: bad port (most likely missing protocol), correct syntax is 
 Error: INVALID_PORT: 110280
 [wsh@li984-80 ~]$ sudo firewall-cmd --zone=public --add-port=11280/tcp --permanent
 success
+[wsh@li984-80 ~]$ sudo firewall-cmd --reload
 ```
-
 #### netfilter
 #### nftables
