@@ -1,0 +1,1 @@
+command 'lastlog' read the file of '/var/log/lastlog'
