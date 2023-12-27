@@ -1,0 +1,18 @@
+// add 
+sudo ip addr add 182.100.6.151/24 dev ibcb-0 label ibcb-0:1
+
+// del
+sudo ip addr del 182.100.6.151/24 dev ibcb-0
+
+// ifconfig：
+ibcb-0:1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 182.100.6.151  netmask 255.255.255.0  broadcast 0.0.0.0
+        ether 08:c0:eb:94:ed:1a  txqueuelen 1000  (Ethernet
+
+
+// ip addr:
+8: ibcb-0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 08:c0:eb:94:ed:1a brd ff:ff:ff:ff:ff:ff
+    inet 182.100.157.151/24 brd 182.100.157.255 scope global ibcb-0
+       valid_lft forever preferred_lft forever
+    inet 182.100.6.151/24 scope global ibcb-0:1
