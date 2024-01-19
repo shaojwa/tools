@@ -1,4 +1,8 @@
 // numastat show memory statistics only
+// numastat is provided by the numactl package. 
 numa <pid>
 numastat -p <pid> // same as numa <pid>
-// Each numa_miss has a numa_foreign on another node.
+
+numa_hit // the memory allocated on this node as intended
+numa_miss // the memory allocated on the node despite the process perfers diff node.
+// each numa_miss has a numa_foreign on another node.
