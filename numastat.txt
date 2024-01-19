@@ -1,0 +1,4 @@
+// numastat show memory statistics only
+numa <pid>
+numastat -p <pid> // same as numa <pid>
+// Each numa_miss has a numa_foreign on another node.
