@@ -1,3 +1,6 @@
+https://docs.kernel.org/admin-guide/numastat.html
+/sys/devices/system/node/node*/numastat
+
 // numastat show memory statistics only
 // numastat is provided by the numactl package. 
 numa <pid>
