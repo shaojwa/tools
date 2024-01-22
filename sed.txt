@@ -1,0 +1,78 @@
+https://www.gnu.org/software/sed/
+https://www.gnu.org/software/sed/manual/sed.html
+
+sed = stream editor for filtering and transforming text
+pay attention to the words ‘filter’ and ‘transform’
+input stream = a file or input from a pipile.
+sed permits scripted edits such as ed.
+sed works by only one pass over the inputs.
+
+the first non-option argument is taken as the sed script to  interpret.
+the command will be executed for all input lines if no address is given.
+
+the general usage ?
+address/addres-cmmmand <input-file>
+
+what's happen if no address is given ?
+the command wioil be executed for all input lines. such as command 's'
+
+why we need -s ?
+the number in adress is the one for each filer or in total for files
+
+what is pattern space ?
+pattern space are the chars to be matched, the default is the current line.
+we can append the next line to the pattern space by comamd n or N.
+
+what's the branch ?
+
+what's an address ?
+number address,  first~step,  $ for last line,  /regexp/ and so on
+
+// append line 
+sed "/^processer_allocation/s/$/, $1=$2/g" ceph.conf
+
+// add something at the beginning of the matched line
+sed "/^processer_allocation/s/^/#/g" ceph.conf
+
+
+// change in the input-file using -i, edit file in place
+ sed -i "/^libgo_conf/s/$proc_num/$new_proc_num/g"  ceph.conf
+
+// with one address, the matched line only
+ sed "/^libgo_conf/s/$proc_num/$new_proc_num/g"  ceph.conf
+
+// match the word ? using \< and \>
+
+// using the matched string by &, add space before and after '='
+sed "/^processer_allocation/s/=/ & /g" ceph.conf
+
+// using expended reguler expression in scripts
+-r to use expend reguler expression because the defult regular expression used in sed is BRE
+
+//  commands
+commands need zero address are : # }
+commands need zero or one address are = a q 
+commands need address ranges are { b c d D
+
+// samples
+range=begin,and
+begin,end=1,^,$,/pattern/
+range=null all
+Hold Space
+Pattern Space
+sed '1,4s/my/your/2g' file
+sed 's/my/[&]/g' file
+sed 'N;s/\n/,/' file
+sed '4a haha' file
+sed '4i huhu' file
+sed '/my/i hehe' file
+sed '2c replace second line' file
+sed '/my/c replease line having my' file
+sed '/my/d' file
+sed '/my/p' file
+sed '/dog/,/fish/p' fil
+sed -n '/my/p' file
+sed '4,5{/This/d}' file
+sed '4,5{/This/{/dog/d}}' file
+sed '!G;h;$!d' file
+sed '4,5{/This/d}' file
