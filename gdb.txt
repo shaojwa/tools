@@ -1,31 +1,16 @@
-#### todo
-break 25 thread 4
-b func if arg1->foo().bar().c_str() == "xxxx"
-interrupt
-thread apply 4 bt
-thread apply all continue
-gdb --command=gdbcmd1 routine
+#### show all types 
+info types
+info types raw_combined
 
-#### how to display virtual-function ????
-p C_MaybeExpiredSegment::finish
-Cannot reference virtual member function "finish"
-
-#### why we need maint ???
-maint print symbol all.sym 
-set multiple-symbols
+#### query type by regexp
+info types dcache
+info types bufferlist
 
 ####  show types
 ptype ceph::buffer::list
 ptype ceph::buffer::ptr
 ptype ceph::buffer::raw // after run
 ptype ceph::buffer::raow_combined // after run
-
-#### show class-instance
-p *this
-p *(C_MaybeExpiredSegment *)0x7f17d08d8560
-
-#### show virtual-table
-info vtbl this
 
 #### query functions
 info func <regexp>
@@ -36,6 +21,14 @@ p C_MaybeExpiredSegment::complete
 
 #### disass function
 disass /m DCacheOPProc::opproc_destroy,+100
+
+
+#### show class-instance
+p *this
+p *(C_MaybeExpiredSegment *)0x7f17d08d8560
+
+#### show virtual-table
+info vtbl this
 
 #### examine mem
 x $rbp-0x18
@@ -102,3 +95,19 @@ set tcp auto-retry on
 
 #### scheduler
 set scheduler-locking off|on|step 
+
+#### todo
+break 25 thread 4
+b func if arg1->foo().bar().c_str() == "xxxx"
+interrupt
+thread apply 4 bt
+thread apply all continue
+gdb --command=gdbcmd1 routine
+
+#### how to display virtual-function ????
+p C_MaybeExpiredSegment::finish
+Cannot reference virtual member function "finish"
+
+#### why we need maint ???
+maint print symbol all.sym 
+set multiple-symbols
