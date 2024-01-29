@@ -8,19 +8,6 @@ thread apply all continue
 gdb --command=gdbcmd1 routine
 ```
 
-#### CLI
-CLI commands：Commnad Line Interface
-
-#### MI
-MI commands：Machine Interface。
-
-#### async
-```
-set target-async on
-```
-
-#### permission
-gdb need root
 
 
 #### attach and detach
