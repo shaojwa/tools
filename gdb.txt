@@ -6,6 +6,13 @@ thread apply 4 bt
 thread apply all continue
 gdb --command=gdbcmd1 routine
 
+#### how to display virtual-function ????
+p C_MaybeExpiredSegment::finish
+Cannot reference virtual member function "finish"
+
+#### why we need maint ???
+maint print symbol all.sym 
+set multiple-symbols
 
 ####  show types
 ptype ceph::buffer::list
@@ -13,30 +20,30 @@ ptype ceph::buffer::ptr
 ptype ceph::buffer::raw // after run
 ptype ceph::buffer::raow_combined // after run
 
-
 #### show class-instance
 p *this
 p *(C_MaybeExpiredSegment *)0x7f17d08d8560
 
+#### show virtual-table
+info vtbl this
 
 #### query functions
 info func <regexp>
 info func opproc
 
-
 #### get function address 
 p C_MaybeExpiredSegment::complete
-
 
 #### disass function
 disass /m DCacheOPProc::opproc_destroy,+100
 
+#### examine mem
+x $rbp-0x18
 
 #### set start-args
 (gdb) file /opt/bin/ceph-mds
 (gdb) set args -f --cluster ceph --id mds0 --setuser ceph --setgroup ceph
 (gdb) run
-
 
 #### enable non-stop mode
 // in `~/.gdbinit` 
@@ -44,15 +51,12 @@ set target-async on
 set pagination off
 set non-stop on
 
-
 #### attach the thread
 gdb attach <pid_of_thread>
-
 
 #### attach and detach
 gdb attach 
 gdb detach
-
 
 #### remote debug
 gdbserver --attach :4444 <pid>
@@ -89,69 +93,12 @@ debug/install.sh
 (1) attach // all-t
 (2) continue // one-S 
 
-
 #### break point
 save breakpoints <filename>
 break file.c:100 thread all
 
-#### 符号
-```
-maint print symbol all.sym 
-info functions C_ObjectOperation_decodevals    
-set multiple-symbols
-```
-
-#### 当前指令位置
-```
-p $rip
-```
-
-#### 指定命令启动
-```
-gdb -p 1234 -ex 'break MOSDOpReply::decode_payload'
-```
-
-#### 查看虚函数
-```
-p C_MaybeExpiredSegment::finish时报错
-Cannot reference virtual member function "finish"
-```
-
-#### 查看虚函数表
-```
-info vtbl this
-```
-
-#### 显示汇编代码
-```
-set disassemble-next-line on
-```
-
-#### 设置汇编样式
-```
-set disassembly-flavor intel
-```
-    
-#### 查看内存内容
-```
-x $rbp-0x18
-```   
-
-#### 单行汇编执行
-```
-si
-```  
-
-#### 网络相关
-```
+#### tcp usage ????
 set tcp auto-retry on
-```
 
-#### 调度器
-```
-set scheduler-locking off|on|step
-```    
-
-#### 为什么bt显示的某些栈帧看不到参数
-一个软件的正式版本一般都是经过优化的，如果一个接口的参数，在调用这个接口之后不再使用，那么这个接口的参数一般会通过寄存器传入。
-这个参数也就不会在栈帧中看到，除非是对内层的调用。所以如果碰到某个接口的参数无法显示，不用觉得奇怪。
+#### scheduler
+set scheduler-locking off|on|step 
