@@ -1,0 +1,4 @@
+# chech virtual memory pagesize
+getconf
+getpagesize() in libc
+grep -ir pagesize /proc/self/smaps
