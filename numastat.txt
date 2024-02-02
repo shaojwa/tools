@@ -6,10 +6,30 @@ https://docs.kernel.org/admin-guide/numastat.html
 numa <pid>
 numastat -p <pid> // same as numa <pid>
 
-numa_hit // the memory allocated on this node as intended
-numa_miss // the memory allocated on the node despite the process perfers diff node.
-// each numa_miss has a numa_foreign on another node.
+// the memory allocated on this node as intended, maybe by the processes running on the other node
+numa_hit
+// the memory allocated on the node despite the process perfers diff node.
+numa_miss
 
 
-local node
-other node
+// allocated by the processes on the same node, not matter the perfer node of the process
+local_node
+// allocated by the processes on the other node, not matter the perfer node of the process
+other_node
+
+so  numa_hit, numa_miss, local_node, other_node is all allocate in the current node.
+and numa_hit + numa_miss = local_node + other_node
+
+a = local_process_intend_local_success
+b = other_process_intend_local_success
+c = local_process_intend_other_failure
+d = other_process_intend_other_failure
+numa_hit  = a + b
+numa_miss = c + d
+local_node = a + c
+other_node = b + d
+interleave = b + c
+
+a =  (numa_hit +  local_node - interleave)/2
+b =  (numa_hit + interleave - local_node)/2
+c =  (local_node + interleave - numa_hit)/2
