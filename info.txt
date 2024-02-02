@@ -1,0 +1,9 @@
+http://www.gnu.org/software/texinfo/manual/info
+/       // search 
+s
+ctrl-r  // search
+ctrl-s  // search
+g       // to to node
+n
+p
+u
