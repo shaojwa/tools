@@ -9,3 +9,7 @@ numastat -p <pid> // same as numa <pid>
 numa_hit // the memory allocated on this node as intended
 numa_miss // the memory allocated on the node despite the process perfers diff node.
 // each numa_miss has a numa_foreign on another node.
+
+
+local node
+other node
