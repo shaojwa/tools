@@ -1,3 +1,10 @@
+https://sourceware.org/gdb/current/onlinedocs/gdb.html/Machine-Code.html
+
+#### hex to dec 
+p/x 0x2aa
+p/d 0x2aa
+p/t 0x2aa
+
 #### show all types 
 info types
 info types raw_combined
@@ -17,11 +24,16 @@ info func <regexp>
 info func opproc
 
 #### get function address 
-p C_MaybeExpiredSegment::complete
+p dm_hash_node_t::hn_get_object
+info line dm_hash_node_t::hn_get_object
+info line *0xcbd710
+info line *(0xcbd710+0x2aa)
+// After info line, the default address for the x command is changed to the starting address of the line.
+// After info line, using info line again without specifying a location will display information about the next source line.
 
 #### disass function
 disass /m DCacheOPProc::opproc_destroy,+100
-
+disass 'foo.c'::bar // not disass foo.c:bar
 
 #### show class-instance
 p *this
