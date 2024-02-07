@@ -1,6 +1,8 @@
 https://sourceware.org/gdb/current/onlinedocs/gdb.html/Machine-Code.html
-#### reload symbol from file
-add-symbol-file dpe.dbg
+#### load symbols from file
+symbol-file dpe.debug
+add-symbol-file dpe.debug
+symbol-file // no args to clear the symbols
 
 #### hex to dec 
 p/x 0x2aa
