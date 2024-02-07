@@ -1,4 +1,6 @@
 https://sourceware.org/gdb/current/onlinedocs/gdb.html/Machine-Code.html
+#### reload symbol from file
+add-symbol-file dpe.dbg
 
 #### hex to dec 
 p/x 0x2aa
