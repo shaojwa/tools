@@ -1,0 +1,3 @@
+Oct  8 16:53:20 node157 kernel: [97251.107570] Out of memory: Killed process 7319 (dpe)
+    total-vm:255540444kB, anon-rss:134013344kB, file-rss:0kB, shmem-rss:0kB, UID:64045 pgtables:457348kB oom_score_adj:0
+Oct  8 16:53:31 node157 kernel: [97263.003428] oom_reaper: reaped process 7319 (dpe), now anon-rss:0kB, file-rss:0kB, shmem-rss:0kB
