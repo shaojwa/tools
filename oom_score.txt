@@ -1,3 +1,6 @@
 https://www.percona.com/blog/out-of-memory-killer-or-savior/
 cat /proc/58149/oom_score
+# sysctl -a | grep panic_on_oom
 vm.panic_on_oom = 0
+# cat /proc/sys/vm/swappiness
+0
