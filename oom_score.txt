@@ -1,2 +1,3 @@
 https://www.percona.com/blog/out-of-memory-killer-or-savior/
 cat /proc/58149/oom_score
+vm.panic_on_oom = 0
