@@ -1,0 +1,9 @@
+using ps
+```
+ps -o  pid,pcpu,psr,comm -Tp $(pidof dpe) > dpe.ps.out
+```
+using top and press 'f' to select fields to show
+```
+top -p $(pidof dpe)
+```
+using atop ?
