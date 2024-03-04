@@ -1,0 +1,2 @@
+# show cpu_id, numa_id
+ps -o pid,tid,pcpu,psr,numa,comm -Tp 22185
