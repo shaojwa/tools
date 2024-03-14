@@ -1,8 +1,20 @@
 ## atop-explained
 https://linuxwheel.com/atop-explained/
 
-####  key l
-Limit the number of system level lines
+#### 系统信息行控制
+key l, Limit the number of system level lines
+
+#### 选定进程
+P
+
+#### 显示进程内线程
+y
+
+#### 显示内存相关输出
+m
+
+#### 显示磁盘相关输出
+d
 
 #### key b
 viewing raw file, go to a certain timestamp, b meas begin
@@ -20,9 +32,7 @@ show the individual threads within a process
 show scheduling characteristics
 
 ## read atop file
-```
 atop -r atop_20210601
-```
 
 ## MISC commands
 #### key z
