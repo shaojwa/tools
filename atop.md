@@ -1,11 +1,13 @@
 ## atop-explained
 https://linuxwheel.com/atop-explained/
+lower case key can be used to show other informations.
+and upper case keys can be used to influence the order.
 
 #### 系统信息行控制
 key l, Limit the number of system level lines
 
 #### 选定进程
-P
+shift+p
 
 #### 显示进程内线程
 y
@@ -21,12 +23,6 @@ viewing raw file, go to a certain timestamp, b meas begin
 
 #### key t/T
 show previous/next sample from the file
-
-#### key m
-show memory related output
-
-#### key y
-show the individual threads within a process
 
 #### key s
 show scheduling characteristics
