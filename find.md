@@ -6,3 +6,11 @@ find /path/ -name *.log
 ```
 find /path/ -name '*.log'
 ```
+或者
+```
+find /path/ -name "*.log"
+```
+或者
+```
+find /path/ -name \*.log
+```
