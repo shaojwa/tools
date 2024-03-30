@@ -1,10 +1,17 @@
 https://sourceware.org/gdb/current/onlinedocs/gdb.html/
 https://sourceware.org/gdb/current/onlinedocs/gdb.html/Machine-Code.html
+https://sourceware.org/gdb/5.1.1/onlinedocs/gdbint.html
+https://cs.baylor.edu/~donahoo/tools/gdb/gdb.html
 
-#### 默认的的target架构
+
+#### run core in gdb
+(gdb) target core /corefile/dse.core
+
+####  show target arch
 (gdb) show arch
 The target architecture is set to "auto" (currently "i386").
-#### 显示可选的arch
+
+#### set arch
 (gdb) set arch
 
 #### load debuginfo file
