@@ -12,4 +12,10 @@ add
 $2 = 2
 (gdb) call add
 $3 = {int (void)} 0x401182 <add()>
+(gdb) p add()
+add
+$4 = 3
+(gdb) p add()
+add
+$5 = 4
 ```
