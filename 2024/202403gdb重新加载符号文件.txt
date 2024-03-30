@@ -1,0 +1,11 @@
+如果不带参数运行就是丢弃符号
+symbol-file
+然后bt的结果就是：
+(gdb) bt
+#0  0x00007fe660f0804f in ?? ()
+#1  0x0000000000000000 in ?? ()
+
+symbol-file dse.debug
+但是发现加载dse的symbol之后bt命令显示还是不全，原因就是我们需要加载的是debuginfo。
+但是我们好像没有特定的命令可以reload这个debuginfo，只能设置debuginfo文件的路径让gdb自己去找。
+一般debug找debuginfo有两种方式：debug-link 和build-id。
