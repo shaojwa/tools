@@ -1,4 +1,14 @@
+https://sourceware.org/gdb/current/onlinedocs/gdb.html/
 https://sourceware.org/gdb/current/onlinedocs/gdb.html/Machine-Code.html
+
+#### 默认的的target架构
+(gdb) show arch
+The target architecture is set to "auto" (currently "i386").
+#### 显示可选的arch
+(gdb) set arch
+
+#### load debuginfo file
+
 #### load symbols from file
 symbol-file dpe.debug
 add-symbol-file dpe.debug
