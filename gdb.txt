@@ -3,6 +3,16 @@ https://sourceware.org/gdb/current/onlinedocs/gdb.html/Machine-Code.html
 https://sourceware.org/gdb/5.1.1/onlinedocs/gdbint.html
 https://cs.baylor.edu/~donahoo/tools/gdb/gdb.html
 
+#### p显示16/8/10/2进制
+(gdb) p sizeof(co::Task)
+(gdb) p /x sizeof(co::Task)
+(gdb) p /o sizeof(co::Task)
+(gdb) p /t sizeof(co::Task)
+help x 就可以看到
+
+#### so可以直接调试
+在/store/wsh/b01/libgo/build下可以直接 gdbliblibgo.so
+(gdb) ptype co::Task
 
 #### run core in gdb
 (gdb) target core /corefile/dse.core
