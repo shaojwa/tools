@@ -3,9 +3,8 @@ https://sourceware.org/gdb/current/onlinedocs/gdb.html/Machine-Code.html
 https://sourceware.org/gdb/5.1.1/onlinedocs/gdbint.html
 https://cs.baylor.edu/~donahoo/tools/gdb/gdb.html
 #### 显示一个子串
-```
 (gdb) x /s 0x43a58
-```
+
 
 #### p显示16/8/10/2进制
 (gdb) p sizeof(co::Task)
