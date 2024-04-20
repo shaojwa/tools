@@ -1,3 +1,5 @@
+https://code.visualstudio.com/docs/languages/cpp
+
 #### 搜索本文
 快捷键ctrl+f
 
