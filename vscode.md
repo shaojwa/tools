@@ -1,5 +1,8 @@
-#### 找文件
-可以直接在命令面板里敲文件名，也可以按快捷键ctrl+p让光标直接跳到输入框，search-files-by-name。
+#### 搜索本文
+快捷键ctrl+f
+
+#### 搜索文件
+快捷键ctrl+p让光标直接跳到输入框，search-files-by-name。也可以直接在命令面板里敲文件名。
 
 #### 运行vscode管理命令
 是ctrl-shift-p
