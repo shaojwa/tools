@@ -2,6 +2,17 @@ https://sourceware.org/gdb/current/onlinedocs/gdb.html/
 https://sourceware.org/gdb/current/onlinedocs/gdb.html/Machine-Code.html
 https://sourceware.org/gdb/5.1.1/onlinedocs/gdbint.html
 https://cs.baylor.edu/~donahoo/tools/gdb/gdb.html
+
+#### 显示多个变量
+p {arrivedOp->arrived_item.parent_, arrivedOp->arrived_item.left_, arrivedOp->arrived_item.right
+
+#### 执行shell命令
+shell date --date @1713434673
+
+#### 显示枚举
+p (int)TRACK_EVENT_DONE
+p (int)boost::intrusive::rbtree_node<void*>::black_t
+
 #### 显示一个子串
 (gdb) x /s 0x43a58
 
