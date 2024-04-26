@@ -1,4 +1,4 @@
-### bash命令行字串替换
+#### bash命令行字串替换
 ```
 ^old^new // substitute once
 !!:s/old/new // substitute once
