@@ -4,11 +4,34 @@ v0.3@ 20151127
 v0.4@ 20160601
 
 
+## add index
+```
+git add  <pathspec>
+git add -u  # add all update tracked files
+git add .   # all files include untracked files
+```
 
-## unstage files
+## reset index
 ```
 git reset HEAD code/global_instance_construct.s
 ```
+
+## delete index
+```
+git rm src/test/dse/dcache/dm/dcache_dm_test.cc   # delete file from index and working directory 
+git rm --cached <file_name>                       # delete file from the index only, not working directory
+```
+
+## reset working
+```
+git checkout src/test/dse/dcache/dm/dcache_dm_test.cc
+```
+
+## delete working
+```
+rm src/test/dse/dcache/dm/dcache_dm_test.cc
+```
+
 
 ## git basics
 - object: blobs, trees, commits
@@ -87,42 +110,41 @@ git branch -r # List the remote-tracking branches.
 git branch -a # List both remote-tracking branches and local branches.
 ```
 
-## log
-#### log basic
+## log basic
 ```
 git log  
 git log -p  
 git log -2  
 ```
 
-#### oneline log
+## oneline log
 ```
 git log --oneline
 ```
 
-#### only the specified dir logs
+## only the specified dir logs
 ```
 git log --name-only .
 ```
 
-####  log graph
+##  log graph
 ```
 git log --graph  # draw graphical commit history
 ```
 
-#### get the log of the specified file
+## get the log of the specified file
 ```
 git log src/test/dse/dcache/CMakeLists.txt
 ```
 
 ## git show
-#### get the change of the particular file on the specified commit
+## get the change of the particular file on the specified commit
 https://stackoverflow.com/questions/44245286/git-see-changes-to-a-specific-file-by-a-commit
 ```
 git show <commit> -- <file>
 ```
  
-#### status 
+## status 
 ```
 git status  
 ```
@@ -136,24 +158,6 @@ git diff --cached       # diff between index and head
 git diff --staged       # same to above  
 git diff --cached HEAD~ # diff between index and remote  
 git diff --stat 47f5af # list file of the commit
-```
-
-#### add
-```
-git add  <pathspec>
-git add -u  # add all update tracked files
-git add .   # all files include untracked files
-```
-
-#### delete from index
-```
-git rm src/test/dse/dcache/dm/dcache_dm_test.cc   # delete file from index and working directory 
-git rm --cached <file_name>                       # delete file from the index only, not working directory
-```
-
-#### delete from Working Direcory
-```
-rm src/test/dse/dcache/dm/dcache_dm_test.cc
 ```
 
 ## reset
@@ -173,25 +177,19 @@ git reset HEAD <file_name>
 git reset HEAD # restore all added files to unstaged
 ```
 
-## checkout
-#### restore the delete of Working Directory
-```
-git checkout src/test/dse/dcache/dm/dcache_dm_test.cc
-```
-
-#### restore one directory
+## restore one directory
 ```
 git checkout -f dse/dcache/
 ```
 
-#### other checkouts
+## other checkouts
 ```
 git checkout  # revert from index to working directory  
 git checkout HEAD
 get checkout <tag>
 ```
 
-#### checkout 
+## checkout 
 when run `git checkout branch_name`, if `branch_name` exists in local branches, then will checkout the branch. 
 ```
 git checkout <new_branch>    # To prepare for working on <branch>
@@ -202,7 +200,7 @@ if not, and the name match the one of branch in the remote, then a local branch 
 git checkout -b <branch> --track <remote>/<branch>
 ```
 
-#### cherry-pick
+## cherry-pick
 ```
 git cherry-pick e0e56
 ```
