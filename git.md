@@ -14,6 +14,8 @@ git add .   # all files include untracked files
 ## reset index
 ```
 git reset HEAD code/global_instance_construct.s
+// same as reset --
+git reset -- src/test/dse/dcache/dm/dcache_dm_test.cc
 ```
 
 ## delete index
@@ -160,14 +162,9 @@ git diff --cached HEAD~ # diff between index and remote
 git diff --stat 47f5af # list file of the commit
 ```
 
-## reset
 #### reset 
 ```
 git reset -- <filename>   # reset current HEAD to the specified state  
-```
-
-#### restore the delete of Index
-```
 git reset -- src/test/dse/dcache/dm/dcache_dm_test.cc
 ```
 
