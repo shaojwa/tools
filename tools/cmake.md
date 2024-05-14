@@ -1,3 +1,5 @@
+https://cmake.org/cmake/help/v3.10/manual/cmake-commands.7.html
+
 #### CMake什么作用
 
 跨平台，可用来构建软件，可用来安装软件。
