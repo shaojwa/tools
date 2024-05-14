@@ -3,6 +3,16 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
+## git
+https://stackoverflow.com/questions/1404796/how-can-i-get-the-latest-tag-name-in-current-branch-in-git
+```
+git describe --tags 
+git describe --tags --abbrev=0
+```
+To get the most recent annotated tag:
+```
+git describe --abbrev=0
+```
 
 ## add index
 ```
