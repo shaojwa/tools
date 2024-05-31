@@ -20,3 +20,5 @@ tc linux的网络流量控制工具，控制带宽，时延，丢包。
 
 ## Stochastic Fireness Queuing
 Round Robin Dqueuing Algorithm
+
+## Hierarchy Token Bucket 分层令牌桶 类型
