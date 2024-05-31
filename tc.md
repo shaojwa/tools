@@ -15,5 +15,8 @@ tc linux的网络流量控制工具，控制带宽，时延，丢包。
 ## 数据跑的TOS字段
 这是报文中的标记字段，type of service， 8比特标记，准确说是8bit中的其中4个bit，在IP报文中，准确说是IP头。
 
-#### TBF
+##TBF
 令牌桶过滤去
+
+## Stochastic Fireness Queuing
+Round Robin Dqueuing Algorithm
