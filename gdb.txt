@@ -3,8 +3,11 @@ https://sourceware.org/gdb/current/onlinedocs/gdb.html/Machine-Code.html
 https://sourceware.org/gdb/5.1.1/onlinedocs/gdbint.html
 https://cs.baylor.edu/~donahoo/tools/gdb/gdb.html
 
+#### 显示上/下一条命令
+ctrl+p/n
+
 #### 显示多个变量
-p {arrivedOp->arrived_item.parent_, arrivedOp->arrived_item.left_, arrivedOp->arrived_item.right
+p {arrivedOp->arrived_item.parent_, arrivedOp->arrived_item.left_, arrivedOp->arrived_item.right}
 
 #### 执行shell命令
 shell date --date @1713434673
