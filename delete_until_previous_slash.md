@@ -15,7 +15,8 @@ bind -P |grep unix-filename-rubout
 ```
 "\e\C-h": backward-kill-word
 ```
-还比如同样的功能，用 `alt+backspace`
+还比如同样的功能，用 `alt+backspace`, // 往左删除一个语义上的单词(以斜杠为分隔符)
 ```
-alt+backspace // 往左删除一个语义上的单词(以斜杠为分隔符)
+"\e\C-?": backward-kill-word
 ```
+因为backspace一般是用ctrl-?来表示。
