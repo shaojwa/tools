@@ -9,3 +9,13 @@ bind -P |grep unix-filename-rubout
 ```
 "\ew":unix-filename-rubout
 ```
+
+## 发现已经有相关命令
+比如`alt-ctrl-h`就可以backward-kill-word
+```
+"\e\C-h": backward-kill-word
+```
+还比如同样的功能，用 `alt+backspace`
+```
+alt+backspace // 往左删除一个语义上的单词(以斜杠为分隔符)
+```
