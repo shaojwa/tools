@@ -2,6 +2,14 @@
 alt+backspace // 往左删除一个语义上的单词(以斜杠为分隔符)
 ```
 
+## word 和 unix-word
+word一般就是单词，不包括slash，如果是包含slash的，以空格作为分隔的，就得用unix-word。
+比如 ctrl-w就会往前删除到前一个空格为止，而不是停在下划线。
+
+##  backward 就是往左
+一般没有这个前缀的kill，delete都是往右删除，右边是光标的forward，所以默认没有forward这个前缀。
+
+
 #### readline 相关快捷键
 ```
 ctrl-a // 光标跳转到行头
