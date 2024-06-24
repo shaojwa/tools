@@ -1,6 +1,5 @@
-```
-alt+backspace // 往左删除一个语义上的单词(以斜杠为分隔符)
-```
+## 往左删除一个语义上的单词(以斜杠为分隔符)
+用`alt+backspace`就可以，backspace在readline中用`ctrl-?`来表示。
 
 ## word 和 unix-word
 word一般就是单词，不包括slash，如果是包含slash的，以空格作为分隔的，就得用unix-word。
