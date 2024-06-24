@@ -53,7 +53,7 @@ rm src/test/dse/dcache/dm/dcache_dm_test.cc
 there are 2 commits after merge, first-parent is the prevous commit of the branch, is also called merged-in commit.
 the second-parent is the commit of from which the patches are merged. in git doc,
 `<rev>~<n>` to a revision parameter means the commit object that is the <n>th genetation ancestor of the named commit object,
- following only the first parnets, but `<rev>^n measn the <n>th parnet. so
+ following only the first parnets, but `<rev>^n` measn the <n>th parnet. so
 
 ```
 HEAD~ is equivalent to HEAD~1, HEAD~2 equivalent to HEAD~1~1
