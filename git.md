@@ -3,6 +3,12 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
+
+## merge branch
+```
+git merge br1 br2 br3
+```
+
 ## show parent relationship of commits in log
 ```
 git log –pretty=raw
