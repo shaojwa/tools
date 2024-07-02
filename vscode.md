@@ -1,4 +1,8 @@
 https://code.visualstudio.com/docs/languages/cpp
+#### 关闭某些error
+
+#### 修改编辑器背景颜色
+【File】【Perferences】【Settings】【Workbench】【Appearance】【ColorCustomizations】【"editor.background":"#d0eec6"】
 
 #### 搜索本文
 快捷键ctrl+f
