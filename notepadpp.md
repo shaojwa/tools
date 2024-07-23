@@ -1,4 +1,16 @@
-#### 过滤关键字
+## Jump to the beginning of the opened file
+```
+ctrl+Home
+```
+and
+```
+ctrl+End
+```
+
+## Jump to the text from the search-result-list
+just double-click on the searched-line
+
+## filter by key
 ```
 ctrl+f
 ```
@@ -14,7 +26,7 @@ Find All in Current Document
 ```
 Alt+D
 ```
-#### 正则匹配关键字
+## search by reg-exp
 ```
 ctrl+f
 ```
@@ -31,7 +43,7 @@ Find All in Current Document
 Alt+D
 ```
 
-#### 跳到第一个匹配的关键字
+## 跳到第一个匹配的关键字
 ```
 ctrl+f
 ```
