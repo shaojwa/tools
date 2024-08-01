@@ -11,3 +11,4 @@ user    0m0.000s
 sys     0m0.000s
 ```
 `k=v` makes the execution of time runing with the binary of `/usr/bin/time`
+it looks that `k=v` make the implicit execution of `env` ?
