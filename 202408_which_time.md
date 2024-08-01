@@ -12,7 +12,7 @@ sys     0m0.000s
 ```
 `k=v` makes the execution of time runing with the binary of `/usr/bin/time`
 it looks that `k=v` make the implicit execution of `env` ?
-`time` is the keyword in shell,  must be the first word in the sentance.
+`time` is the keyword in shell,  must be the first word in the sentence.
 
 using likes this:
 ```
