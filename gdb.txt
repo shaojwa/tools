@@ -5,6 +5,8 @@ https://cs.baylor.edu/~donahoo/tools/gdb/gdb.html
 
 #### 查看包含opporc的函数
 info func opproc
+info var opproc
+info local opproc
 
 
 #### 显示上/下一条命令
