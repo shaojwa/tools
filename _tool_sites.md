@@ -1,4 +1,6 @@
 #### algo
+https://cp-algorithms.com/
+https://e-maxx.ru/algo 
 
 #### regular expression
 - http://www.regexlab.com/zh/regref.htm
@@ -14,6 +16,5 @@
 - https://godbolt.org
 - https://cppinsights.io/
 - https://quick-bench.com/
-
 
 #### open sources
