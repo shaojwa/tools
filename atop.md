@@ -1,22 +1,25 @@
-## atop-explained
-https://linuxwheel.com/atop-explained/
+- https://lwn.net/Articles/387202/
+- https://www.atoptool.nl/download/case_leakage.pdf
+
+#### atop-explained
+- https://linuxwheel.com/atop-explained/
 lower case key can be used to show other informations.
 and upper case keys can be used to influence the order.
 
-#### 系统信息行控制
+####  limit lines setting
 key l, Limit the number of system level lines
 
-#### 选定进程
-shift+p
+#### select process by name
+P
 
-#### 显示进程内线程
+#### in thread mode
 y
 
-#### 显示内存相关输出
-m
+####  in memory mode
+M
 
-#### 显示磁盘相关输出
-d
+#### in disk mode
+D
 
 #### key b
 viewing raw file, go to a certain timestamp, b meas begin
