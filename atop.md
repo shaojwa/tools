@@ -3,8 +3,8 @@
 
 #### atop-explained
 - https://linuxwheel.com/atop-explained/
-lower case key can be used to show other informations.
-and upper case keys can be used to influence the order.
+
+lower case key can be used to show other informations. and upper case keys can be used to influence the order.
 
 ####  limit lines setting
 key l, Limit the number of system level lines
