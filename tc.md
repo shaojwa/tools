@@ -59,7 +59,6 @@ tc qdisc add dev ib41-0 ingress
 tc filter add dev ib41-0 parent ffff: protocol ip u32 match ip src 172.16.25.85 action drop
 tc filter del dev ib41-0 parent ffff:0
 ```
-![image](https://github.com/user-attachments/assets/0f67eff9-8e86-4530-9a7f-4f34faddebbe)
 
 ## algo
 TBF 
