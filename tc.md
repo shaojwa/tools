@@ -1,24 +1,72 @@
 https://cloud.tencent.com/developer/article/2298332
 
-## tc
-tc linux的网络流量控制工具，控制带宽，时延，丢包。
-
-## tc qdisc
-队列和排队规则，qdisc=queueing discipline。
+####  whats qdisc
+qdisc = queueing discipline, the layer between the kernel and interface driver.
+the kernel enqueue the pacakges to qdisc and get the packages from the qdisc, then gives the packages to the driver.
+the qdisc is associated to one of interfaces.
+there are two kinds of qdisc, the classless qdisc and classful qdisc. the commonly-used qdisc 'netem' is one of the classless qdisc.
 
 ## tc qdisc netem
-主机内模拟网络延时，重复，丢包，乱序，网络损坏，网络中断，端口占用。
+ne of the classless qdisc.
 
-## classless queueing discipline
-无分类排队规则，最常用的CQD 是 pfifo_fast，这是默认的排队规则，先来先处理。p是优先级的意思。
+##### algo
+TBF 
 
-## 数据跑的TOS字段
-这是报文中的标记字段，type of service， 8比特标记，准确说是8bit中的其中4个bit，在IP报文中，准确说是IP头。
-
-##TBF
-令牌桶过滤去
-
-## Stochastic Fireness Queuing
+#### Stochastic Fireness Queuing
 Round Robin Dqueuing Algorithm
 
-## Hierarchy Token Bucket 分层令牌桶 类型
+
+
+#### show the current  queue discipline
+```
+tc qdisc show dev  <iface> 
+tc qdisc show dev ib41-0
+
+setting delays for  the interface：
+tc qdisc add dev  <iface> root netem delay <interval>
+tc qdisc add dev ens19 root netem delay 6000ms
+after setting we can see the  pcko is 0 by atop, but  non-zero in pcki, why?
+because tc can not control the incomming packages.
+
+why we cannot find the drops in atop when using command tc to do the dropping?
+
+
+cancel the delays
+tc qdisc del dev  <iface> root 
+tc qdisc del dev ens19 root
+
+dropping packages by tc (control the transmit queue，so it works on for sending)
+tc qdisc add dev  <iface> root netem loss <percent>
+tc qdisc add dev  <iface> root netem drop <percent>
+tc qdisc add dev ens19 root netem loss 10%
+
+
+netem is  one type of  queuing discipline used for network emulation
+
+interface contol
+disable the interface：
+sudo ip link set <iface> down
+sudo ip link set ib41-0 down
+atop will not show the interface stats after we disable the interface.
+ 
+ enable the interface：
+sudo ip link set <iface> up
+
+
+the reason of package drop
+
+
+rx_dropped and tx_dropped
+network driver is in the layer of Data link, eg L2 for the node-to-node data transfer.
+driver works between the NIC(network interface card) and the operating system. 
+https://www.kernel.org/doc/html/v6.1/networking/statistics.html
+
+
+tc qdisc add dev ib41-0 ingress
+tc filter add dev ib41-0 parent ffff: protocol ip u32 match ip src 172.16.25.85 action drop
+tc filter del dev ib41-0 parent ffff:0
+```
+![image](https://github.com/user-attachments/assets/0f67eff9-8e86-4530-9a7f-4f34faddebbe)
+
+
+
