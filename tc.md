@@ -1,23 +1,16 @@
 https://cloud.tencent.com/developer/article/2298332
 
-####  whats qdisc
+##  whats qdisc
 qdisc = queueing discipline, the layer between the kernel and interface driver.
 the kernel enqueue the pacakges to qdisc and get the packages from the qdisc, then gives the packages to the driver.
 the qdisc is associated to one of interfaces.
 there are two kinds of qdisc, the classless qdisc and classful qdisc. the commonly-used qdisc 'netem' is one of the classless qdisc.
 
 ## tc qdisc netem
-ne of the classless qdisc.
-
-##### algo
-TBF 
-
-#### Stochastic Fireness Queuing
-Round Robin Dqueuing Algorithm
+one of the classless qdisc.
 
 
-
-#### show the current  queue discipline
+## show the current  queue discipline
 ```
 tc qdisc show dev  <iface> 
 tc qdisc show dev ib41-0
@@ -68,5 +61,9 @@ tc filter del dev ib41-0 parent ffff:0
 ```
 ![image](https://github.com/user-attachments/assets/0f67eff9-8e86-4530-9a7f-4f34faddebbe)
 
+## algo
+TBF 
 
+## Stochastic Fireness Queuing
+Round Robin Dqueuing Algorithm
 
