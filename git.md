@@ -3,6 +3,14 @@ v0.2@ 20141125
 v0.3@ 20151127  
 v0.4@ 20160601
 
+## The following untracked working tree files would be overwritten by merge
+remove the untracked files and directories
+```
+git clean -f
+git clean -fd
+```
+
+
 ## create a new branch and push
 ```
 git checkout -b t14_storepool_usage
@@ -30,18 +38,22 @@ To get the most recent annotated tag:
 git describe --abbrev=0
 ```
 
-## add index
+## add to index
 ```
 git add  <pathspec>
 git add -u  # add all update tracked files
 git add .   # all files include untracked files
 ```
 
-## reset index
+## unstage
 ```
-git reset HEAD code/global_instance_construct.s
-// same as reset --
+// for git 1.8.3.1
+git reset src/test/dse/dcache/dm/dcache_dm_test.cc
 git reset -- src/test/dse/dcache/dm/dcache_dm_test.cc
+git reset HEAD src/test/dse/dcache/dm/dcache_dm_test.c
+
+// for git 2.33.0
+git restore --staged src/test/dse/dcache/dm/dcache_dm_test.c
 ```
 
 ## delete index
@@ -50,16 +62,19 @@ git rm src/test/dse/dcache/dm/dcache_dm_test.cc   # delete file from index and w
 git rm --cached <file_name>                       # delete file from the index only, not working directory
 ```
 
-## reset working
+##  discard chagnes in working directory
 ```
+// for git 1.8.3.1
 git checkout src/test/dse/dcache/dm/dcache_dm_test.cc
+
+// for git 2.33.0
+git restore src/test/dse/dcache/dm/dcache_dm_test.cc
 ```
 
 ## delete working
 ```
 rm src/test/dse/dcache/dm/dcache_dm_test.cc
 ```
-
 
 ## git basics
 - object: blobs, trees, commits
