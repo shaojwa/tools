@@ -2,6 +2,7 @@ gitav0.1@ 20131219
 v0.2@ 20141125  
 v0.3@ 20151127  
 v0.4@ 20160601
+https://stackoverflow.com/questions/1404796/how-can-i-get-the-latest-tag-name-in-current-branch-in-git
 
 ## The following untracked working tree files would be overwritten by merge
 remove the untracked files and directories
@@ -9,7 +10,6 @@ remove the untracked files and directories
 git clean -f
 git clean -fd
 ```
-
 
 ## create a new branch and push
 ```
@@ -27,8 +27,6 @@ git merge br1 br2 br3
 git log –pretty=raw
 ```
 
-## git
-https://stackoverflow.com/questions/1404796/how-can-i-get-the-latest-tag-name-in-current-branch-in-git
 ```
 git describe --tags 
 git describe --tags --abbrev=0
